@@ -1,0 +1,283 @@
+{
+	"Bundesländer": {
+	  "Nordrhein-Westfalen": {
+		"Versammlung": 0,
+		"Gastronomie": [1,6,18],
+		"Rausgehen": 2,
+		"Laeden": 1,
+		"Offene Laeden":["Apotheke","Bank","Baumarkt","Drogerie","Friseur","Getränkemarkt","Großhandel","Heilmittelerbringer","Hörgeräte-Akustiker","Lebensmittelgeschäft", "Optiker", "Poststellen","Reinigung","Sanitätshaus","Sparkasse","Supermarkt","Tankstelle","Tierbedarf","Waschsalon","Wochenmarkt","Zeitungsverkauf"],
+		"Sport draußen": 2,
+		"Freizeiteinrichtungen": 0,
+		"Gottesdienste": 0,
+		"Schulen": 0,
+		"Zusatz": 0
+	  },
+	  "Niedersachsen": {
+		"Versammlung": 0,
+		"Gastronomie": [1,0,0],
+		"Rausgehen": 2,
+		"Laeden": 1,
+		"Offene Laeden": [],
+		"Sport draußen": 2,
+		"Freizeiteinrichtungen": 0,
+		"Gottesdienste": 0,
+		"Schulen": 0,
+		"Zusatz": 0
+	  },
+	  "Bayern": {
+		"Versammlung": 0,
+		"Gastronomie":  [1,0,0],
+		"Rausgehen": 1,
+		"Haus Verlassen Gründe":[],
+		"Laeden": 1,		
+		"Offene Laeden": ["Lebensmittel", "Jagdbedarf", "KFZ-Werkstatt", "KFZ-Teile","Automietstationen","Blumenladen","Fahrradladen", "Getränke", "Apotheke", "Sanitätshaus", "Drogerie", "Tankstelle", "Bank", "Post", "Friseur", "Reinigung", "Freie Berufe", "Waschsalon", "Zeitungsverkauf","Baumarkt", "Tierbedarf","Großhandel", "Dienstleister", "Handwerker"],
+		"Sport draußen": 1,
+		"Sport Ausnahme": "Mitbewohner",
+		"Freizeiteinrichtungen": 0,
+		"Gottesdienste": 0,
+		"Schulen": 0,
+		"Zusatz": 0
+	  },
+	  "Rheinland-Pfalz": {
+		"Versammlung": 5,
+		"Gastronomie":  [1,0,0],
+		"Rausgehen": 2,
+		"Laeden": 1,
+		"Offene Laeden": ["Apotheke","Bank","Baumarkt","Drogerie","Friseur","Getränkemarkt","Großhandel","Heilmittelerbringer","Hörgeräte-Akustiker","Lebensmittelgeschäft", "Optiker", "Poststellen","Reinigung","Sanitätshaus","Sparkasse","Supermarkt","Tankstelle","Tierbedarf","Waschsalon","Wochenmarkt","Zeitungsverkauf"],
+		"Sport draußen": 2,
+		"Freizeiteinrichtungen": 0,
+		"Gottesdienste": 0,
+		"Schulen": 0
+	  },
+	  "Hessen": {
+		"Versammlung": 5,
+		"Gastronomie":  [1,0,0],
+		"Rausgehen": 2,
+		"Laeden": 1,
+		"Offene Laeden": ["Apotheke","Bank","Baumarkt","Drogerie","Friseur","Getränkemarkt","Großhandel","Heilmittelerbringer","Hörgeräte-Akustiker","Lebensmittelgeschäft", "Optiker", "Poststellen","Reinigung","Sanitätshaus","Sparkasse","Supermarkt","Tankstelle","Tierbedarf","Waschsalon","Wochenmarkt","Zeitungsverkauf"],
+		"Sport draußen": 2,
+		"Freizeiteinrichtungen": 0,
+		"Gottesdienste": 0,
+		"Schulen": 0
+	  },
+	  "Saarland": {
+		"Versammlung": null,
+		"Gastronomie":  [1,0,0],
+		"Rausgehen": 2,
+		"Laeden": 1,
+		"Offene Laeden": ["Apotheke","Bank","Baumarkt","Drogerie","Friseur","Getränkemarkt","Großhandel","Heilmittelerbringer","Hörgeräte-Akustiker","Lebensmittelgeschäft", "Optiker", "Poststellen","Reinigung","Sanitätshaus","Sparkasse","Supermarkt","Tankstelle","Tierbedarf","Waschsalon","Wochenmarkt","Zeitungsverkauf"],
+		"Sport draußen": 2,
+		"Freizeiteinrichtungen": 0,
+		"Gottesdienste": 1,
+		"Gottesdienste Anmerkung": "strenge Auflagen",
+		"Schulen": 0
+	  },
+	  "Berlin": {
+		"Versammlung": 50,
+		"Gastronomie": [1,6,18],
+		"Rausgehen": 2,
+		"Laeden": 1,
+		"Offene Laeden": ["Getränkemarkt", "Supermarkt", "Imbiss", "Wochenmarkt", "Bäcker", "Späti", "Sanitätshaus", "Optiker", "Hörgeräte-Akustiker", "Apotheke", "Drogerie", "Tankstelle", "Bank", "Sparkasse", "Post", "Baumarkt", "Gartenmarkt", "Zeitungsverkauf", "Buchhandel", "Werkstatt", "Dienstleister", "Friseur", "Reinigung", "Waschsalon","Tierbedarf", "Fahrradgeschäft", "Großhandel"],
+		"Sport draußen": 2,
+		"Freizeiteinrichtungen": 0,
+		"Gottesdienste": 0,
+		"Schulen": 0
+	  },
+	  "Brandenburg": {
+		"Versammlung": null,
+		"Gastronomie": [2,0,0],
+		"Rausgehen": 2,
+		"Laeden": 1,
+		"Offene Laeden": ["Getränkemarkt", "Supermarkt", "Imbiss", "Wochenmarkt", "Bäcker", "Späti", "Sanitätshaus", "Optiker", "Hörgeräte-Akustiker", "Apotheke", "Drogerie", "Tankstelle", "Bank", "Sparkasse", "Post", "Baumarkt", "Gartenmarkt", "Zeitungsverkauf", "Buchhandel", "Werkstatt", "Dienstleister", "Friseur", "Reinigung", "Waschsalon","Tierbedarf", "Fahrradgeschäft", "Großhandel"],
+		"Sport draußen": 2,
+		"Freizeiteinrichtungen": 0,
+		"Gottesdienste": 0,
+		"Schulen": 0
+	  },
+	  "Schleswig-Holstein": {
+		"Versammlung": 0,
+		"Gastronomie": [1,0,0],
+		"Rausgehen": 2,
+		"Laeden": 1,
+		"Offene Laeden": ["Apotheke","Bank","Baumarkt","Drogerie","Friseur","Getränkemarkt","Großhandel","Heilmittelerbringer","Hörgeräte-Akustiker","Lebensmittelgeschäft", "Optiker", "Poststellen","Reinigung","Sanitätshaus","Sparkasse","Supermarkt","Tankstelle","Tierbedarf","Waschsalon","Wochenmarkt","Zeitungsverkauf"],
+		"Sport draußen": 2,
+		"Freizeiteinrichtungen": 0,
+		"Gottesdienste": 0,
+		"Schulen": 0
+	  },
+	  "Mecklenburg-Vorpommern": {
+		"Versammlung": 0,
+		"Gastronomie": [1,0,0],
+		"Rausgehen": 2,
+		"Laeden": 1,
+		"Offene Laeden": ["Apotheke","Bank","Baumarkt","Drogerie","Friseur","Getränkemarkt","Großhandel","Heilmittelerbringer","Hörgeräte-Akustiker","Lebensmittelgeschäft", "Optiker", "Poststellen","Reinigung","Sanitätshaus","Sparkasse","Supermarkt","Tankstelle","Tierbedarf","Waschsalon","Wochenmarkt","Zeitungsverkauf"],
+		"Sport draußen": 2,
+		"Freizeiteinrichtungen": 0,
+		"Gottesdienste": 0,
+		"Schulen": 0
+	  },
+	  "Thüringen": {
+		"Versammlung": 0,
+		"Gastronomie": [2,0,0],
+		"Rausgehen": 2,
+		"Laeden": 2,
+		"Offene Laeden": [],
+		"Sport draußen": 2,
+		"Freizeiteinrichtungen": 2,
+		"Gottesdienste": 2,
+		"Schulen": 0,
+		"Besondere Gemeinden": ["Jena"]
+	  },
+	  "Sachsen": {
+		"Versammlung": 0,
+		"Gastronomie": 1,
+		"Rausgehen": 2,
+		"Laeden": null,
+		"Offene Laeden": [],
+		"Sport draußen": 2,
+		"Freizeiteinrichtungen": null,
+		"Gottesdienste": null,
+		"Schulen": 0,
+		"Zusatz": null
+	  },
+	  "Sachsen-Anhalt": {
+		"Versammlung": 0,
+		"Gastronomie": 1,
+		"Rausgehen": 2,
+		"Laeden": null,
+		"Offene Laeden": [],
+		"Sport draußen": 2,
+		"Freizeiteinrichtungen": null,
+		"Gottesdienste": null,
+		"Schulen": 0,
+		"Zusatz": null
+	  },
+	  "Bremen": {
+		"Versammlung": 0,
+		"Gastronomie": 1,
+		"Rausgehen": 2,
+		"Laeden": null,
+		"Offene Laeden": [],
+		"Sport draußen": 2,
+		"Freizeiteinrichtungen": null,
+		"Gottesdienste": null,
+		"Schulen": 0,
+		"Zusatz": null
+	  },
+	  "Baden-Württemberg": {
+		"Versammlung": 3,
+		"Versammlung Ausnahme": ["Familie"],
+		"Gastronomie": 1,
+		"Rausgehen": 2,
+		"Laeden": null,
+		"Sport draußen": 2,
+		"Freizeiteinrichtungen": null,
+		"Gottesdienste": null,
+		"Schulen": 0,
+		"Zusatz": null
+	  },
+	  "Hamburg": {
+		"Versammlung": 6,
+		"Gastronomie": 1,
+		"Rausgehen": 2,
+		"Laeden": null,
+		"Offene Laeden": [],
+		"Sport draußen": 2,
+		"Freizeiteinrichtungen": null,
+		"Gottesdienste": 0,
+		"Schulen": 0,
+		"Zusatz": null
+	  },
+	  
+	
+	  "Lerverkusen": {
+		"Versammlung": 1,
+		"Gastronomie": 1,
+		"Rausgehen": 2,
+		"Laeden": null,
+		"Sport draußen": null,
+		"Freizeiteinrichtungen": null,
+		"Gottesdienste": null,
+		"Schulen": null,
+		"Zusatz": null
+	  },
+	  "Dortmund": {
+		"Versammlung": 4,
+		"Versammlung Ausnahme": ["Familie"],
+		"Gastronomie": 1,
+		"Rausgehen": 2,
+		"Laeden": null,
+		"Sport draußen": null,
+		"Freizeiteinrichtungen": null,
+		"Gottesdienste": null,
+		"Schulen": null,
+		"Zusatz": null
+	  },
+	  "Dresden": {
+		"Versammlung": null,
+		"Gastronomie": 1,
+		"Rausgehen": "triftige Gründe",
+		"Laeden": null,
+		"Sport draußen": null,
+		"Freizeiteinrichtungen": null,
+		"Gottesdienste": null,
+		"Schulen": null,
+		"Zusatz": null
+	  },
+	  "Freiburg": {
+		"Versammlung": "2 oder Mitbewohner",
+		"Gastronomie": null,
+		"Rausgehen": null,
+		"Laeden": null,
+		"Sport draußen": "allein oder mit Mitbewohnern",
+		"Freizeiteinrichtungen": null,
+		"Gottesdienste": null,
+		"Schulen": null,
+		"Zusatz": null
+	  },
+	  "Südpfalz": {
+		"Versammlung": null,
+		"Gastronomie": 1,
+		"Rausgehen": "triftige Gründe",
+		"Laeden": null,
+		"Sport draußen": "allein oder mit Mitbewohnern",
+		"Freizeiteinrichtungen": null,
+		"Gottesdienste": null,
+		"Schulen": null,
+		"Zusatz": null
+	  },
+	  "Mitterteich": {
+		"Versammlung": null,
+		"Gastronomie": 1,
+		"Rausgehen": "triftige Gründe",
+		"Laeden": null,
+		"Sport draußen": "allein oder mit Mitbewohnern",
+		"Freizeiteinrichtungen": null,
+		"Gottesdienste": null,
+		"Schulen": null,
+		"Zusatz": "Arbeit: Bescheinigung des AG"
+	  },
+	  "Wunsiedel": {
+		"Versammlung": null,
+		"Gastronomie": null,
+		"Rausgehen": null,
+		"Laeden": null,
+		"Sport draußen": null,
+		"Freizeiteinrichtungen": null,
+		"Gottesdienste": null,
+		"Schulen": null,
+		"Zusatz": null
+	  },
+	  "München": {
+		"Versammlung": null,
+		"Gastronomie": 1,
+		"Rausgehen": "triftige Gründe",
+		"Laeden": "https://www.hv-bayern.de/media/downloads/newsletter/TopNews/2020/11/positivliste_geschaefte.pdf",
+		"Sport draußen": "allein oder mit Mitbewohnern",
+		"Freizeiteinrichtungen": null,
+		"Gottesdienste": null,
+		"Schulen": null,
+		"Zusatz": null
+	  }
+	}
+  }
