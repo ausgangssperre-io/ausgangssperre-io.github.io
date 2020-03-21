@@ -18,28 +18,75 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
 
     <title>ausgangssperre.io</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/data/img/favicon.ico">
 </head>
-<body>
+<body class="home">
 
 <!-- CONTENT START -->
 
 <div class="container">
 
-    <h1>Info</h1>
-    <form>
-        <div class="form-group">
-            <select class="form-control" id="target" name="target">
-                <option>Bitte wählen</option>
-                <option>Einkaufen</option>
-                <option>Arbeit</option>
-                <option>Besuche</option>
-                <option>Sport</option>
-                <option>Sonstiges</option>
-            </select>
-        </div>
-    </form>
+    <div class="row search">
+        <div class="col-12"><h2>Wohin soll es gehen?</h2></div>
+        <div class="col-12">
+            <div id="custom-search-input">
+                <div class="input-group">
+                    <input id="autocomplete_search" name="autocomplete_search" type="text" class="form-control" placeholder="Search" />
+                    <input type="hidden" name="lat">
+                    <input type="hidden" name="lng">
 
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button"><i class="material-icons">search</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row place-data d-none">
+        <div>
+            <button type="button" class="btn btn-primary bmd-btn-icon"><i class="material-icons">arrow_back_ios</i> Zurück</button>
+        </div>
+        <div class="col-2">
+            <i class="material-icons">shopping</i>
+        </div>
+        <div class="col-10">
+            <h2 id="placeName"></h2><br>
+            <p id="placeAddress"></p>
+        </div>
+        <div class="alert alert-success" role="alert" id="placeInfo">
+            <h3>Aktuell 16 Uhr:</h3>
+            <p>Weniger Besucher als gewöhnlich. Normalerweise bis zu 5 Min. Wartezeit.</p>
+        </div>
+        <div class="col-12">
+            <h3>Öffnungszeiten</h3>
+            <p id="placeWeekday"></p>
+        </div>
+        <div class="col-12">
+            <button type="button" class="btn btn-primary btn-lg active">Jetzt los gehen</button>
+        </div>
+
+    </div>
+    <div class="row latest">
+        <h2 class="col-12">Letzte Ziele</h2>
+
+        <div class="list-group col-12">
+            <button type="button" class="list-group-item list-group-item-action active">Lidl</button>
+            <button type="button" class="list-group-item list-group-item-action">Apotheke XY</button>
+            <button type="button" class="list-group-item list-group-item-action">Norma</button>
+        </div>
+    </div>
+    <div class="row info">
+        <div class="col-12">
+            <h3>Bitte beachte, dass jeder gesparte
+                Gang potentiell Leben retten kann.
+                Kannst du bis morgen warten und
+                dann zwei Erledigungen auf einmal
+                durchführen?</h3>
+        </div>
+    </div>
 </div>
+
+<!--
 <div class="container">
     <div class="row">
         <div class="col-sm-1">
@@ -65,17 +112,11 @@
         </div>
     </div>
 </div>
-
-<div class="container">
-
-    <h3>Bitte beachte, dass jeder gesparte
-        Gang potentiell Leben retten kann.
-        Kannst du bis morgen warten und
-        dann zwei Erledigungen auf einmal
-        durchführen?</h3>
+-->
+<div class="container info">
 
 </div>
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgnLnGGj9HI3sDja5ONz0Vtmoel6fYqMU&libraries=places"></script>
 <!-- CONTENT END -->
 
 <nav class="fixed-bottom center">

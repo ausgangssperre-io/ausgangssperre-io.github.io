@@ -1,1 +1,19 @@
 /* styles only for components on the page splash (index) */
+
+body.splashscreen {
+    background-color: #313031; /* Old browsers */
+    background-color: -moz-linear-gradient(left, #313031 0%, #151314 100%); /* FF3.6-15 */
+    background-color: -webkit-linear-gradient(left, #313031 0%,#151314 100%); /* Chrome10-25,Safari5.1-6 */
+    background-color: linear-gradient(to right, #313031 0%,#151314 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#313031', endColorstr='#151314',GradientType=1 ); /* IE6-9 */
+    background-image: url("../data/img/splash.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: center cover;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+.splashscreen .fixed-bottom {
+    display: none;
+}
