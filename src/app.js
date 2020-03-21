@@ -11,6 +11,23 @@ $(function() {
 var ShelterInPlace = ShelterInPlace || {};
 
 ShelterInPlace.Utilities = (function() {
+  // Obtains all we know about the current activity. This is *the* core state of
+  // the app, where we store all we know about what the user intends to do.
+  var _getActivity =
+      function() {
+    return JSON.parse(localStorage.getItem('activity') || '{}');
+  }
+
+  // Sets the current activity. Call this to persist the activity's state after
+  // the activity has been modified. For debugging, call
+  // `ShelterInPlace.Utilities.SetActivity({...})` in the JavaScript console to
+  // put the app in a particular state.
+  var _setActivity =
+      function(activity) {
+    return localStorage.setItem('activity', JSON.stringify(activity));
+  }
+
+  // Obtains the user's location
   var _getUserLocation =
       function(successCallback, failureCallback) {
     if (navigator.geolocation) {
@@ -27,12 +44,35 @@ ShelterInPlace.Utilities = (function() {
   }
 
   return {
-    GetUserLocation: _getUserLocation
+    GetUserLocation: _getUserLocation, GetActivity: _getActivity,
+        SetActivity: _setActivity,
   }
 })();
 
 ShelterInPlace.Application = (function() {
+  // Search for places up to 10km around the user.
+  const kSearchRadius = 10000;
+
+  // Initializes the entire app. Checks the URL for the page that we're on, and
+  // dispatches accordingly.
   var _init = function() {
+    if (document.location.pathname == '/' ||
+        document.location.pathname == '/index.html') {
+      _initIndex();
+    } else if (document.location.pathname.endsWith('/home.html')) {
+      _initHome();
+    } else {
+      console.error('_init: Unknown page: ' + document.location.pathname);
+    }
+  };
+
+  // Initialized the index page. This is also our way to clear the state.
+  var _initIndex = function() {
+    ShelterInPlace.Utilities.SetActivity({});
+  };
+
+  // Initializes the `home` page of the app.
+  var _initHome = function() {
     ShelterInPlace.Utilities.GetUserLocation(
         function(position) {
           var latLng = {
@@ -40,8 +80,8 @@ ShelterInPlace.Application = (function() {
             lng: position.coords.longitude
           };
 
-          var circle = new google.maps.Circle(
-              {center: latLng, radius: position.coords.accuracy});
+          var circle =
+              new google.maps.Circle({center: latLng, radius: kSearchRadius});
           _initAutocomplete(latLng, circle);
         },
         function(browserHasGeolocation) {
