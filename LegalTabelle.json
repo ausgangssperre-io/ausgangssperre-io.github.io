@@ -267,17 +267,6 @@
 		"Gottesdienste": null,
 		"Schulen": null,
 		"Zusatz": null
-	  },
-	  "München": {
-		"Versammlung": null,
-		"Gastronomie": 1,
-		"Rausgehen": "triftige Gründe",
-		"Laeden": "https://www.hv-bayern.de/media/downloads/newsletter/TopNews/2020/11/positivliste_geschaefte.pdf",
-		"Sport draußen": "allein oder mit Mitbewohnern",
-		"Freizeiteinrichtungen": null,
-		"Gottesdienste": null,
-		"Schulen": null,
-		"Zusatz": null
 	  }
 	}
   }
