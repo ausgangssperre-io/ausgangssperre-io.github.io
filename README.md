@@ -1,34 +1,51 @@
-# ausgangssperre.io
+# ausgangssperre.io - der offizielle Passierschein A38
 
-Haupt-Repository für ausgangssperre.io.
+[> to english version <](README-EN.md)
 
-- `index.html`: Entry-point für die App
+[> Informationen für Entwickler und Mitwirkende <](DEVELOPMENT.md)
 
-## Local Development
 
-To start a local server and run the app, `cd` into the repository and use any
-local web server, e.g.,
+## Setting
 
-```shell
-$ python3 -m http.server 8000
-```
+In Deutschland wird global die Ausgangssperre wegen COVID-19 verhängt.
+Um sich im öffentlichen Raum zu bewegen wird von der Polizei -ähnlich 
+wie jetzt schon in Frankreich- ein Dokument verlangt, auf dem der 
+Bürger erfassen muss, warum er sich außerhalb seiner Räumlichkeiten 
+bewegt.
 
-Then access the app at `localhost:8000`.
+## Szenario
 
-### Best practices
+Der Bürger will das Haus verlassen und kann nicht oder möchte kein 
+Formular auf Papier ausdrucken. Er hat gehört (via Rundfunk / Fernsehen
+/ Social Share), dass es da auch eine App geben soll. Er findet diese
+schnell in seinem App-Store / Play-Store und öffnet sie. 
 
-Please keep code formatted according to our style guide :)
+Daraufhin wird er zunächst nach ein paar grundlegenden Informationen
+(Standort / Bundesland / Name) gefragt und kann dann auswählen was er 
+machen möchte. Will er den “Digitalen Ausgangsschein” erstellen werden 
+ihm ein paar Fragen gestellt, die unter anderem klären, ob er zur 
+Risiko-Gruppe gehört und ob es rechtlich erlaubt ist, was er vor hat.
+ 
+Ohne Oberlehrerhaft zu klingen wird die App dabei Empfehlungen 
+aussprechen ohne den Benutzer an der Ausstellung der Bescheinigung 
+zu hindern.
 
-```shell
-$ clang-format -i src/*.js
-```
+Nach dem Ausstellen der Bescheinigung macht sich der 
+Bürger auf den Weg zur Arbeit und gerät in eine Polizeikontrolle.
 
-Keep our history linear: `git pull --rebase`.
+Hier öffnet er die App, ruft das ausgefüllte Formular ab und zeigt 
+es durch die geschlossene Fensterscheibe des Autos. Die Informationen 
+sind so strukturiert, dass der Polizist auf einen Blick ohne viel lesen 
+zu müssen alles gut erfasst und er lässt das Auto passieren.
 
-For large code changes, please use a feature branch and ask one of the team
-members for a code review before merging it into master. Use fast-forward
-merges.
+## Ziele
 
-## Dependencies
+- Der Bürger soll auf dem Weg zum ausgefüllten Formular auch ein wenig 
+  beraten werden, ob das eine gute Idee ist die Wohnung zu verlassen 
+  (Stichwort Nudging). 
 
-* clang-format: `sudo apt install clang-format`
+- Die App Infos und Links zu verlässlichen Informationen enthalten.
+
+#### Verweis: original Passierschein A38
+
+https://www.youtube.com/watch?v=lIiUR2gV0xk
