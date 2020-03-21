@@ -23,6 +23,12 @@ Please keep code formatted according to our style guide :)
 $ clang-format -i src/*.js
 ```
 
+Keep our history linear: `git pull --rebase`.
+
+For large code changes, please use a feature branch and ask one of the team
+members for a code review before merging it into master. Use fast-forward
+merges.
+
 ## Dependencies
 
 * clang-format: `sudo apt install clang-format`
