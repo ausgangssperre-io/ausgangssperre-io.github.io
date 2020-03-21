@@ -1,0 +1,13 @@
+{
+    "types": [
+        {
+            "type": "accounting", # Google Place tag
+            "Art": "Laeden",     # Art des Eintrags. Mögliche Arten: "Laeden",  
+                                 #"Öffentliche Verkehrsmittel", "Freizeiteinrichtungen", "Übernachtung", 
+                                 #"Infrastruktur", "KFZ-Versorgung", "Anlass", "Schulen", "Lieferdienste"
+                                 # "Gottesdienste", "Sonstiges " (mehrere möglich)
+            "Tags": [           # Tags wie in der LegalTabelle unter "Offene Laeden" und "Rausgehen Ausnahme" (mehrere möglich)
+                "Dienstleister", 
+                "Freie Berufe"
+            ]
+        },

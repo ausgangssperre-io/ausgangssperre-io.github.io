@@ -1,0 +1,669 @@
+{
+    "types": [
+        {
+            "type": "accounting",
+            "Art": "Laeden",
+            "Tags": [
+                "Dienstleister",
+                "Freie Berufe"
+            ]
+        },
+        {
+            "type": "airport",
+            "Art": "Öffentliche Verkehrsmittel",
+            "Tags": [
+                "Flughafen"
+            ]
+        },
+        {
+            "type": "amusement_park",
+            "Art": "Freizeiteinrichtungen",
+            "Tags": []
+        },
+        {
+            "type": "aquarium",
+            "Art": "Freizeiteinrichtungen",
+            "Tags": []
+        },
+        {
+            "type": "art_gallery",
+            "Art": "Freizeiteinrichtungen",
+            "Tags": []
+        },
+        {
+            "type": "atm",
+            "Art": "Laeden",
+            "Tags": [
+                "Bank",
+                "Sparkasse"
+            ]
+        },
+        {
+            "type": "bakery",
+            "Art": "Laeden",
+            "Tags": [
+                "Bäcker"
+            ]
+        },
+        {
+            "type": "bank",
+            "Art": "Laeden",
+            "Tags": [
+                "Bank",
+                "Sparkasse"
+            ]
+        },
+        {
+            "type": "bar",
+            "Art": "Freizeiteinrichtungen",
+            "Tags": []
+        },
+        {
+            "type": "beauty_salon",
+            "Art": "Laeden",
+            "Tags": [
+                "Freie Berufe",
+                "Dienstleister"
+            ]
+        },
+        {
+            "type": "bicycle_store",
+            "Art": "Laeden",
+            "Tags": [
+                "Fahrradladen"
+            ]
+        },
+        {
+            "type": "book_store",
+            "Art": "Laeden",
+            "Tags": [
+                "Buchhandel"
+            ]
+        },
+        {
+            "type": "bowling_alley",
+            "Art": "Freizeiteinrichtungen",
+            "Tags": []
+        },
+        {
+            "type": "bus_station",
+            "Art": "Öffentliche Verkehrsmittel",
+            "Tags": [
+                "Busbahnhof"
+            ]
+        },
+        {
+            "type": "cafe",
+            "Art": "Freizeiteinrichtungen",
+            "Tags": []
+        },
+        {
+            "type": "campground",
+            "Art": "Übernachtung",
+            "Tags": []
+        },
+        {
+            "type": "car_dealer",
+            "Art": "Laeden",
+            "Tags": []
+        },
+        {
+            "type": "car_rental",
+            "Art": "Laeden",
+            "Tags": [
+                "Automietstation"
+            ]
+        },
+        {
+            "type": "car_repair",
+            "Art": "Laeden",
+            "Tags": [
+                "KFZ-Werkstatt",
+                "KFZ-Teile",
+                "Werkstatt"
+            ]
+        },
+        {
+            "type": "car_wash",
+            "Art": "KFZ-Versorgung",
+            "Tags": []
+        },
+        {
+            "type": "casino",
+            "Art": "Freizeiteinrichtungen",
+            "Tags": []
+        },
+        {
+            "type": "cemetery",
+            "Art": "Anlass",
+            "Tags": [
+                "Beerdigung"
+            ]
+        },
+        {
+            "type": "church",
+            "Art": [
+                "Anlass",
+                "Gottesdienste"
+            ],
+            "Tags": [
+                "Kirchenbesuch"
+            ]
+        },
+        {
+            "type": "city_hall",
+            "Art": [
+                "Infrastruktur",
+                "Anlass"
+            ],
+            "Tags": [
+                "Behördengang"
+            ]
+        },
+        {
+            "type": "clothing_store",
+            "Art": "Laeden",
+            "Tags": []
+        },
+        {
+            "type": "convenience_store",
+            "Art": "Laeden",
+            "Tags": [
+                "Supermarkt",
+                "Getränke",
+                "Lebensmittel"
+            ]
+        },
+        {
+            "type": "courthouse",
+            "Art": [
+                "Infrastruktur",
+                "Anlass"
+            ],
+            "Tags": [
+                "Behördengang"
+            ]
+        },
+        {
+            "type": "dentist",
+            "Art": [
+                "Anlass"
+            ],
+            "Tags": [
+                "Medizinische Termine"
+            ]
+        },
+        {
+            "type": "department_store",
+            "Art": "Laeden",
+            "Tags": []
+        },
+        {
+            "type": "doctor",
+            "Art": [
+                "Anlass"
+            ],
+            "Tags": [
+                "Medizinische Termine"
+            ]
+        },
+        {
+            "type": "drugstore",
+            "Art": "Laeden",
+            "Tags": [
+                "Drogerie"
+            ]
+        },
+        {
+            "type": "electrician",
+            "Art": "Laeden",
+            "Tags": [
+                "Freie Berufe",
+                "Handwerker"
+            ]
+        },
+        {
+            "type": "electronics_store",
+            "Art": "Laeden",
+            "Tags": []
+        },
+        {
+            "type": "embassy",
+            "Art": [
+                "Infrastruktur",
+                "Anlass"
+            ],
+            "Tags": [
+                "Behördengang"
+            ]
+        },
+        {
+            "type": "embassy",
+            "Art": [
+                "Infrastruktur"
+            ],
+            "Tags": []
+        },
+        {
+            "type": "florist",
+            "Art": "Laeden",
+            "Tags": [
+                "Blumenladen"
+            ]
+        },
+        {
+            "type": "funeral_home",
+            "Art": "Laeden",
+            "Tags": [
+                "Bestatter",
+                "Dienstleister",
+                "Freie Berufe"
+            ]
+        },
+        {
+            "type": "furniture_store",
+            "Art": "Laeden",
+            "Tags": []
+        },
+        {
+            "type": "gas_station",
+            "Art": "Laeden",
+            "Tags": [
+                "Tankstelle",
+                "KFZ-Versorgung"
+            ]
+        },
+        {
+            "type": "grocery_or_supermarket",
+            "Art": "Laeden",
+            "Tags": [
+                "Supermarkt",
+                "Getränke",
+                "Lebensmittel"
+            ]
+        },
+        {
+            "type": "gym",
+            "Art": "Freizeiteinrichtungen",
+            "Tags": []
+        },
+        {
+            "type": "hair_care",
+            "Art": "Laeden",
+            "Tags": [
+                "Friseur"
+            ]
+        },
+        {
+            "type": "hardware_store",
+            "Art": "Laeden",
+            "Tags": [
+                "Baumarkt"
+            ]
+        },
+        {
+            "type": "hindu_temple",
+            "Art": [
+                "Anlass",
+                "Gottesdienste"
+            ],
+            "Tags": [
+                "Kirchenbesuch"
+            ]
+        },
+        {
+            "type": "home_goods_store",
+            "Art": "Laeden",
+            "Tags": []
+        },
+        {
+            "type": "hospital",
+            "Art": [
+                "Anlass",
+                "Infrastruktur"
+            ],
+            "Tags": [
+                "Medizinische Termine",
+                "Gefahr",
+                "Sterbebegleitung"
+            ]
+        },
+        {
+            "type": "insurance_agency",
+            "Art": "Laeden",
+            "Tags": [
+                "Freie Berufe"
+            ]
+        },
+        {
+            "type": "jewelry_store",
+            "Art": "Laeden",
+            "Tags": []
+        },
+        {
+            "type": "laundry",
+            "Art": "Laeden",
+            "Tags": [
+                "Reinigung",
+                "Waschsalon"
+            ]
+        },
+        {
+            "type": "lawyer",
+            "Art": [
+                "Laeden",
+                "Anlass"
+            ],
+            "Tags": [
+                "Freie Berufe",
+                "Dienstleister",
+                "Rechtsanwältstermin"
+            ]
+        },
+        {
+            "type": "library",
+            "Art": "Freizeiteinrichtungen",
+            "Tags": []
+        },
+        {
+            "type": "light_rail_station",
+            "Art": "Öffentliche Verkehrsmittel",
+            "Tags": []
+        },
+        {
+            "type": "liquor_store",
+            "Art": "Laeden",
+            "Tags": [
+                "Getränkemarkt"
+            ]
+        },
+        {
+            "type": "local_government_office",
+            "Art": [
+                "Anlass",
+                "Infrastruktur"
+            ],
+            "Tags": [
+                "Behördengang"
+            ]
+        },
+        {
+            "type": "locksmith",
+            "Art": "Laeden",
+            "Tags": [
+                "Schlüsselreparatur",
+                "Schlüsseldienst",
+                "Handwerker"
+            ]
+        },
+        {
+            "type": "lodging",
+            "Art": "Übernachtung",
+            "Tags": []
+        },
+        {
+            "type": "meal_delivery",
+            "Art": "Lieferdienste",
+            "Tags": []
+        },
+        {
+            "type": "meal_delivery",
+            "Art": [
+                "Laeden",
+                "Lieferdienste"
+            ],
+            "Tags": []
+        },
+        {
+            "type": "meal_delimosquevery",
+            "Art": "Anlass",
+            "Tags": [
+                "Gottesdienste"
+            ]
+        },
+        {
+            "type": "movie_rental",
+            "Art": "Laeden",
+            "Tags": [
+                "Videoverleih"
+            ]
+        },
+        {
+            "type": "movie_theater",
+            "Art": "Freizeiteinrichtungen",
+            "Tags": []
+        },
+        {
+            "type": "moving_company",
+            "Art": "Laeden",
+            "Tags": [
+                "Dienstleister"
+            ]
+        },
+        {
+            "type": "museum",
+            "Art": "Freizeiteinrichtungen",
+            "Tags": []
+        },
+        {
+            "type": "night_club",
+            "Art": "Freizeiteinrichtungen",
+            "Tags": []
+        },
+        {
+            "type": "painter",
+            "Art": "Laeden",
+            "Tags": [
+                "Freie Berufe",
+                "Dienstleister",
+                "Handwerker"
+            ]
+        },
+        {
+            "type": "park",
+            "Art": "Anlasss",
+            "Tags": [
+                "Versammlung",
+                "Sport draußen",
+                "Versorgung von Tieren"
+            ]
+        },
+        {
+            "type": "park",
+            "Art": "KFZ-Versorgung",
+            "Tags": []
+        },
+        {
+            "type": "pet_store",
+            "Art": [
+                "Laeden",
+                "Anlass"
+            ],
+            "Tags": [
+                "Tierbedarf",
+                "Versorgung von Tieren"
+            ]
+        },
+        {
+            "type": "pharmacy",
+            "Art": "Laeden",
+            "Tags": [
+                "Apotheke"
+            ]
+        },
+        {
+            "type": "pharmacy",
+            "Art": [
+                "Laeden",
+                "Anlass"
+            ],
+            "Tags": [
+                "Medizinische Termine",
+                "Heilmittelerbringer"
+            ]
+        },
+        {
+            "type": "pharmacy",
+            "Art": [
+                "Laeden"
+            ],
+            "Tags": [
+                "Freie Berufe",
+                "Dienstleister"
+            ]
+        },
+        {
+            "police": "pharmacy",
+            "Art": [
+                "Infrastruktur",
+                "Anlass"
+            ],
+            "Tags": [
+                "Behördengang",
+                "Gefahr"
+            ]
+        },
+        {
+            "type": "post_office",
+            "Art": "Laeden",
+            "Tags": [
+                "Post"
+            ]
+        },
+        {
+            "type": "primary_school",
+            "Art": "Schulen",
+            "Tags": []
+        },
+        {
+            "type": "real_estate_agency",
+            "Art": "Laeden",
+            "Tags": [
+                "Dienstleister"
+            ]
+        },
+        {
+            "type": "restaurant",
+            "Art": "Gastronomie",
+            "Tags": []
+        },
+        {
+            "type": "roofing_contractor",
+            "Art": "Laeden",
+            "Tags": [
+                "Dienstleister",
+                "Handwerker"
+            ]
+        },
+        {
+            "type": "rv_park",
+            "Art": "Laeden",
+            "Tags": []
+        },
+        {
+            "type": "school",
+            "Art": "Schulen",
+            "Tags": []
+        },
+        {
+            "type": "secondary_school",
+            "Art": "Schulen",
+            "Tags": []
+        },
+        {
+            "type": "shoe_store",
+            "Art": "Laeden",
+            "Tags": []
+        },
+        {
+            "type": "shopping_mall",
+            "Art": "Laeden",
+            "Tags": []
+        },
+        {
+            "type": "spa",
+            "Art": "Freizeiteinrichtungen",
+            "Tags": []
+        },
+        {
+            "type": "stadium",
+            "Art": "Freizeiteinrichtungen",
+            "Tags": []
+        },
+        {
+            "type": "storage",
+            "Art": "Laeden",
+            "Tags": []
+        },
+        {
+            "type": "store",
+            "Art": "Laeden",
+            "Tags": []
+        },
+        {
+            "type": "subway_station",
+            "Art": "Öffentliche Verkehrsmittel",
+            "Tags": []
+        },
+        {
+            "type": "supermarket",
+            "Art": "Laeden",
+            "Tags": []
+        },
+        {
+            "type": "synagogue",
+            "Art": [
+                "Anlass",
+                "Gottesdienste"
+            ],
+            "Tags": [
+                "Kirchenbesuch"
+            ]
+        },
+        {
+            "type": "taxi_stand",
+            "Art": "Öffentliche Verkehrsmittel",
+            "Tags": []
+        },
+        {
+            "type": "tourist_attraction",
+            "Art": "Freizeiteinrichtungen",
+            "Tags": []
+        },
+        {
+            "type": "train_station",
+            "Art": "Öffentliche Verkehrsmittel",
+            "Tags": []
+        },
+        {
+            "type": "transit_station",
+            "Art": "Sonstiges",
+            "Tags": []
+        },
+        {
+            "type": "travel_agency",
+            "Art": "Laeden",
+            "Tags": [
+                "Reisebüro"
+            ]
+        },
+        {
+            "type": "university",
+            "Art": "Schulen",
+            "Tags": []
+        },
+        {
+            "type": "veterinary_care",
+            "Art": "Anlass",
+            "Tags": [
+                "Versorgung von Tieren",
+                "Veterinärmedizinische Termine"
+            ]
+        },
+        {
+            "type": "zoo",
+            "Art": "Freizeiteinrichtungen",
+            "Tags": []
+        }
+    ]
+}
