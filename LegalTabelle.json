@@ -2,13 +2,13 @@
     "Bundesländer": {
         "Nordrhein-Westfalen": {
             "Versammlung": -1,
-            "Lieferdienste": 2,
+            "Lieferdienste": -1,
             "Gastronomie": {
-               "Bewirtung": 2,
+               "Bewirtung": -1,
                 "Anfang": 6,
                 "Ende": 18
             },
-            "Rausgehen": 2,
+            "Rausgehen": -1,
             "Laeden": 1,
             "Offene Laeden": [
                 "Apotheke",
@@ -33,7 +33,7 @@
                 "Wochenmarkt",
                 "Zeitungsverkauf"
             ],
-            "Sport draußen": 2,
+            "Sport draußen": -1,
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 0,
             "Schulen": 0,
@@ -54,14 +54,14 @@
         },
         "Niedersachsen": {
             "Versammlung": -1,
-            "Lieferdienste": 2,
+            "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
             },
-            "Rausgehen": 2,
+            "Rausgehen": -1,
             "Laeden": 1,
             "Offene Laeden": [],
-            "Sport draußen": 2,
+            "Sport draußen": -1,
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 0,
             "Schulen": 0,
@@ -69,7 +69,7 @@
         },
         "Bayern": {
             "Versammlung": -1,
-            "Lieferdienste": 2,
+            "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
             },
@@ -126,11 +126,11 @@
         },
         "Rheinland-Pfalz": {
             "Versammlung": 5,
-            "Lieferdienste": 2,
+            "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
             },
-            "Rausgehen": 2,
+            "Rausgehen": -1,
             "Laeden": 1,
             "Offene Laeden": [
                 "Apotheke",
@@ -155,7 +155,7 @@
                 "Wochenmarkt",
                 "Zeitungsverkauf"
             ],
-            "Sport draußen": 2,
+            "Sport draußen": -1,
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 0,
             "Schulen": 0,
@@ -174,11 +174,11 @@
         },
         "Hessen": {
             "Versammlung": 5,
-            "Lieferdienste": 2,
+            "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
             },
-            "Rausgehen": 2,
+            "Rausgehen": -1,
             "Laeden": 1,
             "Offene Laeden": [
                 "Apotheke",
@@ -203,14 +203,14 @@
                 "Wochenmarkt",
                 "Zeitungsverkauf"
             ],
-            "Sport draußen": 2,
+            "Sport draußen": -1,
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 0,
             "Schulen": 0
         },
         "Saarland": {
             "Versammlung": -1,
-            "Lieferdienste": 2,
+            "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
             },
@@ -259,7 +259,7 @@
                 "Wochenmarkt",
                 "Zeitungsverkauf"
             ],
-            "Sport draußen": 2,
+            "Sport draußen": -1,
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 1,
             "Gottesdienste Anmerkung": "strenge Auflagen",
@@ -267,13 +267,13 @@
         },
         "Berlin": {
             "Versammlung": 50,
-            "Lieferdienste": 2,
+            "Lieferdienste": -1,
             "Gastronomie": {
-               "Bewirtung": 2,
+               "Bewirtung": -1,
                 "Anfang": 6,
                 "Ende": 18
             },
-            "Rausgehen": 2,
+            "Rausgehen": -1,
             "Laeden": 1,
             "Offene Laeden": [
                 "Getränkemarkt",
@@ -304,18 +304,18 @@
                 "Fahrradgeschäft",
                 "Großhandel"
             ],
-            "Sport draußen": 2,
+            "Sport draußen": -1,
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 0,
             "Schulen": 0
         },
         "Brandenburg": {
             "Versammlung": -1,
-            "Lieferdienste": 2,
+            "Lieferdienste": -1,
             "Gastronomie": {
-               "Bewirtung": 2
+               "Bewirtung": -1
             },
-            "Rausgehen": 2,
+            "Rausgehen": -1,
             "Laeden": 1,
             "Offene Laeden": [
                 "Getränkemarkt",
@@ -346,18 +346,18 @@
                 "Fahrradgeschäft",
                 "Großhandel"
             ],
-            "Sport draußen": 2,
+            "Sport draußen": -1,
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 0,
             "Schulen": 0
         },
         "Schleswig-Holstein": {
             "Versammlung": -1,
-            "Lieferdienste": 2,
+            "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
             },
-            "Rausgehen": 2,
+            "Rausgehen": -1,
             "Laeden": 1,
             "Offene Laeden": [
                 "Apotheke",
@@ -382,18 +382,18 @@
                 "Wochenmarkt",
                 "Zeitungsverkauf"
             ],
-            "Sport draußen": 2,
+            "Sport draußen": -1,
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 0,
             "Schulen": 0
         },
         "Mecklenburg-Vorpommern": {
             "Versammlung": -1,
-            "Lieferdienste": 2,
+            "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
             },
-            "Rausgehen": 2,
+            "Rausgehen": -1,
             "Laeden": 1,
             "Offene Laeden": [
                 "Apotheke",
@@ -418,25 +418,23 @@
                 "Wochenmarkt",
                 "Zeitungsverkauf"
             ],
-            "Sport draußen": 2,
+            "Sport draußen": -1,
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 0,
             "Schulen": 0
         },
         "Thüringen": {
             "Versammlung": -1,
-            "Lieferdienste": 2,
-            "Gastronomie": [
-                2,
-                0,
-                0
-            ],
-            "Rausgehen": 2,
-            "Laeden": 2,
+            "Lieferdienste": -1,
+            "Gastronomie": {
+               "Bewirtung": -1
+            },
+            "Rausgehen": -1,
+            "Laeden": -1,
             "Offene Laeden": [],
-            "Sport draußen": 2,
-            "Freizeiteinrichtungen": 2,
-            "Gottesdienste": 2,
+            "Sport draußen": -1,
+            "Freizeiteinrichtungen": -1,
+            "Gottesdienste": -1,
             "Schulen": 0,
             "Besondere Gemeinden": {
                 "Jena": {
@@ -460,12 +458,12 @@
         },
         "Sachsen": {
             "Versammlung": -1,
-            "Lieferdienste": 2,
+            "Lieferdienste": -1,
             "Versammlung Ausnahme": "Mitbewohner",
             "Gastronomie": {
                "Bewirtung": 0
             },
-            "Rausgehen": 2,
+            "Rausgehen": -1,
             "Laeden": 1,
             "Offene Laeden": [
                 "Apotheke",
@@ -488,9 +486,9 @@
                 "Wochenmarkt",
                 "Zeitungsverkauf"
             ],
-            "Sport draußen": 2,
+            "Sport draußen": -1,
             "Freizeiteinrichtungen": 0,
-            "Gottesdienste": 2,
+            "Gottesdienste": -1,
             "Schulen": 0,
             "Besondere Gemeinden": {
                 "Dresden": {
@@ -514,13 +512,13 @@
         },
         "Sachsen-Anhalt": {
             "Versammlung": -1,
-            "Lieferdienste": 2,
+            "Lieferdienste": -1,
             "Gastronomie": {
-               "Bewirtung": 2,
+               "Bewirtung": -1,
                 "Anfang": 6,
                 "Ende": 18
             },
-            "Rausgehen": 2,
+            "Rausgehen": -1,
             "Laeden": 1,
             "Offene Laeden": [
                 "Apotheke",
@@ -545,20 +543,20 @@
                 "Wochenmarkt",
                 "Zeitungsverkauf"
             ],
-            "Sport draußen": 2,
+            "Sport draußen": -1,
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 0,
             "Schulen": 0
         },
         "Bremen": {
             "Versammlung": -1,
-            "Lieferdienste": 2,
+            "Lieferdienste": -1,
             "Gastronomie": {
-               "Bewirtung": 2,
+               "Bewirtung": -1,
                 "Anfang": 6,
                 "Ende": 18
             },
-            "Rausgehen": 2,
+            "Rausgehen": -1,
             "Laeden": 1,
             "Offene Laeden": [
                 "Apotheke",
@@ -583,21 +581,21 @@
                 "Wochenmarkt",
                 "Zeitungsverkauf"
             ],
-            "Sport draußen": 2,
+            "Sport draußen": -1,
             "Freizeiteinrichtungen": 1,
             "Gottesdienste": 0,
             "Schulen": 0
         },
         "Baden-Württemberg": {
             "Versammlung": 3,
-            "Lieferdienste": 2,
+            "Lieferdienste": -1,
             "Versammlung Ausnahme": [
                 "Familie"
             ],
             "Gastronomie": {
                "Bewirtung": 0
             },
-            "Rausgehen": 2,
+            "Rausgehen": -1,
             "Laeden": 1,
             "Offene Laeden": [
                 "Apotheken",
@@ -642,7 +640,7 @@
                 "Wochenmarkt",
                 "Zeitschriftenladen"
             ],
-            "Sport draußen": 2,
+            "Sport draußen": -1,
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 0,
             "Schulen": 0,
@@ -671,11 +669,11 @@
         },
         "Hamburg": {
             "Versammlung": 6,
-            "Lieferdienste": 2,
+            "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
             },
-            "Rausgehen": 2,
+            "Rausgehen": -1,
             "Laeden": 1,
             "Offene Laeden": [
                 "Apotheke",
@@ -700,7 +698,7 @@
                 "Wochenmarkt",
                 "Zeitungsverkauf"
             ],
-            "Sport draußen": 2,
+            "Sport draußen": -1,
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 0,
             "Schulen": 0

@@ -1,32 +1,32 @@
 Dokumentation LegalTabelle:
         "Nordrhein-Westfalen": { #Bundesland
             "Versammlung": 0,   #Maximalanzahl an Personen, die gemeinsam draußen sein dürfen. -1 Bedeutet unbeschränkt
-            "Lieferdienste": 2, # 0 für alle geschlossen, 1 eingeschränkt geöffnet, 2 uneingeschränkt geöffnet
+            "Lieferdienste": -1, # 0 für alle geschlossen, 1 eingeschränkt geöffnet, -1 uneingeschränkt geöffnet
             "Gastronomie": {
-               "Bewirtung": 2, # 0 für alle geschlossen, 1 eingeschränkt geöffnet, 2 uneingeschränkt geöffnet
+               "Bewirtung": -1, # 0 für alle geschlossen, 1 eingeschränkt geöffnet, -1 uneingeschränkt geöffnet
                 "Anfang": 6,   # Frühste Öffnungszeit bei eingeschränkter Bewirtung
                 "Ende": 18     # Späteste Schließzeit bei eingeschränkter Bewirtung
             },
             "Gastronomie": [    #Vorgaben für Restaurants und Öffentliche Kantinen [1,0,0] bedeutet nur Take Away
-                1,              # Erster Wert: 0 für alles geschlossen, 1 eingeschränkt geöffnet, 2 uneingeschränkt geöffnet
+                1,              # Erster Wert: 0 für alles geschlossen, 1 eingeschränkt geöffnet, -1 uneingeschränkt geöffnet
                 6,              # Zweiter Wert:, erlaubte Bewirtungszeit Beginn
                 18              # Zweiter Wert:, erlaubte Bewirtungszeit Ende 
             ], Dict, zerlegen
-            "Rausgehen": 2,     #0 für verboten, 1 eingeschränkt erlaubt, 2 uneingeschränkt erlaubt
+            "Rausgehen": -1,     #0 für verboten, 1 eingeschränkt erlaubt, -1 uneingeschränkt erlaubt
             "Rausgehen Ausnahme":[ #Ausnahmen von der Einschränkung/Ausgangssperre
                 "Gefahr",
                 "Arbeit",
             ]
-            "Laeden": 1,         # 0 für alle geschlossen, 1 eingeschränkt geöffnet, 2 uneingeschränkt geöffnet
+            "Laeden": 1,         # 0 für alle geschlossen, 1 eingeschränkt geöffnet, -1 uneingeschränkt geöffnet
             "Offene Laeden":     #Liste aller offenen Geschäfte im Bundesland
             [
                 "Apotheke",
                 "Bank"
             ],
-            "Sport draußen": 2,             #0 für verboten, 1 eingeschränkt erlaubt, 2 uneingeschränkt erlaubt
-            "Freizeiteinrichtungen": 0,     # 0 für alle geschlossen, 1 eingeschränkt geöffnet, 2 uneingeschränkt geöffnet
-            "Gottesdienste": 0,             # 0 für alle geschlossen, 1 eingeschränkt geöffnet, 2 uneingeschränkt geöffnet
-            "Schulen": 0,                   # 0 für alle geschlossen, 1 eingeschränkt geöffnet, 2 uneingeschränkt geöffnet       
+            "Sport draußen": -1,             #0 für verboten, 1 eingeschränkt erlaubt, -1 uneingeschränkt erlaubt
+            "Freizeiteinrichtungen": 0,     # 0 für alle geschlossen, 1 eingeschränkt geöffnet, -1 uneingeschränkt geöffnet
+            "Gottesdienste": 0,             # 0 für alle geschlossen, 1 eingeschränkt geöffnet, -1 uneingeschränkt geöffnet
+            "Schulen": 0,                   # 0 für alle geschlossen, 1 eingeschränkt geöffnet, -1 uneingeschränkt geöffnet       
             "Besondere Gemeinden":          # Ausnahmeregeln für einzelne Gemeinden, überschreiben die Angaben oben.
                     {"Leverkusen":  {
                         "Versammlung": 1,
