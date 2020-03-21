@@ -14,6 +14,10 @@ body.splashscreen {
     background-repeat: no-repeat;
 }
 
-.splashscreen .fixed-bottom {
-    display: none;
+#start-container {
+  text-align: center;
+  position:absolute;
+  top: 40vh;
+  left: 0;
+  width: 100%;
 }
