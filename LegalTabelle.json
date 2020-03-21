@@ -1,12 +1,13 @@
 {
     "Bundesländer": {
         "Nordrhein-Westfalen": {
-            "Versammlung": 0,
-            "Gastronomie": [
-                1,
-                6,
-                18
-            ],
+            "Versammlung": -1,
+            "Lieferdienste": 2,
+            "Gastronomie": {
+               "Bewirtung": 2,
+                "Anfang": 6,
+                "Ende": 18
+            },
             "Rausgehen": 2,
             "Laeden": 1,
             "Offene Laeden": [
@@ -36,24 +37,27 @@
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 0,
             "Schulen": 0,
-            "Besondere Gemeinden":
-                    {"Leverkusen":  {
-                        "Versammlung": 1,
-                        "Gastronomie": [1,0,0]
-                             }
-                             ,
-                       "Dortmund":  {
-                            "Versammlung": 4,
-                            "Versammlung Ausnahme": "Familie"
-                             }
-                    },
+            "Besondere Gemeinden": {
+                "Leverkusen": {
+                    "Versammlung": 1,
+                    "Gastronomie": [
+                        1,
+                        0,
+                        0
+                    ]
+                },
+                "Dortmund": {
+                    "Versammlung": 4,
+                    "Versammlung Ausnahme": "Familie"
+                }
+            }
+        },
         "Niedersachsen": {
-            "Versammlung": 0,
-            "Gastronomie": [
-                1,
-                0,
-                0
-            ],
+            "Versammlung": -1,
+            "Lieferdienste": 2,
+            "Gastronomie": {
+               "Bewirtung": 0
+            },
             "Rausgehen": 2,
             "Laeden": 1,
             "Offene Laeden": [],
@@ -64,14 +68,13 @@
             "Zusatz": 0
         },
         "Bayern": {
-            "Versammlung": 0,
-            "Gastronomie": [
-                1,
-                0,
-                0
-            ],
+            "Versammlung": -1,
+            "Lieferdienste": 2,
+            "Gastronomie": {
+               "Bewirtung": 0
+            },
             "Rausgehen": 1,
-            "Rausgehen Ausnahme":[
+            "Rausgehen Ausnahme": [
                 "Gefahr",
                 "Arbeit",
                 "Medizinische Termine",
@@ -86,7 +89,7 @@
                 "Sport",
                 "Versorgung von Tieren",
                 "Briefwahl"
-                            ],
+            ],
             "Laeden": 1,
             "Offene Laeden": [
                 "Lebensmittel",
@@ -123,11 +126,10 @@
         },
         "Rheinland-Pfalz": {
             "Versammlung": 5,
-            "Gastronomie": [
-                1,
-                0,
-                0
-            ],
+            "Lieferdienste": 2,
+            "Gastronomie": {
+               "Bewirtung": 0
+            },
             "Rausgehen": 2,
             "Laeden": 1,
             "Offene Laeden": [
@@ -157,26 +159,25 @@
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 0,
             "Schulen": 0,
-            "Besondere Gemeinden":
-
-                {"Leverkusen":  {
-                "Versammlung": 1,
-                "Gastronomie": [1,0,0]
-                     }
-                     ,
-               "Dortmund":  {
+            "Besondere Gemeinden": {
+                "Leverkusen": {
+                    "Versammlung": 1,
+                    "Gastronomie": {
+                       "Bewirtung": 0
+                    }
+                },
+                "Dortmund": {
                     "Versammlung": 4,
                     "Versammlung Ausnahme": "Familie"
-                     }
-            },
+                }
+            }
         },
         "Hessen": {
             "Versammlung": 5,
-            "Gastronomie": [
-                1,
-                0,
-                0
-            ],
+            "Lieferdienste": 2,
+            "Gastronomie": {
+               "Bewirtung": 0
+            },
             "Rausgehen": 2,
             "Laeden": 1,
             "Offene Laeden": [
@@ -208,14 +209,13 @@
             "Schulen": 0
         },
         "Saarland": {
-            "Versammlung": 0,
-            "Gastronomie": [
-                1,
-                0,
-                0
-            ],
+            "Versammlung": -1,
+            "Lieferdienste": 2,
+            "Gastronomie": {
+               "Bewirtung": 0
+            },
             "Rausgehen": 1,
-            "Rausgehen Ausnahme":[
+            "Rausgehen Ausnahme": [
                 "Gefahr",
                 "Arbeit",
                 "Medizinische Termine",
@@ -234,7 +234,7 @@
                 "Notartermin",
                 "Rechtsanwältstermin",
                 "Kirchenbesuch"
-                            ],
+            ],
             "Laeden": 1,
             "Offene Laeden": [
                 "Apotheke",
@@ -267,11 +267,12 @@
         },
         "Berlin": {
             "Versammlung": 50,
-            "Gastronomie": [
-                1,
-                6,
-                18
-            ],
+            "Lieferdienste": 2,
+            "Gastronomie": {
+               "Bewirtung": 2,
+                "Anfang": 6,
+                "Ende": 18
+            },
             "Rausgehen": 2,
             "Laeden": 1,
             "Offene Laeden": [
@@ -309,12 +310,11 @@
             "Schulen": 0
         },
         "Brandenburg": {
-            "Versammlung": null,
-            "Gastronomie": [
-                2,
-                0,
-                0
-            ],
+            "Versammlung": -1,
+            "Lieferdienste": 2,
+            "Gastronomie": {
+               "Bewirtung": 2
+            },
             "Rausgehen": 2,
             "Laeden": 1,
             "Offene Laeden": [
@@ -352,12 +352,11 @@
             "Schulen": 0
         },
         "Schleswig-Holstein": {
-            "Versammlung": 0,
-            "Gastronomie": [
-                1,
-                0,
-                0
-            ],
+            "Versammlung": -1,
+            "Lieferdienste": 2,
+            "Gastronomie": {
+               "Bewirtung": 0
+            },
             "Rausgehen": 2,
             "Laeden": 1,
             "Offene Laeden": [
@@ -389,12 +388,11 @@
             "Schulen": 0
         },
         "Mecklenburg-Vorpommern": {
-            "Versammlung": 0,
-            "Gastronomie": [
-                1,
-                0,
-                0
-            ],
+            "Versammlung": -1,
+            "Lieferdienste": 2,
+            "Gastronomie": {
+               "Bewirtung": 0
+            },
             "Rausgehen": 2,
             "Laeden": 1,
             "Offene Laeden": [
@@ -426,7 +424,8 @@
             "Schulen": 0
         },
         "Thüringen": {
-            "Versammlung": 0,
+            "Versammlung": -1,
+            "Lieferdienste": 2,
             "Gastronomie": [
                 2,
                 0,
@@ -439,31 +438,33 @@
             "Freizeiteinrichtungen": 2,
             "Gottesdienste": 2,
             "Schulen": 0,
-            "Besondere Gemeinden":
-                {
-                    "Jena":  {
-                        "Rausgehen Ausnahme":[
-                            "Gefahr",
-                            "Arbeit",
-                            "Medizinische Termine",
-                            "Veterinärmedizinische Termine",
-                            "Versorgung",
-                            "Lebenspartner besuchen",
-                            "Alte, Kranke, Menschen mit Einschränkungen besuchen",
-                            "Begleitung Hilfsbedürftiger",
-                            "Begleitung Minderjähriger",
-                            "Sterbebegleitung",
-                            "Beerdigung",
-                            "Sport",
-                            "Versorgung von Tieren"
-                                        ]
-                             }
-                 }
+            "Besondere Gemeinden": {
+                "Jena": {
+                    "Rausgehen Ausnahme": [
+                        "Gefahr",
+                        "Arbeit",
+                        "Medizinische Termine",
+                        "Veterinärmedizinische Termine",
+                        "Versorgung",
+                        "Lebenspartner besuchen",
+                        "Alte, Kranke, Menschen mit Einschränkungen besuchen",
+                        "Begleitung Hilfsbedürftiger",
+                        "Begleitung Minderjähriger",
+                        "Sterbebegleitung",
+                        "Beerdigung",
+                        "Sport",
+                        "Versorgung von Tieren"
+                    ]
+                }
+            }
         },
         "Sachsen": {
-            "Versammlung": 0,
+            "Versammlung": -1,
+            "Lieferdienste": 2,
             "Versammlung Ausnahme": "Mitbewohner",
-            "Gastronomie": [1,0,0],
+            "Gastronomie": {
+               "Bewirtung": 0
+            },
             "Rausgehen": 2,
             "Laeden": 1,
             "Offene Laeden": [
@@ -491,30 +492,34 @@
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 2,
             "Schulen": 0,
-            "Besondere Gemeinden":
-                {
-                    "Dresden":  {
-                        "Rausgehen Ausnahme":[
-                            "Gefahr",
-                            "Arbeit",
-                            "Medizinische Termine",
-                            "Veterinärmedizinische Termine",
-                            "Versorgung",
-                            "Lebenspartner besuchen",
-                            "Alte, Kranke, Menschen mit Einschränkungen besuchen",
-                            "Begleitung Hilfsbedürftiger",
-                            "Begleitung Minderjähriger",
-                            "Sterbebegleitung",
-                            "Beerdigung",
-                            "Sport",
-                            "Versorgung von Tieren"
-                                        ]
-                             }
-                 }
+            "Besondere Gemeinden": {
+                "Dresden": {
+                    "Rausgehen Ausnahme": [
+                        "Gefahr",
+                        "Arbeit",
+                        "Medizinische Termine",
+                        "Veterinärmedizinische Termine",
+                        "Versorgung",
+                        "Lebenspartner besuchen",
+                        "Alte, Kranke, Menschen mit Einschränkungen besuchen",
+                        "Begleitung Hilfsbedürftiger",
+                        "Begleitung Minderjähriger",
+                        "Sterbebegleitung",
+                        "Beerdigung",
+                        "Sport",
+                        "Versorgung von Tieren"
+                    ]
+                }
+            }
         },
         "Sachsen-Anhalt": {
-            "Versammlung": 0,
-            "Gastronomie": [1,6,18],
+            "Versammlung": -1,
+            "Lieferdienste": 2,
+            "Gastronomie": {
+               "Bewirtung": 2,
+                "Anfang": 6,
+                "Ende": 18
+            },
             "Rausgehen": 2,
             "Laeden": 1,
             "Offene Laeden": [
@@ -546,8 +551,13 @@
             "Schulen": 0
         },
         "Bremen": {
-            "Versammlung": 0,
-            "Gastronomie": [1,6,18],
+            "Versammlung": -1,
+            "Lieferdienste": 2,
+            "Gastronomie": {
+               "Bewirtung": 2,
+                "Anfang": 6,
+                "Ende": 18
+            },
             "Rausgehen": 2,
             "Laeden": 1,
             "Offene Laeden": [
@@ -580,64 +590,66 @@
         },
         "Baden-Württemberg": {
             "Versammlung": 3,
+            "Lieferdienste": 2,
             "Versammlung Ausnahme": [
                 "Familie"
             ],
-            "Gastronomie": [1,0,0],
+            "Gastronomie": {
+               "Bewirtung": 0
+            },
             "Rausgehen": 2,
             "Laeden": 1,
             "Offene Laeden": [
-                            "Apotheken",
-                            "Optiker",
-                            "Bäckerei",
-                            "Bank",
-                            "Sparkasse",
-                            "Baumarkt",
-                            "Baustoffstandort",
-                            "Bestatter",
-                            "Brennstoffhandel",
-                            "Drogerie",
-                            "Werkstatt",
-                            "Fahrradwerkstatt",
-                            "Freie Berufe",
-                            "Medizinische Fußpflege",
-                            "Gärtnerei",
-                            "Gartenbaubedarf",
-                            "Getränkemarkt",
-                            "Großhandel",
-                            "Hofladen",
-                            "Hörgeräteakustiker",
-                            "Kaminkehrer",
-                            "Kiosk",
-                            "Landwirtschaftsbedarf",
-                            "Lebensmitteleinzelhandel",
-                            "Metzgerei",
-                            "Dienstleister in Einzelberatung",
-                            "Post",
-                            "Raiffeisenmärkt",
-                            "Reisebüro",
-                            "Sanitätshaus",
-                            "Schuhreparatur",
-                            "Schlüsselreparatur",
-                            "Baumarkt",
-                            "Schlüsseldienst",
-                            "Tankstelle",
-                            "Reinigung",
-                            "Tierbedarf",
-                            "Jägereibedarf",
-                            "Waschsalon",
-                            "Wochenmarkt",
-                            "Zeitschriftenladen"
+                "Apotheken",
+                "Optiker",
+                "Bäckerei",
+                "Bank",
+                "Sparkasse",
+                "Baumarkt",
+                "Baustoffstandort",
+                "Bestatter",
+                "Brennstoffhandel",
+                "Drogerie",
+                "Werkstatt",
+                "Fahrradwerkstatt",
+                "Freie Berufe",
+                "Medizinische Fußpflege",
+                "Gärtnerei",
+                "Gartenbaubedarf",
+                "Getränkemarkt",
+                "Großhandel",
+                "Hofladen",
+                "Hörgeräteakustiker",
+                "Kaminkehrer",
+                "Kiosk",
+                "Landwirtschaftsbedarf",
+                "Lebensmitteleinzelhandel",
+                "Metzgerei",
+                "Dienstleister in Einzelberatung",
+                "Post",
+                "Raiffeisenmärkt",
+                "Reisebüro",
+                "Sanitätshaus",
+                "Schuhreparatur",
+                "Schlüsselreparatur",
+                "Baumarkt",
+                "Schlüsseldienst",
+                "Tankstelle",
+                "Reinigung",
+                "Tierbedarf",
+                "Jägereibedarf",
+                "Waschsalon",
+                "Wochenmarkt",
+                "Zeitschriftenladen"
             ],
             "Sport draußen": 2,
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 0,
             "Schulen": 0,
-            "Besondere Gemeinden":
-            {
-                "Freiburg":  {
+            "Besondere Gemeinden": {
+                "Freiburg": {
                     "Rausgehen": 1,
-                    "Rausgehen Ausnahme":[
+                    "Rausgehen Ausnahme": [
                         "Gefahr",
                         "Arbeit",
                         "Medizinische Termine",
@@ -651,16 +663,18 @@
                         "Beerdigung",
                         "Sport",
                         "Versorgung von Tieren"
-                                    ],
+                    ],
                     "Sport draußen": 1,
                     "Sport Ausnahme": "Mitbewohner"
-                         }
-             }
-
+                }
+            }
         },
         "Hamburg": {
             "Versammlung": 6,
-            "Gastronomie": [1,0,0],
+            "Lieferdienste": 2,
+            "Gastronomie": {
+               "Bewirtung": 0
+            },
             "Rausgehen": 2,
             "Laeden": 1,
             "Offene Laeden": [
@@ -690,32 +704,6 @@
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 0,
             "Schulen": 0
-        },
-
-        "Südpfalz": {
-            "Versammlung": null,
-            "Gastronomie": 1,
-            "Rausgehen Ausnahme":[
-                "Gefahr",
-                "Arbeit",
-                "Medizinische Termine",
-                "Veterinärmedizinische Termine",
-                "Versorgung",
-                "Lebenspartner besuchen",
-                "Alte, Kranke, Menschen mit Einschränkungen besuchen",
-                "Begleitung Hilfsbedürftiger",
-                "Begleitung Minderjähriger",
-                "Sterbebegleitung",
-                "Beerdigung",
-                "Sport",
-                "Versorgung von Tieren"
-                            ],
-            "Laeden": null,
-            "Sport draußen": "allein oder mit Mitbewohnern",
-            "Freizeiteinrichtungen": null,
-            "Gottesdienste": null,
-            "Schulen": null,
-            "Zusatz": null
         }
     }
 }
