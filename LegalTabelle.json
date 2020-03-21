@@ -64,8 +64,7 @@
             "Sport draußen": -1,
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 0,
-            "Schulen": 0,
-            "Zusatz": 0
+            "Schulen": 0
         },
         "Bayern": {
             "Versammlung": -1,
@@ -121,8 +120,7 @@
             "Sport Ausnahme": "Mitbewohner",
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 0,
-            "Schulen": 0,
-            "Zusatz": 0
+            "Schulen": 0
         },
         "Rheinland-Pfalz": {
             "Versammlung": 5,

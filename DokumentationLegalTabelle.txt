@@ -7,11 +7,6 @@ Dokumentation LegalTabelle:
                 "Anfang": 6,   # Frühste Öffnungszeit bei eingeschränkter Bewirtung
                 "Ende": 18     # Späteste Schließzeit bei eingeschränkter Bewirtung
             },
-            "Gastronomie": [    #Vorgaben für Restaurants und Öffentliche Kantinen [1,0,0] bedeutet nur Take Away
-                1,              # Erster Wert: 0 für alles geschlossen, 1 eingeschränkt geöffnet, -1 uneingeschränkt geöffnet
-                6,              # Zweiter Wert:, erlaubte Bewirtungszeit Beginn
-                18              # Zweiter Wert:, erlaubte Bewirtungszeit Ende 
-            ], Dict, zerlegen
             "Rausgehen": -1,     #0 für verboten, 1 eingeschränkt erlaubt, -1 uneingeschränkt erlaubt
             "Rausgehen Ausnahme":[ #Ausnahmen von der Einschränkung/Ausgangssperre
                 "Gefahr",
