@@ -2,7 +2,7 @@
 
 [> zur deutschen Version <](README.md)
 
-[> information for developers and ontributers <](DEVELOPMENT.md)
+[> information for developers and contributors <](DEVELOPMENT.md)
 
 
 ## Setting
