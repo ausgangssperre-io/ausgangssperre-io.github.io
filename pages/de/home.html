@@ -23,8 +23,58 @@
 
 <!-- CONTENT START -->
 
-<h1>Splash!</h1>
+<div class="container">
 
+    <h1>Info</h1>
+    <form>
+        <div class="form-group">
+            <select class="form-control" id="target" name="target">
+                <option>Bitte wählen</option>
+                <option>Einkaufen</option>
+                <option>Arbeit</option>
+                <option>Besuche</option>
+                <option>Sport</option>
+                <option>Sonstiges</option>
+            </select>
+        </div>
+    </form>
+
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h6 class="card-title">Zuhause</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h6 class="card-title">Supermarkt</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h6 class="card-title">Arbeit</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <h3>Bitte beachte, dass jeder gesparte
+        Gang potentiell Leben retten kann.
+        Kannst du bis morgen warten und
+        dann zwei Erledigungen auf einmal
+        durchführen?</h3>
+
+</div>
 
 <!-- CONTENT END -->
 
@@ -40,9 +90,5 @@
 <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
 <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
-<script src="src/app.js"></script>
-<script>window.setTimeout(function(){
-    document.location.href='/pages/de/home.html';
-},1000)</script>
 </body>
 </html>
