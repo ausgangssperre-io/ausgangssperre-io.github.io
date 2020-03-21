@@ -1,0 +1,34 @@
+Dokumentation LegalTabelle:
+        "Nordrhein-Westfalen": { #Bundesland
+            "Versammlung": 0,   #Maximalanzahl an Personen, die gemeinsam draußen sein dürfen. 0 Bedeutet unbeschränkt
+            "Gastronomie": [    #Vorgaben für Restaurants und Öffentliche Kantinen [1,0,0] bedeutet nur Take Away
+                1,              # Erster Wert: 0 für alles geschlossen, 1 eingeschränkt geöffnet, 2 uneingeschränkt geöffnet
+                6,              # Zweiter Wert:, erlaubte Bewirtungszeit Beginn
+                18              # Zweiter Wert:, erlaubte Bewirtungszeit Ende 
+            ],
+            "Rausgehen": 2,     #0 für verboten, 1 eingeschränkt erlaubt, 2 uneingeschränkt erlaubt
+            "Rausgehen Ausnahme":[ #Ausnahmen von der Einschränkung/Ausgangssperre
+                "Gefahr",
+                "Arbeit",
+            ]
+            "Laeden": 1,         # 0 für alle geschlossen, 1 eingeschränkt geöffnet, 2 uneingeschränkt geöffnet
+            "Offene Laeden":     #Liste aller offenen Geschäfte im Bundesland
+            [
+                "Apotheke",
+                "Bank"
+            ],
+            "Sport draußen": 2,             #0 für verboten, 1 eingeschränkt erlaubt, 2 uneingeschränkt erlaubt
+            "Freizeiteinrichtungen": 0,     # 0 für alle geschlossen, 1 eingeschränkt geöffnet, 2 uneingeschränkt geöffnet
+            "Gottesdienste": 0,             # 0 für alle geschlossen, 1 eingeschränkt geöffnet, 2 uneingeschränkt geöffnet
+            "Schulen": 0,                   # 0 für alle geschlossen, 1 eingeschränkt geöffnet, 2 uneingeschränkt geöffnet       
+            "Besondere Gemeinden":          # Ausnahmeregeln für einzelne Gemeinden, überschreiben die Angaben oben.
+                    {"Leverkusen":  {
+                        "Versammlung": 1,
+                        "Gastronomie": [1,0,0]
+                             }
+                             ,        
+                       "Dortmund":  {
+                            "Versammlung": 4,
+                            "Versammlung Ausnahme": "Familie"
+                             }         
+                    },
