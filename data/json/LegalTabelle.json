@@ -1,10 +1,11 @@
 {
     "Bundesländer": {
         "Nordrhein-Westfalen": {
-            "Versammlung": -1,
+            "Versammlung": 2,
+            "Versammlung Ausnahme": "Mitbewohner",
             "Lieferdienste": -1,
             "Gastronomie": {
-               "Bewirtung": 0,
+               "Bewirtung": 0
             },
             "Rausgehen": -1,
             "Laeden": 1,
@@ -39,19 +40,14 @@
                 "Leverkusen": {
                     "Versammlung": 1,
                     "Gastronomie": [
-                        1,
-                        0,
                         0
                     ]
-                },
-                "Dortmund": {
-                    "Versammlung": 4,
-                    "Versammlung Ausnahme": "Familie"
                 }
             }
         },
         "Niedersachsen": {
-            "Versammlung": -1,
+            "Versammlung": 2,
+            "Versammlung Ausnahme": "Mitbewohner",
             "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
@@ -122,7 +118,8 @@
             "Schulen": 0
         },
         "Rheinland-Pfalz": {
-            "Versammlung": 5,
+            "Versammlung": 2,
+            "Versammlung Ausnahme": "Mitbewohner",
             "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
@@ -156,21 +153,12 @@
             "Freizeiteinrichtungen": 0,
             "Gottesdienste": 0,
             "Schulen": 0,
-            "Besondere Gemeinden": {
-                "Leverkusen": {
-                    "Versammlung": 1,
-                    "Gastronomie": {
-                       "Bewirtung": 0
-                    }
-                },
-                "Dortmund": {
-                    "Versammlung": 4,
-                    "Versammlung Ausnahme": "Familie"
-                }
+
             }
         },
         "Hessen": {
-            "Versammlung": 5,
+            "Versammlung": 2,
+            "Versammlung Ausnahme": "Mitbewohner",
             "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
@@ -206,7 +194,8 @@
             "Schulen": 0
         },
         "Saarland": {
-            "Versammlung": -1,
+            "Versammlung": 2,
+            "Versammlung Ausnahme": "Mitbewohner",
             "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
@@ -263,7 +252,8 @@
             "Schulen": 0
         },
         "Berlin": {
-            "Versammlung": 50,
+            "Versammlung": 2,
+            "Versammlung Ausnahme": "Mitbewohner",
             "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
@@ -305,10 +295,11 @@
             "Schulen": 0
         },
         "Brandenburg": {
-            "Versammlung": -1,
+            "Versammlung": 2,
+            "Versammlung Ausnahme": "Mitbewohner",
             "Lieferdienste": -1,
             "Gastronomie": {
-               "Bewirtung": -1
+               "Bewirtung": 0
             },
             "Rausgehen": -1,
             "Laeden": 1,
@@ -347,7 +338,8 @@
             "Schulen": 0
         },
         "Schleswig-Holstein": {
-            "Versammlung": -1,
+            "Versammlung": 2,
+            "Versammlung Ausnahme": "Mitbewohner",
             "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
@@ -383,7 +375,8 @@
             "Schulen": 0
         },
         "Mecklenburg-Vorpommern": {
-            "Versammlung": -1,
+            "Versammlung": 2,
+            "Versammlung Ausnahme": "Mitbewohner",
             "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
@@ -419,7 +412,8 @@
             "Schulen": 0
         },
         "Thüringen": {
-            "Versammlung": -1,
+            "Versammlung": 2,
+            "Versammlung Ausnahme": "Mitbewohner",
             "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": -1
@@ -452,9 +446,9 @@
             }
         },
         "Sachsen": {
-            "Versammlung": -1,
-            "Lieferdienste": -1,
+            "Versammlung": 2,
             "Versammlung Ausnahme": "Mitbewohner",
+            "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
             },
@@ -506,7 +500,8 @@
             }
         },
         "Sachsen-Anhalt": {
-            "Versammlung": -1,
+            "Versammlung": 2,
+            "Versammlung Ausnahme": "Mitbewohner",
             "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
@@ -542,7 +537,8 @@
             "Schulen": 0
         },
         "Bremen": {
-            "Versammlung": -1,
+            "Versammlung": 2,
+            "Versammlung Ausnahme": "Mitbewohner",
             "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
@@ -578,11 +574,9 @@
             "Schulen": 0
         },
         "Baden-Württemberg": {
-            "Versammlung": 3,
+            "Versammlung": 2,
+            "Versammlung Ausnahme": "Mitbewohner",
             "Lieferdienste": -1,
-            "Versammlung Ausnahme": [
-                "Familie"
-            ],
             "Gastronomie": {
                "Bewirtung": 0
             },
@@ -659,7 +653,8 @@
             }
         },
         "Hamburg": {
-            "Versammlung": 6,
+            "Versammlung": 2,
+            "Versammlung Ausnahme": "Mitbewohner",
             "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
