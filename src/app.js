@@ -168,12 +168,12 @@ ShelterInPlace.Utilities = (function() {
   }
 
   return {
-    GetUserLocation: _getUserLocation,                //
+    GetUserLocation: _getUserLocation,            //
     GetActivityHistory: _getActivityHistory,      //
     GetActivity: _getActivity,                    //
     AddActivity: _addActivity,                    //
     ClearActivityHistory: _clearActivityHistory,  //
-    GetPopularTimes: _getPopularTimes
+    GetPopularTimes: _getPopularTimes             //
   }
 })();
 
@@ -349,7 +349,7 @@ ShelterInPlace.Application = (function() {
     $('.placeWeekday').html(activity.place.weekday_text);
 
     // load popular times
-    ShelterInPlace.Utilities.GetPopularTimes('#placeInfo', activity.place.name + activity.place.formatted_address);
+    ShelterInPlace.Utilities.GetPopularTimes('#placeInfo', activity.place.name + ',' + activity.place.formatted_address);
 
     $('.js-jetzt-losgehen-btn').on('click', function() {
       ShelterInPlace.Router.Navigate('jetzt-losgehen');
