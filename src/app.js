@@ -330,7 +330,55 @@ ShelterInPlace.Application = (function() {
         element.appendChild(recentPlace);
       })
     } else {
-      document.getElementById('history-text').innerHTML = 'Keine Letzten Ziele.'
+      document.getElementById('history-text').innerHTML = 'Vorgeschlagenes Ziel.'
+
+      var recentPlace = document.createElement('button');
+      recentPlace.className =
+        'list-group-item list-group-ite-primary list-group-item-action flex-column align-items-start';
+
+      var div = document.createElement('div');
+      div.className = 'd-flex w-100 justify-content-between';
+
+      var h5 = document.createElement('h5');
+      h5.className = 'mb-1';
+
+      var span = document.createElement('span');
+      span.className = 'place-name mr-1';
+      span.innerText = 'Hauptbahnhof Berlin';
+      h5.appendChild(span);
+
+      var small = document.createElement('small');
+      small.className = 'badge badge-info';
+      small.innerHTML = 'Bahnhof';
+      h5.appendChild(small);
+      div.appendChild(h5);
+
+      var deleteButton = document.createElement('button');
+      deleteButton.type = 'button';
+      deleteButton.className = 'delete-button btn btn-raised btn-sm btn-danger';
+
+      var img = document.createElement('img');
+      img.src = '/data/img/icon-delete.svg';
+      img.alt = 'Delete this place';
+      deleteButton.appendChild(img);
+      div.appendChild(deleteButton);
+      recentPlace.appendChild(div);
+
+      var p = document.createElement('p');
+      p.className = 'mb-1';
+
+      var span2 = document.createElement('span');
+      span2.className = 'place-address';
+      span2.innerText = 'Hauptbahnhof, Europaplatz 1, 10557 Berlin';
+      p.appendChild(span2);
+      recentPlace.appendChild(p);
+
+      var small2 = document.createElement('div');
+      small2.className = 'alert alert-success mb-0 col-12 text-center';
+      small2.innerText = 'Weniger Besucher als gewöhnlich.';
+      recentPlace.appendChild(small2);
+
+      element.appendChild(recentPlace);
     }
 
     // Init the "latest destination" buttons. Currently, we use these for
