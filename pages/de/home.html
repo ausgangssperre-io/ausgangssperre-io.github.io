@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Material Design for Bootstrap CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+
     <!-- Material Design for Bootstrap fonts and icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
     <link rel="stylesheet" href="/src/app.css">
     <link rel="stylesheet" href="/src/page-home.css">
-
-    <!-- Material Design for Bootstrap CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
 
     <title>ausgangssperre.io</title>
     <link rel="shortcut icon" type="image/x-icon" href="/data/img/favicon.ico">
@@ -23,18 +23,12 @@
 <div class="container mt-5">
 
     <div class="row search">
-        <div class="col-12"><h2>Wohin soll es gehen?</h2></div>
+        <div class="col-12"><h2>Wohin soll's gehen?</h2></div>
         <div class="col-12">
             <div id="custom-search-input">
-                <div class="input-group">
-                    <input id="autocomplete_search" name="autocomplete_search" type="text" class="form-control border p-2" placeholder="Suchen" />
-                    <input type="hidden" name="lat">
-                    <input type="hidden" name="lng">
-
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary border" type="button"><i class="material-icons">search</i></button>
-                    </div>
-                </div>
+                <input id="autocomplete_search" name="autocomplete_search" type="text" class="form-control border p-2" placeholder="Suchen" />
+                <input type="hidden" name="lat">
+                <input type="hidden" name="lng">
             </div>
         </div>
     </div>
