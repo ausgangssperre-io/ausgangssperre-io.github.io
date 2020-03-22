@@ -1,15 +1,40 @@
 /* styles only for components on the page home */
 
+#search-history .list-group-item,
+#search-history .list-group-item:first-child,
+#search-history .list-group-item:last-child {
+  border-top-left-radius: 4pt;
+  border-top-right-radius: 4pt;
+  border-bottom-left-radius: 4pt;
+  border-bottom-right-radius: 4pt;
+}
+
 #search-history .list-group-item {
   border: 1px solid rgba(0,0,0,.125);
+}
+
+#search-history .delete-button {
+  position: relative;
+  margin-right: -18px;
+  margin-top: -6px;
 }
 
 #search-history .delete-button img {
   width: 1em;
   height: 1em;
+  font-size: 1.5em;
 }
 
 /* I don't understand why Bootstrap Material has this rule, but it hurts. */
 #search-history .list-group-item :first-child {
   margin-right: 0;
+}
+
+#search-history .placeName {
+  font-weight: 700;
+}
+
+#search-history .placeType {
+  color: #ccc;
+  font-size: 0.8rem;
 }

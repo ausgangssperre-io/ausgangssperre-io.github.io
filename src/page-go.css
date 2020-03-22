@@ -1,28 +1,24 @@
 /* styles only for components on the page go */
 
 body.go {
-    margin-bottom: 150px;
+  padding-bottom: 150px;
 }
 
 h1 a {
-    color: #000;
+  color: #000;
 }
 
 canvas#sign {
-    border:1px solid #ccc;
-    margin:30px 0 20px;
-    background-color: #fff;
+  border:1px solid #ccc;
+  margin:30px 0 20px;
+  background-color: #fff;
 }
 
 .place-data .placeName {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .place-data .placeType {
-    color: #ccc;
-    font-size: 0.8rem;
-}
-
-.place-data .placeAddress {
-
+  color: #ccc;
+  font-size: 0.8rem;
 }
