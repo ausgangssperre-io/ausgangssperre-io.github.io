@@ -1,8 +1,16 @@
 # ausgangssperre.io
 
-Haupt-Repository für ausgangssperre.io.
+This is the main repository for
+[ausgangssperre.io](https://app.ausgangssperre.io).
 
--   `index.html`: Entry-point für die App
+This file contains information for developers. For general information about the
+project, please check out [the README](README-EN.md).
+
+## Resources
+
+-   [Trello board](https://trello.com/b/qlP6s0gh/ausgangssperreio): look here
+    for TODOs and tasks.
+-   Slack: channel `#ausgangssperre-io` at the WirVsVirus hackathon.
 
 ## Local Development
 
@@ -56,24 +64,31 @@ branch). Create a pull request and assign it to another team member.
 For simple changes, you can also directly merge them in master without a code
 review.
 
-To merge the pull request, use GitHub's UI or:
+To merge the pull request, use GitHub's UI. Prefer the "rebase and merge" mode.
+Alternatively, from the command line:
 
 ```shell
 $ git checkout master             # Go to master
-$ git merge --ff-only my-feature  # Merge while keeping hte history linear. Should
+$ git merge --ff-only my-feature  # Merge while keeping the history linear. Should
                                   # work if you rebased your branch before.
-$ git push                        # publish the changes.
+$ git push                        # Publish the changes.
 ```
 
 ## Dependencies
 
 *   clang-format: `sudo apt install clang-format`
 
-##  Open Source Libs used
-* [Navigo js router](https://github.com/krasimir/navigo) MIT-License - THX @ Krasimir Tsonev
-* [Signature pad](https://github.com/szimek/signature_pad)  MIT-License - THX @ Szymon Nowak
-* [jQuery](https://github.com/jquery) MIT-License - THX @ The jQuery Foundation
-* [popper.js](https://popper.js.org/) MIT-License - THX @ The Popper Js Foundation
-* [Boostrap Material Design](https://fezvrasta.github.io/bootstrap-material-design/) MIT-License - THX @ Federico Zivolo
-* [Twitter Boostrap](https://getbootstrap.com/) MIT-License - THX @ Twitter.com
+## Open Source Libs used
 
+*   [Navigo js router](https://github.com/krasimir/navigo) MIT-License - THX @
+    Krasimir Tsonev
+*   [Signature pad](https://github.com/szimek/signature_pad) MIT-License - THX @
+    Szymon Nowak
+*   [jQuery](https://github.com/jquery) MIT-License - THX @ The jQuery
+    Foundation
+*   [popper.js](https://popper.js.org/) MIT-License - THX @ The Popper Js
+    Foundation
+*   [Boostrap Material Design](https://fezvrasta.github.io/bootstrap-material-design/)
+    MIT-License - THX @ Federico Zivolo
+*   [Twitter Boostrap](https://getbootstrap.com/) MIT-License - THX @
+    Twitter.com

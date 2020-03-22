@@ -1,42 +1,47 @@
 # ausgangssperre.io - The official Pass A38
 
-[> zur deutschen Version <](README.md)
+[➡ zur deutschen Version](README.md)
 
-[> information for developers and contributors <](DEVELOPMENT.md)
+[➡ information for developers and contributors](DEVELOPMENT.md)
 
+ausgangssperre.io is an app for users to decide whether it is wise to go out of
+their home for a given task. Should the user choose to leave their home, the app
+generates a certificate with the intended destination and the reason.
 
 ## Setting
 
-Shelter in place for all German states because of COVID-19. In order to go 
-out the police require a document stating the intent for leaving their home, 
-similar to the one already in action in France. 
+Shelter in place is currently mandated for all German states because of
+COVID-19. When people leave the house, the police might require a document
+stating the intent for leaving their home, similar to the one already in action
+in France.
 
-# Scenario
+## Scenario
 
-A person needs to leave their house and can not or doesn’t want to print out 
-the form. They heard via Radio/TV/Social Media that there also exists an App 
-for this.They find the App on Play-Store/App-Store, installs and opens it.
- 
-They first need to answer a few simple questions (Name/State) and next they 
-get to choose what activity they would like to go. Should they need the digital 
-pass for leaving the house (“Ausgangsschein”) they would get more questions 
-asked with the purpose of clarifying whether they are in a risc group or if 
-the activity is legally allowed. 
+A person needs to leave their house and can not or does not want to print out
+the form. They heard via radio/TV/social media that there also exists an App for
+this. They find the App on Play Store/App Store, install and open it.
 
-The app would make friendly recommendations, without blocking the printing 
-of the document.
+In the app, the user chooses an activity and destination. The app provides users
+with information about the destination, such as whether it is currently legal to
+go there, how crowded the destination is expected to be, and whether there are any
+alternatives available.
 
-Once the user has the pass they leave for work and meet a 
-police(wo)man. They open the app and quickly show the form through the
-closed car window. The information is structured and easy to understand 
-from the distance so the police(wo)man doesn’t need to spend a long time 
-reading and our user can continue their journey.
+Should the user decide to leave their home, the app generates a digital pass
+("Ausgangsschein"). Users can show this pass to the police during controls,
+certifying that they are pursuing an essential and legal activity.
 
-##Goals
+## Goals
 
-- Generate the pass document while also advising the users whether it is a 
-  good idea to leave their house.
-- Provide information and links to reliable sources.
+-   Help users stay at home. The app warns users when they are about to do
+    something dangerous or illegal. It also provides alternative actions.
+-   Help users when they have to go out and reduce anxiety about controls.
+-   Make it quicker, easier and more environmentally friendly to get one's
+    Ausgangsschein.
+-   Be a source of reliable and accessible information in the complex jungle of
+    local regulations.
 
-#### Link: original Pass A38
-https://www.youtube.com/watch?v=lIiUR2gV0xk
+## Next steps
+
+-   Try out the app: <https://app.ausgangssperre.io> (best viewed on a phone)
+-   Find out more about the original mysterious
+    ["Passierschein A38"](https://www.youtube.com/watch?v=lIiUR2gV0xk) :)
