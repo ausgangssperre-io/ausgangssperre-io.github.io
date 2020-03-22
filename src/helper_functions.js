@@ -14,7 +14,7 @@ _J_FORBIDDEN = 0;
 // b) if we want to be specific about restricted activities or comments
 async function canGoOut(city, state, activity, number_of_people = -1) {
 
-  const legal_table = JSON.parse(await _fillJSONContents('../data/json/LegalTabelle.json'));
+  const legal_table = JSON.parse(await _fillJSONContents('/data/json/LegalTabelle.json'));
   state_restrictions = legal_table["Bundesländer"][state];
   // TODO(ilinca) check cities too
   if (state_restrictions[activity] != null){
