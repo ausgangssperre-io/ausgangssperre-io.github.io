@@ -49,7 +49,7 @@ ShelterInPlace.Router = (function() {
       }
 
       // fetch sign as png data url
-      var signature = signaturePad.toDataURL("image/png");
+      var signature = signaturePad.toDataURL('image/png');
       // @TODO: store data in local storage
       localStorage.setItem('signature', signature);
       // document.write('<img src="'+signature+'"/>');
@@ -58,28 +58,30 @@ ShelterInPlace.Router = (function() {
     _signaturePadInitilized = true;
   };
 
-  var _initDataCheck = function () {
-    $('.js-go-data-btn').click(function(e){
-        var name = document.getElementById('name').value;
-        var familiy_name = document.getElementById('fname').value;
-        if (fname == "" || name == ""){
-          alert('Namen fehlen!');
-        } else {
-          localStorage.setItem('name', JSON.stringify(name));
-          localStorage.setItem('familiy_name', JSON.stringify(familiy_name));
-        }
+  var _initDataCheck =
+      function() {
+    $('.js-go-data-btn').click(function(e) {
+      var name = document.getElementById('name').value;
+      var familiy_name = document.getElementById('fname').value;
+      if (fname == '' || name == '') {
+        alert('Namen fehlen!');
+      } else {
+        localStorage.setItem('name', JSON.stringify(name));
+        localStorage.setItem('familiy_name', JSON.stringify(familiy_name));
+      }
     });
   }
 
-  var _initOnTheGo = function(){
-
+  var _initOnTheGo =
+      function() {
     $('.firstName').html(localStorage.getItem('name').replace(/"/g, ''));
-    $('.familyName').html(localStorage.getItem('familiy_name').replace(/"/g, ''));
+    $('.familyName')
+        .html(localStorage.getItem('familiy_name').replace(/"/g, ''));
 
     // timestamp
-    $('.signatureImage').html("<img src='" + localStorage.getItem('signature') + "'/>");
+    $('.signatureImage')
+        .html('<img src=\'' + localStorage.getItem('signature') + '\'/>');
     // TODO(ilincat) Reason??
-
   }
 
   var _init = function() {
@@ -122,17 +124,18 @@ ShelterInPlace.Utilities = (function() {
     return {}
   };
 
-  var _removeActivity = function (activity) {
+  var _removeActivity =
+      function(activity) {
     console.log('_removeActivity:', activity);
     var history = _getActivityHistory();
     if (history.some(
-      existing => existing.place.name == activity.place.name &&
-        existing.formatted_address == activity.formatted_address)) {
+            existing => existing.place.name == activity.place.name &&
+                existing.formatted_address == activity.formatted_address)) {
       console.log('Activity removed.');
       history.splice(history.indexOf(activity));
       return localStorage.setItem('activityHistory', JSON.stringify(history));
     } else {
-      console.log("Activity not removed; didn't exist.");
+      console.log('Activity not removed; didn\'t exist.');
     }
   }
 
@@ -184,43 +187,43 @@ ShelterInPlace.Utilities = (function() {
 
   var _getPopularTimes =
       function(id, placeId) {
-          let baseUri = 'https://api.ausgangssperre.io/place/';
-          let detailUri = baseUri + placeId;
+    let baseUri = 'https://api.ausgangssperre.io/place/';
+    let detailUri = baseUri + placeId;
 
-          var request = new XMLHttpRequest();
-          request.open('GET', detailUri, true);
+    var request = new XMLHttpRequest();
+    request.open('GET', detailUri, true);
 
-          request.onload = function() {
-              if (request.status >= 200 && request.status < 400) {
-                  // Success!
-                  var data = JSON.parse(request.responseText);
-                  console.log(data);
-                  $('.currentHour').html(data.current.hour);
-                  $('.currentDesc').html(data.current.desc);
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 400) {
+        // Success!
+        var data = JSON.parse(request.responseText);
+        console.log(data);
+        $('.currentHour').html(data.current.hour);
+        $('.currentDesc').html(data.current.desc);
 
 
-                  // $(id).html('#####');
+        // $(id).html('#####');
 
-              } else {
-                  console.log('popular times api returned a error');
-              }
-          };
+      } else {
+        console.log('popular times api returned a error');
+      }
+    };
 
-          request.onerror = function() {
-              console.log('popular times api connection error');
-          };
+    request.onerror = function() {
+      console.log('popular times api connection error');
+    };
 
-          request.send();
+    request.send();
   }
 
   return {
     GetUserLocation: _getUserLocation,            //
-    GetActivityHistory: _getActivityHistory,      //
-    GetActivity: _getActivity,                    //
-    AddActivity: _addActivity,                    //
-    RemoveActivity: _removeActivity,
-    ClearActivityHistory: _clearActivityHistory,  //
-    GetPopularTimes: _getPopularTimes             //
+        GetActivityHistory: _getActivityHistory,  //
+        GetActivity: _getActivity,                //
+        AddActivity: _addActivity,                //
+        RemoveActivity: _removeActivity,
+        ClearActivityHistory: _clearActivityHistory,  //
+        GetPopularTimes: _getPopularTimes             //
   }
 })();
 
@@ -278,7 +281,7 @@ ShelterInPlace.Application = (function() {
         var place = autocomplete.getPlace();
 
         // Set place data...
-        ShelterInPlace.Utilities.AddActivity({"place": place});
+        ShelterInPlace.Utilities.AddActivity({'place': place});
 
         // ... and go.
         document.location.href =
@@ -298,7 +301,7 @@ ShelterInPlace.Application = (function() {
         console.log('Adding from history: ', activity);
         var recentPlace = document.createElement('div');
         recentPlace.className =
-          'list-group-item list-group-ite-primary list-group-item-action flex-column align-items-start mb-3';
+            'list-group-item list-group-ite-primary list-group-item-action flex-column align-items-start mb-3';
 
         var div = document.createElement('div');
         div.className = 'd-flex w-100 justify-content-between';
@@ -404,7 +407,9 @@ ShelterInPlace.Application = (function() {
     $('.placeWeekday').html(activity.place.weekday_text);
 
     // load popular times
-    ShelterInPlace.Utilities.GetPopularTimes('#placeInfo', activity.place.name + ',' + activity.place.formatted_address);
+    ShelterInPlace.Utilities.GetPopularTimes(
+        '#placeInfo',
+        activity.place.name + ',' + activity.place.formatted_address);
   };
 
   return {

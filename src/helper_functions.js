@@ -19,11 +19,13 @@ async function canGoOut(city, state, activity, number_of_people = -1) {
       JSON.parse(await _fillJSONContents('/data/json/LegalTabelle.json'));
   restrictions = legal_table['Bundesländer'][state];
   // Check if thre are particular local overrides for the city
-  if (restrictions["Besondere Gemeinden"] != null && restrictions["Besondere Gemeinden"][city] != null){
-    further_restrictions = Object.keys(restrictions["Besondere Gemeinden"][city]);
-    for (i in further_restrictions){
+  if (restrictions['Besondere Gemeinden'] != null &&
+      restrictions['Besondere Gemeinden'][city] != null) {
+    further_restrictions =
+        Object.keys(restrictions['Besondere Gemeinden'][city]);
+    for (i in further_restrictions) {
       key = further_restrictions[i];
-      restrictions[key] = restrictions["Besondere Gemeinden"][city][key];
+      restrictions[key] = restrictions['Besondere Gemeinden'][city][key];
     }
   }
 
