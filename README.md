@@ -2,10 +2,12 @@
 
 [➡ to the English version](README-EN.md)
 
+[➡ Projektseite](https://ausgangssperre.io/)
+
 [➡ information for developers and contributors](DEVELOPMENT.md)
 
-ausgangssperre.io ist eine App, die Nutzer:innen hilft bei der Entscheidung, ob
-es weise ist, das Haus zu verlassen. Falls Nutzer:innen ausser Haus gehen,
+**ausgangssperre.io** ist eine App, die Nutzer:innen hilft bei der Entscheidung,
+ob es weise ist, das Haus zu verlassen. Falls Nutzer:innen ausser Haus gehen,
 generiert die App einen Ausgangsschein mit dem Ziel und Grund des Ausgangs.
 
 ## Setting

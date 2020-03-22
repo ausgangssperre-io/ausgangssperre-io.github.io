@@ -2,11 +2,13 @@
 
 [➡ zur deutschen Version](README.md)
 
+[➡ project website](https://ausgangssperre.io/)
+
 [➡ information for developers and contributors](DEVELOPMENT.md)
 
-ausgangssperre.io is an app for users to decide whether it is wise to go out of
-their home for a given task. Should the user choose to leave their home, the app
-generates a certificate with the intended destination and the reason.
+**ausgangssperre.io** is an app for users to decide whether it is wise to go out
+of their home for a given task. Should the user choose to leave their home, the
+app generates a certificate with the intended destination and the reason.
 
 ## Setting
 
@@ -23,8 +25,8 @@ this. They find the App on Play Store/App Store, install and open it.
 
 In the app, the user chooses an activity and destination. The app provides users
 with information about the destination, such as whether it is currently legal to
-go there, how crowded the destination is expected to be, and whether there are any
-alternatives available.
+go there, how crowded the destination is expected to be, and whether there are
+any alternatives available.
 
 Should the user decide to leave their home, the app generates a digital pass
 ("Ausgangsschein"). Users can show this pass to the police during controls,
