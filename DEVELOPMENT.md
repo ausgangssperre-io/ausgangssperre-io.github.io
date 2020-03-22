@@ -74,6 +74,6 @@ $ git push                        # publish the changes.
 * [Signature pad](https://github.com/szimek/signature_pad)  MIT-License - THX @ Szymon Nowak
 * [jQuery](https://github.com/jquery) MIT-License - THX @ The jQuery Foundation
 * [popper.js](https://popper.js.org/) MIT-License - THX @ The Popper Js Foundation
-* [boostrap meterial Design](https://fezvrasta.github.io/bootstrap-material-design/) MIT-License - THX @ Federico Zivolo
-* [twitter boostrap](https://getbootstrap.com/) MIT-License - THX @ Twitter.com
+* [Boostrap Material Design](https://fezvrasta.github.io/bootstrap-material-design/) MIT-License - THX @ Federico Zivolo
+* [Twitter Boostrap](https://getbootstrap.com/) MIT-License - THX @ Twitter.com
 

@@ -65,8 +65,8 @@ ShelterInPlace.Router = (function() {
           'jetzt-losgehen': function() {
             _setContent('jetzt-losgehen');
           },
-          'zusammenfasung-unterschrift': function() {
-            _setContent('zusammenfasung-unterschrift');
+          'zusammenfassung-unterschrift': function() {
+            _setContent('zusammenfassung-unterschrift');
             _initSignaturePad();
           },
           '*': function() {
