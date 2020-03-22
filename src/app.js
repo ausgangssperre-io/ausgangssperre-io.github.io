@@ -114,7 +114,8 @@ ShelterInPlace.Application = (function() {
         ShelterInPlace.Utilities.SetActivity(activity);
 
         // ... and go.
-        document.location.href = document.location.href.replace('/home.html', '/go.html');
+        document.location.href =
+            document.location.href.replace('/home.html', '/go.html');
       });
     }
 
@@ -163,13 +164,18 @@ ShelterInPlace.Application = (function() {
                 ],
               };
               ShelterInPlace.Utilities.SetActivity(activity);
-              document.location.href = document.location.href.replace('/home.html', '/go.html');
+              document.location.href =
+                  document.location.href.replace('/home.html', '/go.html');
             });
   };
 
   // Initializes the `go` page of the app.
   var _initGo = function() {
+    var activity = ShelterInPlace.Utilities.GetActivity();
 
+    $('#placeName').html(activity.place.name);
+    $('#placeAddress').html(activity.place.formatted_address);
+    $('#placeWeekday').html(activity.place.weekday_text);
   };
 
   return {
