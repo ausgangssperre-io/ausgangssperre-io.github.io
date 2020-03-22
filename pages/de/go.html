@@ -19,35 +19,44 @@
 <body class="go">
 
 <!-- CONTENT START -->
-
 <div class="container mt-5">
-
     <h1><a href="#" onclick="history.back();"><i class="material-icons">arrow_back_ios</i> Go?</a></h1>
+</div>
+<section class="route-active" id="home">
+    <div class="container mt-5">
 
-    <div class="row place-data">
-        <div class="col-10">
-            <h2 id="placeName"></h2><br>
-            <p id="placeType">
-	      <i class="material-icons">shopping</i>
-	      Einkaufen
-            </p>
-            <p id="placeAddress"></p>
-        </div>
-        <div class="alert alert-success" role="alert" id="placeInfo">
-            <h3>Aktuell 16 Uhr:</h3>
-            <p>Weniger Besucher als gewöhnlich. Normalerweise bis zu 5 Min. Wartezeit.</p>
-        </div>
-        <div class="col-12">
-            <h3>Öffnungszeiten</h3>
-            <p id="placeWeekday"></p>
-        </div>
-        <div class="col-12">
-            <button type="button" class="btn btn-primary btn-lg active">Jetzt los gehen</button>
+        <div class="row place-data">
+            <div class="col-10">
+                <h2 id="placeName"></h2><br>
+                <p id="placeType">
+              <i class="material-icons">shopping</i>
+              Einkaufen
+                </p>
+                <p id="placeAddress"></p>
+            </div>
+            <div class="alert alert-success" role="alert" id="placeInfo">
+                <h3>Aktuell 16 Uhr:</h3>
+                <p>Weniger Besucher als gewöhnlich. Normalerweise bis zu 5 Min. Wartezeit.</p>
+            </div>
+            <div class="col-12">
+                <h3>Öffnungszeiten</h3>
+                <p id="placeWeekday"></p>
+            </div>
+            <div class="col-12">
+                <button type="button" class="btn btn-primary btn-lg active js-jetzt-losgehen-btn">Jetzt los gehen</button>
+            </div>
+
         </div>
 
     </div>
 
-</div>
+</section>
+
+<section class="route-inactive" id="jetzt-losgehen">
+    <div class="container mt-5">
+        <h1>los gehen</h1>
+    </div>
+</section>
 
 <!-- CONTENT END -->
 
@@ -73,7 +82,8 @@
 <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
 
 <!-- Our own JavaScript -->
+<script src="//unpkg.com/navigo@6"></script>
+<script src="/src/router.js"></script>
 <script src="/src/app.js"></script>
-
 </body>
 </html>

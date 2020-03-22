@@ -45,3 +45,11 @@
 .navigation ul li .about.active {
     background: url("../data/img/icon-about-red.svg") no-repeat top center;
 }
+
+.route-active {
+    display: block;
+}
+
+.route-inactive {
+    display: none;
+}

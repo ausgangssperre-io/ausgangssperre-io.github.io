@@ -6,6 +6,7 @@
 $(function() {
   $('body').bootstrapMaterialDesign();
   ShelterInPlace.Application.Init();
+  BindEventsOnGoPage();
 });
 
 var ShelterInPlace = ShelterInPlace || {};
@@ -181,3 +182,15 @@ ShelterInPlace.Application = (function() {
     Init: _init
   }
 })();
+
+
+/**
+ * binds click-event on page go.html
+ */
+function BindEventsOnGoPage() {
+  $(document).ready(function(){
+    $('.js-jetzt-losgehen-btn').on('click', function(){
+      router.navigate('jetzt-losgehen');
+    })
+  });
+}
