@@ -24,6 +24,7 @@ ShelterInPlace.Utilities = (function() {
   // put the app in a particular state.
   var _setActivity =
       function(activity) {
+    console.log('Activity updated:', activity);
     return localStorage.setItem('activity', JSON.stringify(activity));
   }
 
@@ -61,6 +62,8 @@ ShelterInPlace.Application = (function() {
       _initIndex();
     } else if (document.location.pathname.endsWith('/home.html')) {
       _initHome();
+    } else if (document.location.pathname.endsWith('/go.html')) {
+      _initGo();
     } else {
       console.error('_init: Unknown page: ' + document.location.pathname);
     }
@@ -73,6 +76,8 @@ ShelterInPlace.Application = (function() {
 
   // Initializes the `home` page of the app.
   var _initHome = function() {
+    // Request the user's location and init the autocomplete search bar once we
+    // get it.
     ShelterInPlace.Utilities.GetUserLocation(
         function(position) {
           var latLng = {
@@ -88,7 +93,8 @@ ShelterInPlace.Application = (function() {
           _initAutocomplete();
         });
 
-    var _initAutocomplete = function(latLng, circle) {
+    var _initAutocomplete =
+        function(latLng, circle) {
       var input = document.getElementById('autocomplete_search');
       var autocomplete = new google.maps.places.Autocomplete(input);
       autocomplete.setBounds(circle.getBounds());
@@ -102,22 +108,68 @@ ShelterInPlace.Application = (function() {
       autocomplete.addListener('place_changed', function() {
         var place = autocomplete.getPlace();
 
-        // set place data
-        console.log(place);
-        $('.place-data').removeClass('d-none');
-        $('.latest').addClass('d-none');
-        $('.info').addClass('d-none');
+        // Set place data...
+        activity = ShelterInPlace.Utilities.GetActivity();
+        activity.place = place;
+        ShelterInPlace.Utilities.SetActivity(activity);
 
-        $('#placeName').html(place.name);
-        $('#placeAddress').html(place.formatted_address);
-        $('#placeWeekday').html(place.weekday_text);
-
-
-        // place variable will have all the information you are looking for.
-        $('#lat').val(place.geometry['location'].lat());
-        $('#long').val(place.geometry['location'].lng());
+        // ... and go.
+        document.location.href = document.location.href.replace('/home.html', '/go.html');
       });
     }
+
+        // Init the "latest destination" buttons. Currently, we use these for
+        // debugging to set the place to a hard-coded value.
+        $('.latest button')
+            .click((e) => {
+              console.log('click: ', e.target);
+              activity = ShelterInPlace.Utilities.GetActivity();
+              activity.place = {
+                name: e.target.innerText,
+                formatted_address: 'Laim, Munich, Germany',
+                adr_address:
+                    'Laim, <span class="locality">Munich</span>, <span class="country-name">Germany</span>',
+                address_components: [
+                  {
+                    'long_name': 'Laim',
+                    'short_name': 'Laim',
+                    'types': ['sublocality_level_1', 'sublocality', 'political']
+                  },
+                  {
+                    'long_name': 'Munich',
+                    'short_name': 'Munich',
+                    'types': ['locality', 'political']
+                  },
+                  {
+                    'long_name': 'Munich',
+                    'short_name': 'Munich',
+                    'types': ['administrative_area_level_3', 'political']
+                  },
+                  {
+                    'long_name': 'Upper Bavaria',
+                    'short_name': 'Upper Bavaria',
+                    'types': ['administrative_area_level_2', 'political']
+                  },
+                  {
+                    'long_name': 'Bavaria',
+                    'short_name': 'BY',
+                    'types': ['administrative_area_level_1', 'political']
+                  },
+                  {
+                    'long_name': 'Germany',
+                    'short_name': 'DE',
+                    'types': ['country', 'political']
+                  }
+                ],
+              };
+              ShelterInPlace.Utilities.SetActivity(activity);
+              document.location.href = document.location.href.replace('/home.html', '/go.html');
+            });
+  };
+
+  // Initializes the `go` page of the app.
+  var _initGo = function() {
+
   };
 
   return {
