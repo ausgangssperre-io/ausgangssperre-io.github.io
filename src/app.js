@@ -5,11 +5,42 @@
 // Bootstrap on all pages
 $(function() {
   $('body').bootstrapMaterialDesign();
+  ShelterInPlace.Router.Init();
   ShelterInPlace.Application.Init();
-  BindEventsOnGoPage();
 });
 
 var ShelterInPlace = ShelterInPlace || {};
+
+ShelterInPlace.Router = (function() {
+  var _router = new Navigo(null, /*useHash=*/ true, /*hash=*/ '#!');
+
+  var _setContent = function(area) {
+    console.log('_setContent:', area);
+    $('section.route-active')
+        .removeClass('route-active')
+        .addClass('route-inactive');
+    $('section#' + area).removeClass('route-inactive').addClass('route-active');
+  };
+
+  var _init = function() {
+    _router
+        .on({
+          'jetzt-losgehen': function() {
+            _setContent('jetzt-losgehen');
+          },
+          '*': function() {
+            _setContent('home')
+          }
+        })
+        .resolve();
+  };
+
+  return {
+    Init: _init,
+    SetContent: _setContent,
+    Navigate: _router.navigate.bind(_router),
+  };
+})();
 
 ShelterInPlace.Utilities = (function() {
   // Obtains all we know about the current activity. This is *the* core state of
@@ -176,21 +207,13 @@ ShelterInPlace.Application = (function() {
     $('#placeName').html(activity.place.name);
     $('#placeAddress').html(activity.place.formatted_address);
     $('#placeWeekday').html(activity.place.weekday_text);
+
+    $('.js-jetzt-losgehen-btn').on('click', function() {
+      ShelterInPlace.Router.Navigate('jetzt-losgehen');
+    })
   };
 
   return {
     Init: _init
   }
 })();
-
-
-/**
- * binds click-event on page go.html
- */
-function BindEventsOnGoPage() {
-  $(document).ready(function(){
-    $('.js-jetzt-losgehen-btn').on('click', function(){
-      router.navigate('jetzt-losgehen');
-    })
-  });
-}
