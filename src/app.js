@@ -152,6 +152,9 @@ ShelterInPlace.Utilities = (function() {
                   // Success!
                   var data = JSON.parse(request.responseText);
                   console.log(data);
+                  $('.currentHour').html(data.current.hour);
+                  $('.currentDesc').html(data.current.desc);
+
 
                   // $(id).html('#####');
 
@@ -178,8 +181,8 @@ ShelterInPlace.Utilities = (function() {
 })();
 
 ShelterInPlace.Application = (function() {
-  // Search for places up to 10km around the user.
-  const kSearchRadius = 10000;
+  // Search for places up to 100km around the user.
+  const kSearchRadius = 100000;
 
   // Initializes the entire app. Checks the URL for the page that we're on, and
   // dispatches accordingly.

@@ -24,27 +24,43 @@
 </div>
 
 <section class="route-active" id="home">
-    <div class="container mt-5">
+    <div class="container mt-4">
 
-        <div class="row place-data">
-            <div class="col-10">
-                <h2 class="placeName"></h2><br>
-                <p class="placeType">
-              <i class="material-icons">shopping</i>
-              Einkaufen
-                </p>
+        <div class="row place-data border m-1">
+            <div class="col-12">
+                <h2 class="pt-3 pb-1">
+                    <span class="placeName"></span>
+                    <span class="placeType">Einkauf</span>
+                </h2>
                 <p class="placeAddress"></p>
             </div>
-            <div class="alert alert-success" role="alert" id="placeInfo">
-                <h3>Aktuell 16 Uhr:</h3>
-                <p>Weniger Besucher als gewöhnlich. Normalerweise bis zu 5 Min. Wartezeit.</p>
+            <div class="alert alert-success col-12" role="alert" id="placeInfo">
+                <h3>Aktuell <span class="currentHour"></span> Uhr</h3>
+                <p class="currentDesc"></p>
             </div>
-            <div class="col-12">
+
+            <div class="col-12 days-chart mt-3">
+                <img src="/data/img/placeholder_popular_times.png" class="img-fluid" alt="Responsive image">
+            </div>
+
+            <div class="col-12 info-text mt-3">
+                <h5 class="infoTextHeader"><strong>Einkauf</strong></h5>
+                <p class="infoTextContent">Einkauf Du darfst während der Ausgangssperre Lebensmittel, Getränke und
+                    Gegenstände des täglichen Bedarfs wie gewohnt einkaufen gehen. Bitte beachte, dass jeder gesparte
+                    Gang potentiell Leben retten kann. Kannst du bis morgen warten und dann zwei Erledigungen auf
+                    einmal durchführen? Vorratskäufe sind nicht nötig, denn die Versorgung mit Lebensmitteln ist
+                    gesichert, die Lieferketten sind intakt und die Läden bleiben offen. Du brauchst nur das kaufen,
+                    was du aktuell wirklich brauchst. Einkaufen ist angenehmer, wenn sich alle umsichtig verhalten, d. h.
+                    Nies-Etikette beachten, Abstand halten, evtl. auf bargeldloses Bezahlen umsteigen.</p>
+            </div>
+
+            <!--<div class="col-12">
                 <h3>Öffnungszeiten</h3>
                 <p id="placeWeekday"></p>
-            </div>
-            <div class="col-12">
-                <button type="button" class="btn btn-primary btn-lg active js-jetzt-losgehen-btn">Jetzt los gehen</button>
+            </div> -->
+
+            <div class="fixed-bottom button col-12">
+                <button type="button" class="btn btn-lg bg-white text-black border border-red btn-block js-jetzt-losgehen-btn">Verstanden</button>
             </div>
 
         </div>
