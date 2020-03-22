@@ -72,7 +72,7 @@ ShelterInPlace.Router = (function() {
   }
 
   var _initOnTheGo = function(){
-    
+
     $('.firstName').html(localStorage.getItem('name').replace(/"/g, ''));
     $('.familyName').html(localStorage.getItem('familiy_name').replace(/"/g, ''));
 
@@ -353,9 +353,9 @@ ShelterInPlace.Application = (function() {
       var link = e.target.closest('.list-group-item');
       var activity = ShelterInPlace.Utilities.GetActivity();
       activity.place = {
-        name: $(link).find('.place-name').text(),
-        formatted_address: $(link).find('.place-address').text(),
-        addr_address: $(link).find('.place-address').text(),
+        name: $(link).find('.placeName').text(),
+        formatted_address: $(link).find('.placeAddress').text(),
+        addr_address: $(link).find('.placeAddress').text(),
         address_components: [
           {
             'long_name': 'Laim',
