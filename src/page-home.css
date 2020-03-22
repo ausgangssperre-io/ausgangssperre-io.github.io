@@ -1,1 +1,15 @@
 /* styles only for components on the page home */
+
+#search-history .list-group-item {
+  border: 1px solid rgba(0,0,0,.125);
+}
+
+#search-history .delete-button img {
+  width: 1em;
+  height: 1em;
+}
+
+/* I don't understand why Bootstrap Material has this rule, but it hurts. */
+#search-history .list-group-item :first-child {
+  margin-right: 0;
+}
