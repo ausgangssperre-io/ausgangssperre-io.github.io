@@ -14,34 +14,32 @@ _J_FORBIDDEN = 0;
 // b) if we want to be specific about restricted activities or comments
 async function canGoOut(city, state, activity, number_of_people = -1) {
 
-
-  const legal_table = await _fillJSONContents('../data/json/LegalTabelle.json');
-
-  console.log(legal_table)
-  state_restrictions = JSON.parse(legal_table)["Bundesländer"]["Bayern"];
-  console.log("heyy");
-  console.log(state_restrictions);
+  const legal_table = JSON.parse(await _fillJSONContents('../data/json/LegalTabelle.json'));
+  state_restrictions = legal_table["Bundesländer"][state];
   // TODO(ilinca) check cities too
   if (state_restrictions[activity] != null){
-  	if (state_restrictions[activity] == _J_UNRESTRICTED || state_restrictions[activity] == _J_PARTIAL_RESTRICTIONS) {
+  	if (state_restrictions[activity] == _J_UNRESTRICTED) {
   		return true;
-  	} else {
+  	} else  if (state_restrictions[activity] == _J_PARTIAL_RESTRICTIONS){
   		// For gatherings the number have a different significance - the max # of ppl allowed together
-		if (activity in _ACTIVITIES_WITH_MAX_PPL){
+		if (needPeopleCount(activity)){
+			console.log(" need ppl count ");
 			return number_of_people <= state_restrictions[activity]; 
 		} else {
-  			return false;
+  			return true;
 		}
+  	} else {
+  		return false;
   	}
   }
+  return true;
 }
 
 function needPeopleCount(activity){
-	return activity in _ACTIVITIES_WITH_MAX_PPL;
+	return _ACTIVITIES_WITH_MAX_PPL.includes(activity);
 }
 
 async function _fillJSONContents(path){
 	const response = await fetch(path);
-	const legal_table = response.text();
-	return legal_table;
+	return response.text();
 }
