@@ -1,0 +1,104 @@
+{
+    "Selbstauskunft": [
+        {
+            "Anlass": "Gefahr",
+            "Aussage": "Ich befand mich in Gefahr und musste meine Wohnung verlassen."
+            
+        },
+        {
+            "Anlass": "Arbeit",
+            "Aussage": "Ich bin auf dem Weg zur Arbeit oder zurück. Homeoffice ist mir nicht möglich."
+            
+        },
+        {
+            "Anlass": "Medizinische Termine",
+            "Aussage": "Ich bin auf dem Weg zum Arzt oder einer andere notwenigen medizinischen Maßnahme."
+            
+        },
+        {
+            "Anlass": "Veterinärmedizinische Termine",
+            "Aussage": "Ich bin auf dem Weg zum Tierarzt."
+            
+        },
+        {
+            "Anlass": "Versorgung",
+            "Aussage": "Ich bin unterwegs um notwendige Einkäufe zu tätigen oder unaufschiebbare Besorgungen zu erledigen."
+            
+        },
+        {
+            "Anlass": "Lebenspartner besuchen",
+            "Aussage": "Ich bin unterwegs zu meinem/meiner Lebenspartner:in."
+            
+        },
+        {
+            "Anlass": "Alte, Kranke, Menschen mit Einschränkungen besuchen",
+            "Aussage": "Ich bin unterwegs um Menschen zu Besuchen, die meine Hilfe benötigen."
+            
+        },
+        {
+            "Anlass": "Begleitung Hilfsbedürftiger",
+            "Aussage": "Ich begleite einen Menschen der/die meine Hilfe benötigt."
+            
+        },
+        {
+            "Anlass": "Begleitung Minderjähriger",
+            "Aussage": "Ich begleite eine:n Minderjährige:n."
+            
+        },
+        {
+            "Anlass": "Sterbebegleitung",
+            "Aussage": "Ich bin unterwegs, um eine:n Sterbende:n zu begleiten."
+            
+        },
+        {
+            "Anlass": "Sterbebegleitung",
+            "Aussage": "Ich gehe zu einer Beerdigung."
+            
+        },
+        {
+            "Anlass": "Sport",
+            "Aussage": "Ich treibe Sport an der frischen Luft."
+            
+        },
+        {
+            "Anlass": "Versorgung von Tieren",
+            "Aussage": "Ich bin unterwegs um Tiere zu versorgen oder gehe Gassi."
+            
+        },
+        {
+            "Anlass": "Versorgung von Tieren",
+            "Aussage": "Ich bin unterwegs um meine Briefwahlunterlagen abzugeben."
+            
+        },
+        {
+            "Anlass": "Behördengang",
+            "Aussage": "Ich bin unterwegs zu einem Behördentermin."
+            
+        },
+        {
+            "Anlass": "Gerichtstermin",
+            "Aussage": "Ich bin unterwegs zu einem Gerichtstermin."
+            
+        },
+        {
+            "Anlass": "Notartermin",
+            "Aussage": "Ich bin unterwegs zu einem Notartermin."
+            
+        },
+        {
+            "Anlass": "Rechtsanwältstermin",
+            "Aussage": "Ich bin unterwegs zu einem Rechtsanwältstermin."
+            
+        }
+        ,
+        {
+            "Anlass": "Kirchenbesuch",
+            "Aussage": "Ich bin unterwegs zur Kirche."
+            
+        }
+    ]
+}
+
+
+
+
