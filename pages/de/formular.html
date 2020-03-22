@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="/src/app.css">
+    <link rel="stylesheet" href="/src/page-go.css">
+
+    <!-- Material Design for Bootstrap CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+
+    <title>ausgangssperre.io</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/data/img/favicon.ico">
+</head>
+<body class="go">
+
+<!-- CONTENT START -->
+
+<div class="container mt-5">
+
+    <h1><a href="#" onclick="history.back();"><i class="material-icons">arrow_back_ios</i> Go?</a></h1>
+
+    <div class="identification" role="alert" id="placeInfo">
+        <h3>Martin Mustermann</h3>    
+        <h3>01.01.2000</h3>
+        <h3>Steinheilstraße 1, 80333 München</h3> 
+    </div>
+        <div class="alert alert-success" role="alert" id="placeInfo">
+            <h3>Selbsterklärung:</h3> 
+            <h3>Ich bin unterwegs um notwendige Einkäufe zu erledigen.</h3>    
+        </div>
+        <div class="row place-data">
+            <div class="col-10">
+                <h2 id="placeName"></h2><br>
+                <p id="placeType">
+              <i class="material-icons">shopping</i>
+              Einkaufen
+                </p>
+                <p id="placeAddress"></p>
+            </div>
+        <div class="col-12">
+            <h3>Startzeit: 22.03.2020, 16:00 Uhr</h3>
+        </div>
+        <div class="col-12">
+            <button type="button" class="btn btn-primary btn-lg active">PDF erstellen</button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- CONTENT END -->
+
+
+<nav class="navigation fixed-bottom center pt-3">
+    <ul class="row">
+        <li class="col text-center m-2">
+            <a href="/pages/de/home.html" class="go text-hide active">Wohin soll es gehen?</a>
+        </li>
+        <li class="col text-center m-2">
+            <a href="/pages/de/news.html" class="news text-hide">News</a>
+        </li>
+        <li class="col text-center m-2">
+            <a href="/pages/de/about.html" class="about text-hide">Über diese App</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+
+<!-- Our own JavaScript -->
+<script src="/src/app.js"></script>
+
+</body>
+</html>
