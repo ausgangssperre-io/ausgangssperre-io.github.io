@@ -4,6 +4,10 @@
     background-color: #c12722 !important;
 }
 
+.navigation {
+    background-color: #fff;
+}
+
 .navigation ul {
     list-style: none;
     padding: 0;
