@@ -23,26 +23,25 @@ ShelterInPlace.Router = (function() {
   };
 
   var _signaturePadInitilized = false;
-  var _initSignaturePad = function () {
-    if(_signaturePadInitilized) {
+  var _initSignaturePad = function() {
+    if (_signaturePadInitilized) {
       return;
     }
     var canvasContainer = $('#canvas-container');
 
-    // do not style canvas width and height via css, this will break functionality!
-    $('#sign')
-      .attr('width', canvasContainer.outerWidth())
-      .attr('height', 300);
-    var canvas = document.querySelector("canvas");
+    // do not style canvas width and height via css, this will break
+    // functionality!
+    $('#sign').attr('width', canvasContainer.outerWidth()).attr('height', 300);
+    var canvas = document.querySelector('canvas');
     var signaturePad = new SignaturePad(canvas);
 
-    $('.js-reset-sign').click(function(e){
+    $('.js-reset-sign').click(function(e) {
       e.preventDefault();
       e.stopPropagation();
       signaturePad.clear();
     });
-    $('.js-jetzt-unterschreiben-btn').click(function(e){
-      if(signaturePad.isEmpty()) {
+    $('.js-jetzt-unterschreiben-btn').click(function(e) {
+      if (signaturePad.isEmpty()) {
         alert('Bitte unterschreibe im Signaturfeld!');
         e.preventDefault();
         e.stopPropagation();
@@ -104,19 +103,56 @@ ShelterInPlace.Router = (function() {
 ShelterInPlace.Utilities = (function() {
   // Obtains all we know about the current activity. This is *the* core state of
   // the app, where we store all we know about what the user intends to do.
-  var _getActivity =
-      function() {
-    return JSON.parse(localStorage.getItem('activity') || '{}');
+  var _getActivity = function() {
+    var history = _getActivityHistory();
+    if (history.length > 0) {
+      return history[history.length - 1];
+    }
+    return {}
+  };
+
+  var _removeActivity = function (activity) {
+    console.log('_removeActivity:', activity);
+    var history = _getActivityHistory();
+    if (history.some(
+      existing => existing.place.name == activity.place.name &&
+        existing.formatted_address == activity.formatted_address)) {
+      console.log('Activity removed.');
+      history.splice(history.indexOf(activity));
+      return localStorage.setItem('activityHistory', JSON.stringify(history));
+    } else {
+      console.log("Activity not removed; didn't exist.");
+    }
   }
 
-  // Sets the current activity. Call this to persist the activity's state after
+  // Returns the history of all activities.
+  var _getActivityHistory = function() {
+    return JSON.parse(localStorage.getItem('activityHistory') || '[]');
+  };
+
+  // Adds the current activity. Call this to persist the activity's state after
   // the activity has been modified. For debugging, call
-  // `ShelterInPlace.Utilities.SetActivity({...})` in the JavaScript console to
+  // `ShelterInPlace.Utilities.AddActivity({...})` in the JavaScript console to
   // put the app in a particular state.
-  var _setActivity =
+  var _addActivity =
       function(activity) {
-    console.log('Activity updated:', activity);
-    return localStorage.setItem('activity', JSON.stringify(activity));
+    console.log('_addActivity:', activity);
+    var history = _getActivityHistory();
+    if (!history.some(
+            existing => existing.place.name == activity.place.name &&
+                existing.formatted_address == activity.formatted_address)) {
+      console.log('Activity added.');
+      history.push(activity);
+      return localStorage.setItem('activityHistory', JSON.stringify(history));
+    } else {
+      console.log('Activity not added; already existed.');
+    }
+  }
+
+  var _clearActivityHistory =
+      function() {
+    console.log('Activity history cleared');
+    return localStorage.setItem('activityHistory', '[]');
   }
 
   // Obtains the user's location
@@ -135,9 +171,42 @@ ShelterInPlace.Utilities = (function() {
     }
   }
 
+  var _getPopularTimes =
+      function(id, placeId) {
+          let baseUri = 'https://api.ausgangssperre.io/place/';
+          let detailUri = baseUri + placeId;
+
+          var request = new XMLHttpRequest();
+          request.open('GET', detailUri, true);
+
+          request.onload = function() {
+              if (request.status >= 200 && request.status < 400) {
+                  // Success!
+                  var data = JSON.parse(request.responseText);
+                  console.log(data);
+
+                  // $(id).html('#####');
+
+              } else {
+                  console.log('popular times api returned a error');
+              }
+          };
+
+          request.onerror = function() {
+              console.log('popular times api connection error');
+          };
+
+          request.send();
+  }
+
   return {
-    GetUserLocation: _getUserLocation, GetActivity: _getActivity,
-        SetActivity: _setActivity,
+    GetUserLocation: _getUserLocation,            //
+    GetActivityHistory: _getActivityHistory,      //
+    GetActivity: _getActivity,                    //
+    AddActivity: _addActivity,                    //
+    RemoveActivity: _removeActivity,
+    ClearActivityHistory: _clearActivityHistory,  //
+    GetPopularTimes: _getPopularTimes             //
   }
 })();
 
@@ -158,11 +227,6 @@ ShelterInPlace.Application = (function() {
     } else {
       console.error('_init: Unknown page: ' + document.location.pathname);
     }
-  };
-
-  // Initialized the index page. This is also our way to clear the state.
-  var _initIndex = function() {
-    ShelterInPlace.Utilities.SetActivity({});
   };
 
   // Initializes the `home` page of the app.
@@ -200,9 +264,7 @@ ShelterInPlace.Application = (function() {
         var place = autocomplete.getPlace();
 
         // Set place data...
-        activity = ShelterInPlace.Utilities.GetActivity();
-        activity.place = place;
-        ShelterInPlace.Utilities.SetActivity(activity);
+        ShelterInPlace.Utilities.AddActivity({"place": place});
 
         // ... and go.
         document.location.href =
@@ -210,53 +272,105 @@ ShelterInPlace.Application = (function() {
       });
     }
 
-        // Init the "latest destination" buttons. Currently, we use these for
-        // debugging to set the place to a hard-coded value.
-        $('.latest a')
-            .click((e) => {
-              var link = e.target.closest('a');
-              var activity = ShelterInPlace.Utilities.GetActivity();
-              activity.place = {
-                name: $(link).find('.place-name').text(),
-                formatted_address: $(link).find('.place-address').text(),
-                addr_address: $(link).find('.place-address').text(),
-                address_components: [
-                  {
-                    'long_name': 'Laim',
-                    'short_name': 'Laim',
-                    'types': ['sublocality_level_1', 'sublocality', 'political']
-                  },
-                  {
-                    'long_name': 'Munich',
-                    'short_name': 'Munich',
-                    'types': ['locality', 'political']
-                  },
-                  {
-                    'long_name': 'Munich',
-                    'short_name': 'Munich',
-                    'types': ['administrative_area_level_3', 'political']
-                  },
-                  {
-                    'long_name': 'Upper Bavaria',
-                    'short_name': 'Upper Bavaria',
-                    'types': ['administrative_area_level_2', 'political']
-                  },
-                  {
-                    'long_name': 'Bavaria',
-                    'short_name': 'BY',
-                    'types': ['administrative_area_level_1', 'political']
-                  },
-                  {
-                    'long_name': 'Germany',
-                    'short_name': 'DE',
-                    'types': ['country', 'political']
-                  }
-                ],
-              };
-              ShelterInPlace.Utilities.SetActivity(activity);
-              document.location.href =
-                  document.location.href.replace('/home.html', '/go.html');
-            });
+    // Fill the search history
+    var element = document.getElementById('search-history');
+    var history = ShelterInPlace.Utilities.GetActivityHistory();
+    if (history.length != 0) {
+      history.forEach(activity => {
+        console.log('Adding from history: ', activity);
+        var a = document.createElement('A');
+        a.className =
+            'list-group-item list-group-item-action flex-column align-items-start border mb-3';
+
+        var div = document.createElement('div');
+        div.className = 'd-flex w-100 justify-content-between';
+
+        var h5 = document.createElement('h5');
+        h5.className = 'mb-1';
+
+        var span = document.createElement('span');
+        span.className = 'place-name';
+        span.innerHTML = activity.place.name;
+        h5.appendChild(span);
+
+        var small = document.createElement('small');
+        small.innerHTML = 'Einkauf';
+        h5.appendChild(small);
+        div.appendChild(h5);
+
+        var img = document.createElement('img');
+        img.src = '/data/img/icon-delete.svg';
+        img.width = 20;
+        img.height = 20;
+        div.appendChild(img);
+        a.appendChild(div);
+
+        var p = document.createElement('p');
+        p.className = 'mb-1';
+
+        var span2 = document.createElement('span');
+        span2.className = 'place-address';
+        span2.innerHTML = activity.place.formatted_address;
+        p.appendChild(span2);
+        a.appendChild(p);
+
+        var small2 = document.createElement('small');
+        small2.className = 'p-3 mb-2 bg-success';
+        small2.innerHTML = 'Weniger Besucher als gewöhnlich.';
+        a.appendChild(small2);
+
+        element.appendChild(a);
+      })
+    } else {
+      document.getElementById('history-text').innerHTML = 'Keine Letzten Ziele.'
+    }
+
+    // Init the "latest destination" buttons. Currently, we use these for
+    // debugging to set the place to a hard-coded value.
+    $('.latest a').click((e) => {
+      var link = e.target.closest('a');
+      var activity = ShelterInPlace.Utilities.GetActivity();
+      activity.place = {
+        name: $(link).find('.place-name').text(),
+        formatted_address: $(link).find('.place-address').text(),
+        addr_address: $(link).find('.place-address').text(),
+        address_components: [
+          {
+            'long_name': 'Laim',
+            'short_name': 'Laim',
+            'types': ['sublocality_level_1', 'sublocality', 'political']
+          },
+          {
+            'long_name': 'Munich',
+            'short_name': 'Munich',
+            'types': ['locality', 'political']
+          },
+          {
+            'long_name': 'Munich',
+            'short_name': 'Munich',
+            'types': ['administrative_area_level_3', 'political']
+          },
+          {
+            'long_name': 'Upper Bavaria',
+            'short_name': 'Upper Bavaria',
+            'types': ['administrative_area_level_2', 'political']
+          },
+          {
+            'long_name': 'Bavaria',
+            'short_name': 'BY',
+            'types': ['administrative_area_level_1', 'political']
+          },
+          {
+            'long_name': 'Germany',
+            'short_name': 'DE',
+            'types': ['country', 'political']
+          }
+        ],
+      };
+      ShelterInPlace.Utilities.AddActivity(activity);
+      document.location.href =
+          document.location.href.replace('/home.html', '/go.html');
+    });
   };
 
   // Initializes the `go` page of the app.
@@ -266,6 +380,9 @@ ShelterInPlace.Application = (function() {
     $('.placeName').html(activity.place.name);
     $('.placeAddress').html(activity.place.formatted_address);
     $('.placeWeekday').html(activity.place.weekday_text);
+
+    // load popular times
+    ShelterInPlace.Utilities.GetPopularTimes('#placeInfo', activity.place.name + ',' + activity.place.formatted_address);
 
     $('.js-jetzt-losgehen-btn').on('click', function() {
       ShelterInPlace.Router.Navigate('jetzt-losgehen');
