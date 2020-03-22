@@ -49,14 +49,28 @@ ShelterInPlace.Router = (function() {
       }
 
       // fetch sign as png data url
-      var sign = signaturePad.toDataURL();
-
+      var signature = signaturePad.toDataURL();
       // @TODO: store data in local storage
-
+      localStorage.setItem('signature', JSON.stringify(signature));
+      // document.write('<img src="'+signature+'"/>');
       return true;
     });
     _signaturePadInitilized = true;
   };
+
+  var _initDataCheck = function () {
+    $('.js-go-data-btn').click(function(e){
+        console.log("doing something here");
+        var name = document.getElementById('name').value;
+        var familiy_name = document.getElementById('fname').value;
+        if (fname == "" || name == ""){
+          alert('Namen fehlen!');
+        } else {
+          localStorage.setItem('name', JSON.stringify(name));
+          localStorage.setItem('familiy_name', JSON.stringify(familiy_name));
+        }
+    });
+  }
 
   var _init = function() {
     _router
@@ -67,6 +81,10 @@ ShelterInPlace.Router = (function() {
           'zusammenfassung-unterschrift': function() {
             _setContent('zusammenfassung-unterschrift');
             _initSignaturePad();
+          },
+          'go-data': function() {
+            _setContent('go-data');
+            _initDataCheck();
           },
           '*': function() {
             _setContent('home')

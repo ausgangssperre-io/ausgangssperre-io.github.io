@@ -89,7 +89,34 @@
             <div class="col-12">
                 <button type="button" class="btn btn-danger btn-lg active js-reset-sign">Unterschrift zurücksetzen</button>
                 &nbsp;
-                <button type="button" class="btn btn-primary btn-lg active js-jetzt-unterschreiben-btn">Weiter</button>
+                <a href="#!go-data" class="btn btn-primary btn-lg active js-jetzt-unterschreiben-btn">Weiter</a>
+            </div>
+        </div>
+    </form>
+</section>
+
+<section class="route-inactive" id="go-data">
+    <form>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-10">
+                    <h2 class="placeName"></h2><br>
+                    <p class="placeType">
+                        <i class="material-icons">shopping</i>
+                        Einkaufen
+                    </p>
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="name"> Vorname:</label>
+                <input type="text" id="name" name="fname"><br><br>
+            </div>
+            <div class="col-12">
+                <label for="fname"> Nachname:</label>
+                <input type="text" id="fname" name="fname"><br><br>
+            </div>
+            <div class="col-12">
+                <button type="button" class="btn btn-primary btn-lg active js-go-data-btn">Weiter</button>
             </div>
         </div>
     </form>
