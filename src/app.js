@@ -278,9 +278,9 @@ ShelterInPlace.Application = (function() {
     if (history.length != 0) {
       history.forEach(activity => {
         console.log('Adding from history: ', activity);
-        var a = document.createElement('A');
-        a.className =
-            'list-group-item list-group-item-action flex-column align-items-start border mb-3';
+        var recentPlace = document.createElement('button');
+        recentPlace.className =
+            'list-group-item list-group-ite-primary list-group-item-action flex-column align-items-start';
 
         var div = document.createElement('div');
         div.className = 'd-flex w-100 justify-content-between';
@@ -289,37 +289,42 @@ ShelterInPlace.Application = (function() {
         h5.className = 'mb-1';
 
         var span = document.createElement('span');
-        span.className = 'place-name';
-        span.innerHTML = activity.place.name;
+        span.className = 'place-name mr-1';
+        span.innerText = activity.place.name;
         h5.appendChild(span);
 
         var small = document.createElement('small');
+        small.className = 'badge badge-info';
         small.innerHTML = 'Einkauf';
         h5.appendChild(small);
         div.appendChild(h5);
 
+        var deleteButton = document.createElement('button');
+        deleteButton.type = 'button';
+        deleteButton.className = 'delete-button btn btn-raised btn-sm btn-danger';
+
         var img = document.createElement('img');
         img.src = '/data/img/icon-delete.svg';
-        img.width = 20;
-        img.height = 20;
-        div.appendChild(img);
-        a.appendChild(div);
+        img.alt = 'Delete this place';
+        deleteButton.appendChild(img);
+        div.appendChild(deleteButton);
+        recentPlace.appendChild(div);
 
         var p = document.createElement('p');
         p.className = 'mb-1';
 
         var span2 = document.createElement('span');
         span2.className = 'place-address';
-        span2.innerHTML = activity.place.formatted_address;
+        span2.innerText = activity.place.formatted_address;
         p.appendChild(span2);
-        a.appendChild(p);
+        recentPlace.appendChild(p);
 
-        var small2 = document.createElement('small');
-        small2.className = 'p-3 mb-2 bg-success';
-        small2.innerHTML = 'Weniger Besucher als gewöhnlich.';
-        a.appendChild(small2);
+        var small2 = document.createElement('div');
+        small2.className = 'alert alert-success mb-0 col-12 text-center';
+        small2.innerText = 'Weniger Besucher als gewöhnlich.';
+        recentPlace.appendChild(small2);
 
-        element.appendChild(a);
+        element.appendChild(recentPlace);
       })
     } else {
       document.getElementById('history-text').innerHTML = 'Keine Letzten Ziele.'
@@ -327,8 +332,8 @@ ShelterInPlace.Application = (function() {
 
     // Init the "latest destination" buttons. Currently, we use these for
     // debugging to set the place to a hard-coded value.
-    $('.latest a').click((e) => {
-      var link = e.target.closest('a');
+    $('.latest .list-group-item').click((e) => {
+      var link = e.target.closest('.list-group-item');
       var activity = ShelterInPlace.Utilities.GetActivity();
       activity.place = {
         name: $(link).find('.place-name').text(),
