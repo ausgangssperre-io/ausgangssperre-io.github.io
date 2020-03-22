@@ -17,17 +17,25 @@ _J_FORBIDDEN = 0;
 async function canGoOut(city, state, activity, number_of_people = -1) {
   const legal_table =
       JSON.parse(await _fillJSONContents('/data/json/LegalTabelle.json'));
-  state_restrictions = legal_table['Bundesländer'][state];
-  // TODO(ilinca) check cities too
-  if (state_restrictions[activity] != null) {
-    if (state_restrictions[activity] == _J_UNRESTRICTED) {
+  restrictions = legal_table['Bundesländer'][state];
+  // Check if thre are particular local overrides for the city
+  if (restrictions["Besondere Gemeinden"] != null && restrictions["Besondere Gemeinden"][city] != null){
+    further_restrictions = Object.keys(restrictions["Besondere Gemeinden"][city]);
+    for (i in further_restrictions){
+      key = further_restrictions[i];
+      restrictions[key] = restrictions["Besondere Gemeinden"][city][key];
+    }
+  }
+
+  if (restrictions[activity] != null) {
+    if (restrictions[activity] == _J_UNRESTRICTED) {
       return true;
-    } else if (state_restrictions[activity] == _J_PARTIAL_RESTRICTIONS) {
+    } else if (restrictions[activity] == _J_PARTIAL_RESTRICTIONS) {
       // For gatherings the number have a different significance - the max # of
       // ppl allowed together
       if (needPeopleCount(activity)) {
         console.log(' need ppl count ');
-        return number_of_people <= state_restrictions[activity];
+        return number_of_people <= restrictions[activity];
       } else {
         return true;
       }
