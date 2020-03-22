@@ -139,12 +139,41 @@ ShelterInPlace.Utilities = (function() {
     }
   }
 
+  var _getPopularTimes =
+      function(id, placeId) {
+          let baseUri = 'https://api.ausgangssperre.io/place/';
+          let detailUri = baseUri + placeId;
+
+          var request = new XMLHttpRequest();
+          request.open('GET', detailUri, true);
+
+          request.onload = function() {
+              if (request.status >= 200 && request.status < 400) {
+                  // Success!
+                  var data = JSON.parse(request.responseText);
+                  console.log(data);
+
+                  // $(id).html('#####');
+
+              } else {
+                  console.log('popular times api returned a error');
+              }
+          };
+
+          request.onerror = function() {
+              console.log('popular times api connection error');
+          };
+
+          request.send();
+  }
+
   return {
     GetUserLocation: _getUserLocation,                //
-        GetActivityHistory: _getActivityHistory,      //
-        GetActivity: _getActivity,                    //
-        AddActivity: _addActivity,                    //
-        ClearActivityHistory: _clearActivityHistory,  //
+    GetActivityHistory: _getActivityHistory,      //
+    GetActivity: _getActivity,                    //
+    AddActivity: _addActivity,                    //
+    ClearActivityHistory: _clearActivityHistory,  //
+    GetPopularTimes: _getPopularTimes
   }
 })();
 
@@ -318,6 +347,9 @@ ShelterInPlace.Application = (function() {
     $('.placeName').html(activity.place.name);
     $('.placeAddress').html(activity.place.formatted_address);
     $('.placeWeekday').html(activity.place.weekday_text);
+
+    // load popular times
+    ShelterInPlace.Utilities.GetPopularTimes('#placeInfo', activity.place.name + activity.place.formatted_address);
 
     $('.js-jetzt-losgehen-btn').on('click', function() {
       ShelterInPlace.Router.Navigate('jetzt-losgehen');
