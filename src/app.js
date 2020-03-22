@@ -121,7 +121,7 @@ ShelterInPlace.Application = (function() {
 
         // Init the "latest destination" buttons. Currently, we use these for
         // debugging to set the place to a hard-coded value.
-        $('.latest button')
+        $('.latest a')
             .click((e) => {
               console.log('click: ', e.target);
               activity = ShelterInPlace.Utilities.GetActivity();

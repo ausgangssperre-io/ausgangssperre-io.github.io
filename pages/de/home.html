@@ -27,43 +27,71 @@
         <div class="col-12">
             <div id="custom-search-input">
                 <div class="input-group">
-                    <input id="autocomplete_search" name="autocomplete_search" type="text" class="form-control" placeholder="Search" />
+                    <input id="autocomplete_search" name="autocomplete_search" type="text" class="form-control border p-2" placeholder="Suchen" />
                     <input type="hidden" name="lat">
                     <input type="hidden" name="lng">
 
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button"><i class="material-icons">search</i></button>
+                        <button class="btn btn-outline-secondary border" type="button"><i class="material-icons">search</i></button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row latest">
+    <div class="row latest mt-5">
         <h2 class="col-12">Letzte Ziele</h2>
 
-        <div class="list-group col-12">
-            <button type="button" class="list-group-item list-group-item-action active">Lidl</button>
-            <button type="button" class="list-group-item list-group-item-action">Apotheke St. Anton</button>
-            <button type="button" class="list-group-item list-group-item-action">Norma</button>
+        <div class="list-group m-3">
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start border mb-3">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">REWE <small>Einkauf</small></h5>
+                    <img src="/data/img/icon-delete.svg" width="20" height="20">
+                </div>
+                <p class="mb-1">Hauptstraße 123, 11111 Berlin</p>
+                <small class="p-3 mb-2 bg-success">Weniger Besucher als gewöhnlich.</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start border mb-3">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Lidl <small>Einkauf</small></h5>
+                    <img src="/data/img/icon-delete.svg" width="20" height="20">
+                </div>
+                <p class="mb-1">Hauptstraße 123, 11111 Berlin</p>
+                <small class="p-3 mb-2 bg-warning">Weniger Besucher als gewöhnlich.</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start border mb-3">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Mama <small>Familie</small></h5>
+                    <img src="/data/img/icon-delete.svg" width="20" height="20">
+                </div>
+                <p class="mb-1">Dorfstraße 23, 12345 Schönestadt</p>
+                <small class="p-3 mb-2 bg-info">Markus und Sabine sind bereits da.</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start border mb-3">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Mama <small>Familie</small></h5>
+                    <img src="/data/img/icon-delete.svg" width="20" height="20">
+                </div>
+                <p class="mb-1">Dorfstraße 23, 12345 Schönestadt</p>
+                <small class="p-3 mb-2 bg-success">Weniger Besucher als gewöhnlich.</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start border mb-3">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Mama <small>Familie</small></h5>
+                    <img src="/data/img/icon-delete.svg" width="20" height="20">
+                </div>
+                <p class="mb-1">Dorfstraße 23, 12345 Schönestadt</p>
+                <small class="p-3 mb-2 bg-success">Weniger Besucher als gewöhnlich.</small>
+            </a>
         </div>
     </div>
 
-    <div class="row info">
-        <div class="col-12">
-            <h3>Bitte beachte, dass jeder gesparte
-                Gang potentiell Leben retten kann.
-                Kannst du bis morgen warten und
-                dann zwei Erledigungen auf einmal
-                durchführen?</h3>
-        </div>
-    </div>
 </div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgnLnGGj9HI3sDja5ONz0Vtmoel6fYqMU&libraries=places"></script>
 <!-- CONTENT END -->
 
-<nav class="navigation fixed-bottom center">
+<nav class="navigation fixed-bottom center pt-3">
     <ul class="row">
         <li class="col text-center m-2">
             <a href="/pages/de/home.html" class="go text-hide active">Wohin soll es gehen?</a>
