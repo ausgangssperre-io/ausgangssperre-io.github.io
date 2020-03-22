@@ -88,18 +88,28 @@ ShelterInPlace.Utilities = (function() {
   // the app, where we store all we know about what the user intends to do.
   var _getActivity =
       function() {
-    return JSON.parse(localStorage.getItem('activity') || '{}');
-  }
+        return JSON.parse(localStorage.getItem('activity') || '[]');
+      }
 
-  // Sets the current activity. Call this to persist the activity's state after
+  // Adds the current activity. Call this to persist the activity's state after
   // the activity has been modified. For debugging, call
-  // `ShelterInPlace.Utilities.SetActivity({...})` in the JavaScript console to
+  // `ShelterInPlace.Utilities.AddActivity({...})` in the JavaScript console to
   // put the app in a particular state.
-  var _setActivity =
+  var _addActivity =
       function(activity) {
-    console.log('Activity updated:', activity);
-    return localStorage.setItem('activity', JSON.stringify(activity));
-  }
+        console.log('Activity added:', activity);
+        var tmp = _getActivity();
+        if (!tmp.includes(JSON.stringify(activity))) {
+            tmp.push(JSON.stringify(activity));
+            return localStorage.setItem('activity', JSON.stringify(tmp));
+        }
+      }
+
+  var _clearActivity =
+      function () {
+        console.log('Activity cleared');
+        return localStorage.setItem('activity', [])
+      }
 
   // Obtains the user's location
   var _getUserLocation =
@@ -119,7 +129,7 @@ ShelterInPlace.Utilities = (function() {
 
   return {
     GetUserLocation: _getUserLocation, GetActivity: _getActivity,
-        SetActivity: _setActivity,
+        AddActivity: _addActivity, ClearActivity: _clearActivity
   }
 })();
 
@@ -140,11 +150,6 @@ ShelterInPlace.Application = (function() {
     } else {
       console.error('_init: Unknown page: ' + document.location.pathname);
     }
-  };
-
-  // Initialized the index page. This is also our way to clear the state.
-  var _initIndex = function() {
-    ShelterInPlace.Utilities.SetActivity({});
   };
 
   // Initializes the `home` page of the app.
@@ -181,10 +186,8 @@ ShelterInPlace.Application = (function() {
       autocomplete.addListener('place_changed', function() {
         var place = autocomplete.getPlace();
 
-        // Set place data...
-        activity = ShelterInPlace.Utilities.GetActivity();
-        activity.place = place;
-        ShelterInPlace.Utilities.SetActivity(activity);
+          // Set place data...
+          ShelterInPlace.Utilities.AddActivity(place);
 
         // ... and go.
         document.location.href =
@@ -192,12 +195,64 @@ ShelterInPlace.Application = (function() {
       });
     }
 
+    // Fill the search history
+      var element = document.getElementById('search-history');
+      var history = ShelterInPlace.Utilities.GetActivity();
+      if (history.length!=0) {
+          history.forEach(activity => {
+              activity = JSON.parse(activity)
+              var a = document.createElement("A");
+              a.className = 'list-group-item list-group-item-action flex-column align-items-start border mb-3';
+
+              var div = document.createElement("DIV");
+              div.className = 'd-flex w-100 justify-content-between';
+
+              var h5 = document.createElement("H5");
+              h5.className = 'mb-1';
+
+              var span = document.createElement("SPAN");
+              span.className = 'place-name';
+              span.innerHTML = activity.name;
+              h5.appendChild(span);
+
+              var small = document.createElement("SMALL");
+              small.innerHTML = 'Einkauf';
+              h5.appendChild(small);
+              div.appendChild(h5);
+
+              var img = document.createElement("img");
+              img.src = '/data/img/icon-delete.svg';
+              img.width = 20;
+              img.height = 20;
+              div.appendChild(img);
+              a.appendChild(div);
+
+              var p = document.createElement("p");
+              p.className = 'mb-1';
+
+              var span2 = document.createElement("span");
+              span2.className = 'place-address';
+              span2.innerHTML = activity.formatted_address;
+              p.appendChild(span2);
+              a.appendChild(p);
+
+              var small2 = document.createElement("small");
+              small2.className = 'p-3 mb-2 bg-success';
+              small2.innerHTML = 'Weniger Besucher als gewöhnlich.';
+              a.appendChild(small2);
+
+              element.appendChild(a);
+          })
+      } else {
+        document.getElementById("history-text").innerHTML = "Keine Letzten Ziele."
+      }
+
         // Init the "latest destination" buttons. Currently, we use these for
         // debugging to set the place to a hard-coded value.
         $('.latest a')
             .click((e) => {
               var link = e.target.closest('a');
-              var activity = ShelterInPlace.Utilities.GetActivity();
+              var activity = ShelterInPlace.Utilities.GetActivity()[0];
               activity.place = {
                 name: $(link).find('.place-name').text(),
                 formatted_address: $(link).find('.place-address').text(),
@@ -235,15 +290,17 @@ ShelterInPlace.Application = (function() {
                   }
                 ],
               };
-              ShelterInPlace.Utilities.SetActivity(activity);
+              ShelterInPlace.Utilities.AddActivity(JSON.parse(activity));
               document.location.href =
                   document.location.href.replace('/home.html', '/go.html');
             });
   };
 
   // Initializes the `go` page of the app.
-  var _initGo = function() {
-    var activity = ShelterInPlace.Utilities.GetActivity();
+    var _initGo = function() {
+        var activities = ShelterInPlace.Utilities.GetActivity();
+        var activity = JSON.parse(activities[activities.length-1]);
+
 
     $('.placeName').html(activity.place.name);
     $('.placeAddress').html(activity.place.formatted_address);
