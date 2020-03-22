@@ -1,0 +1,76 @@
+{
+    "readme": [
+        {
+            "name": "Scenario",
+            "tag": "Scenario",
+            "text": "<div>In Deutschland wird global die Ausgangssperre wegen COVID-19 verhängt. Um sich im öffentlichen Raum zu bewegen wird von der Polizei -ähnlich wie jetzt schon in Frankreich- ein Dokument verlangt, auf dem der Bürger erfassen muss, warum er sich außerhalb seiner Räumlichkeiten bewegt.</div>"
+        },
+        {
+            "name": "Setting",
+            "tag": "Setting",
+            "text": "<div>Der Bürger will das Haus verlassen und kann nicht oder möchte kein Formular auf Papier ausdrucken. Er hat gehört (via Rundfunk / Fernsehen / Social Share), dass es da auch eine App geben soll. Er findet diese schnell in seinem App-Store / Play-Store und öffnet sie. Daraufhin wird er zunächst nach ein paar grundlegenden Informationen (Standort / Bundesland / Name) gefragt und kann dann auswählen was er machen möchte. Will er den “Digitalen Ausgangsschein” erstellen werden ihm ein paar Fragen gestellt, die unter anderem klären, ob er zur Risiko-Gruppe gehört und ob es rechtlich erlaubt ist, was er vor hat. Ohne Oberlehrerhaft zu klingen wird die App dabei Empfehlungen aussprechen ohne den Benutzer an der Ausstellung der Bescheinigung zu hindern. Nach dem ausstellen der Bescheinigung macht sich der Bürger auf den Weg zur Arbeit und gerät in eine Polizeikontrolle. Hier öffnet er die App, ruft das ausgefüllte Formular ab und zeigt es durch die geschlossene Fensterscheibe des Autos. Die Informationen sind so strukturiert, dass der Polizist auf einen Blick ohne viel lesen zu müssen alles gut erfasst und er lässt das Auto passieren.</div>"
+        },
+        {
+            "name": "Ziele",
+            "tag": "Ziele",
+            "text": "<div>Der Bürger soll auf dem Weg zum ausgefüllten Formular auch ein wenig beraten werden, ob das eine gute Idee ist die Wohnung zu verlassen (Stichwort Nudging).  Die App soll außerdem Infos und Links zu verlässlichen Informationen enthalten.</div>"
+        }
+    ],
+    "UI": [
+        {
+            "name": "WELCOME",
+            "tag": "welcome",
+            "text": "<div>Hallo,</div><div>wir möchten dir helfen in Zeiten der Ausgangssperre, schnell und einfach einen digitalen Passierschein zu erstellen. Außerdem Informieren wir dich in Echtzeit über die aktuellen Besucherzahlen deines Zielortes.</div>"
+        },
+        {
+            "name": "ABOUT",
+            "tag": "about",
+            "text": "<div style='font-weight: bold'> Ausgangssperre.io ist im Rahmen des #WirVsVirus Online Hackathon entstanden, um Probleme im Zusammenhang mit der Corona-Krise gemeinsam zu lösen.</div><div>Version: 0.1</div><div>Entwickelt von: Teammitglieder einfügen</div><div>Anwendungsberechtigungen: Standort, Network</div><div>Die App Ausgangssperre.io dient zur Erstellung eines digitalen Passierscheins, welcher benötigt wird, um sich während einer verhängten Ausgangssperre außerhalb der eigenen Häuslichkeit aufzuhalten. Dafür gibst du einfach an, wohin du dich bewegen möchtest oder was du tun willst und die App erstellt dir einen digitalen Ausgangsschein, welchen du bei eventuellen Kontrollen einfach vorzeigen kannst.</div><div>Die App Ausgangssperre.io dient zur Erstellung eines digitalen Passierscheins, welcher benötigt wird, um sich während einer verhängten Ausgangssperre außerhalb der eigenen Häuslichkeit aufzuhalten. Dafür gibst du einfach an, wohin du dich bewegen möchtest oder was du tun willst und die App erstellt dir einen digitalen Ausgangsschein, welchen du bei eventuellen Kontrollen einfach vorzeigen kannst.</div><div></Zudem informiert sie dich in Echtzeit über die aktuellen Besucherzahlen deines Zielortes und gibt dir Tipps zum allgemeinen Verhalten während einer Ausgangssperre. Außerdem erhältst du wertvolle Hinweise, ob es aktuell erlaubt ist, deinen Zielort während einer Ausgangssperre aufzusuchen oder nicht.>"
+        }
+    ],
+    "Infotexte": [
+        {
+            "name": "Einkaufen",
+            "tag": "Einkaufen",
+            "text_erlaubt":"<div>Du darfst während der Ausgangssperre Lebensmittel, Getränke und Gegenstände des täglichen Bedarfs wie gewohnt einkaufen gehen</div>",
+            "text_verboten":"<div>Du darfst während der Ausgangssperre Lebensmittel, Getränke und Gegenstände des täglichen Bedarfs wie gewohnt einkaufen gehen</div>",
+            "tip": "<div>Bitte beachte, dass jeder gesparte Gang potentiell Leben retten kann. Kannst du bis morgen warten und dann zwei Erledigungen auf einmal durchführen?</div><div>Vorratskäufe sind nicht nötig, denn die Versorgung mit Lebensmitteln ist gesichert, die Lieferketten sind intakt und die Läden bleiben offen. Du brauchst nur das kaufen, was du aktuell wirklich brauchst.</div><div>Einkaufen ist angenehmer, wenn sich alle umsichtig verhalten, d.h.: Nies-Etikette beachten, Abstand halten, auf bargeldloses Bezahlen umsteigen.</div>"
+        },
+        {
+            "name": "Arbeit",
+            "tag": "Arbeit",
+            "text_erlaubt":"<div>Du darfst während der Ausgangssperre zur Arbeit gehen und berufliche Tätigkeiten ausüben, einschließlich der Unterbringung von Minderjährigen in der Notbetreuung.</div>",
+            "text_verboten":"<div>Dein Geschäft ist unmittelbar von der Ausgangssperre betroffen. Dur darfst es nicht für deine Kunden öffnen. </div>",
+            "tip": "<div>Bitte beachte, dass jeder gesparte Gang potentiell Leben retten kann. Du kannst Zeit sparen und Risiken minimieren, indem du den den direkten Weg zu deinem Ziel nimmst.</div>"
+        },
+        {
+            "name": "Arzt",
+            "tag": "Arzt",
+            "text_erlaubt":"<div>Du darfst während der Ausgangssperre zum Arzt gehen und medizinische Versorgungsleistungen in Anspruch nehmen. Du darfst ausdrücklich auch Blut spenden gehen!</div>",
+            "text_verboten":"<div>Du darfst während der Ausgangssperre dein Haus nicht mal für einen Arztbesuch verlassen.</div>",
+            "tip": "<div>Bitte beachte, dass jeder gesparte Gang potentiell Leben retten kann. Du kannst Zeit sparen und Risiken minimieren, indem du den den direkten Weg zu deinem Ziel nimmst.</div>"
+        },
+        {
+            "name": "Familie",
+            "tag": "Familie",
+            "text_erlaubt":"<div>Du darfst während der Ausgangssperre Familienmitglieder besuchen. Der Besuch bei Lebenspartnern, Alten, Kranken oder Menschen mit Einschränkungen (außerhalb von Einrichtungen) und die Wahrnehmung des Sorgerechtes sind erlaubt.</div>",
+            "text_verboten":"<div>Du darfst während der Ausgangssperre nicht einmal Familienmitglieder besuchen. </div>",
+            "tip": "<div>Denk dabei an die erhöhte Ansteckungsgefahr bei Risikogruppen! Besonders ältere Menschen ab 50/60 Jahren, Menschen mit Grunderkrankungen wie Herzkreislaufstörungen, Diabetes, Atemwegserkrankungen, Leber-, Niere- oder Krebserkrankungen (unabhängig vom Alter), Menschen mit einer Immunschwäche und Menschen, die gewisse Medikamente einnehmen, die die Immunabwehr unterdrücken (wie z.B. Cortison) sind besonders gefährdet. Besuche Oma oder den kranken Onkel lieber per Videotelefonie, rufe sie öfter mal an oder schreib mal wieder einen Brief.</div><div>Bitte beachte, dass jeder gesparte Gang potentiell Leben retten kann. Du kannst Zeit sparen und Risiken minimieren, indem du den den direkten Weg zu deinem Ziel nimmst.</div>"
+        },
+        {
+            "name": "Bewegung draußen",
+            "tag": "Bewegung draußen",
+            "text_erlaubt":"<div>Du darfst während der Ausgangssperre frische Luft schnappen gehen. Sport und Bewegung an der frischen Luft sind erlaubt - allerdings ausschließlich alleine oder mit Angehörigen des eigenen Hausstandes und ohne jede sonstige Gruppenbildung größer fünf Personen.</div>",
+            "text_verboten":"<div>An deinem Wohnort ist das Verlassen der Wohnung auch für Sport oder Bewegung an der Frischen Luft nicht erlaubt.</div>",
+            "tip": "<div>Bitte beachte, dass jeder gesparte Gang potentiell Leben retten kann. Du kannst Zeit sparen und Risiken minimieren, indem du den den direkten Weg zu deinem Ziel nimmst.</div>"
+        },
+        {
+            "name": "Haustiere",
+            "tag": "Haustiere",
+            "text_erlaubt":"<div>Du darfst während der Ausgangssperre deine Tiere versorgen. Das Ausführen deiner Tiere an der frischen Luft ist erlaubt - allerdings ausschließlich alleine oder mit Angehörigen des eigenen Hausstandes und ohne jede sonstige Gruppenbildung größer fünf Personen. Auch der Besuch beim Tierarzt und die Inanspruchnahme veterinärmedizinischer Versorgungsleistungen sind erlaubt.</div>",
+            "text_verboten":"<div>Du darfst während der Ausgangssperre deine Tiere nicht außerhalb der Wohnung versorgen</div>",
+            "tip": "<div>Bitte beachte, dass jeder gesparte Gang potentiell Leben retten kann. Du kannst Zeit sparen und Risiken minimieren, indem du den den direkten Weg zu deinem Ziel nimmst.</div>"
+        }
+
+    ]
+}

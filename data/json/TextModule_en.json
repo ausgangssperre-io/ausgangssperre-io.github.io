@@ -1,0 +1,77 @@
+{
+    "readme": [
+        {
+            "name":"Scenario",
+            "tag":"Scenario",
+            "text": "<div>Shelter in place for all German states because of COVID-19. In order to go out the police require a document stating the intent for leaving their home, similar to the one already in action in France.</div>"
+        },
+        {
+            "name":"Setting",
+            "tag":"Setting",
+            "text": "<div>A person needs to leave their house and can not or doesn’t want to print out the form. They heard via Radio/TV/Social Media that there also exists an App for this.They find the App on Play-Store/App-Store, installs and opens it. They first need to answer a few simple questions (Name/State) and next they get to choose what activity they would like to go. Should they need the digital pass for leaving the house (“Ausgangsschein”) they would get more questions asked with the purpose of clarifying whether they are in a risc group or if the activity is legally allowed. The app would make friendly recommendations, without blocking the printing of the document. Once the user has the pass they leave for work and meet a police(wo)man. They open the app and quickly show the form through the closed car window. The information is structured and easy to understand from the distance so the police(wo)man doesn’t need to spend a long time reading and our user can continue their journey.</div>"
+        },
+        {
+            "name":"Goals",
+            "tag":"Ziele",
+            "text": "<div>This app will generate the pass document while also advising the users whether it is a good idea to leave their house. In addition it will provide information and links to reliable sources.</div>"
+        }
+        
+    ],
+    "UI": [
+        {
+            "name": "WELCOME",
+            "tag": "welcome",
+            "text": "<div>Hello,</div><div>we would like to help you generate a quick and simple digital pass document. It will help you during the curfew. Also we inform you live about the number of visitors at your destination.</div>"
+        },
+        {
+            "name": "ABOUT",
+            "tag": "about",
+            "text": "<div style='font-weight: bold'>Ausgangssperre.io was created as part of the #WirVsVirus Online Hackathon to help solve problems related to the corona crisis.</div><div>Version: 0.1</div><div>Developed by: Teammitglieder einfügen</div><div>Permissions required: location, network connection</div><div>Ausgangssperre.io the app is used to create a digital pass, which is required during your stay outside your home during a curfew. You choose a destination and this app will generate a curview pass. You can show it in case of an inspection to the officer.</div><div>It also provides you with real-time information about the current number of visitors to your destination and gives you tips on general behavior during a curfew. It also gives you valuable information about whether or not it is currently permitted to visit your destination during a curfew.</div>"
+        }
+    ],
+    "Infotexte": [
+        {
+            "name": "Shopping",
+            "tag": "Einkaufen",
+            "text_erlaubt":"<div>During curfew you may go shopping as usual for food, drinks and daily necessities.</div>",
+            "text_verboten":"<div>During curfew you may go shopping as usual for food, drinks and daily necessities only</div>",
+            "tip": "<div>Please note that every  trip you do not take can save lives. Can you wait until tomorrow and then do two errands at once?</div><div> Stockpiling is not needed. The supply chains for food are intact and the shops remain open. Plese buy only what you really need at the moment. Shopping is more pleasant when everyone is careful, i.e: respect the sneezing etiquette, keep your distance, switch to cashless payment.</div>"
+        },
+        {
+            "name": "Work",
+            "tag": "Arbeit",
+            "text_erlaubt":"<div>You are allowed to go to work and perform professional activities during curfew, including placing minors in curview care.</div>",
+            "text_verboten":"<div>Your business is immediately affected by the curfew. You are not allowed not open it for your customers. </div>",
+            "tip": "<div>Please note that every  trip you do not take can save lives. You can save time and minimize risks by taking the direct route to your destination.</div>"
+        },
+        {
+            "name": "Doctor",
+            "tag": "Arzt",
+            "text_erlaubt":"<div>You are allowed to see a doctor and receive medical care during curfew. You are also explicitly allowed to donate blood!</div>",
+            "text_verboten":"<div>You are not allowed to leave your house during curfew, even for a visit to the doctor.</div>",
+            "tip": "<div>Please note that every  trip you do not take can save lives. You can save time and minimize risks by taking the direct route to your destination.</div>"
+        },
+        {
+            "name": "Family",
+            "tag": "Familie",
+            "text_erlaubt":"<div>You are allowed to visit family members during curfew. Visiting your partner,  elderly, sick or people with disabilities (outside of institutions) and exerciseing custody is permitted.</div>",
+            "text_verboten":"<div>You are not even allowed to visit family members during curfew. </div>",
+            "tip": "<div>Remember the increased risk of infection among risk groups! Especially older people from the age of 50/60, people with basic diseases such as cardiovascular disorders, diabetes, respiratory diseases, liver, kidney or cancer diseases (regardless of age), people with an immune deficiency and people who take certain drugs that suppress the immune system (such as cortisone) are particularly at risk. Visit grandma or the sick uncle via video phone, call them more often or write a letter.</div><div>Please note that every trip you do not take can save lives. You can save time and minimize risks by taking the direct route to your destination.</div>"
+        },
+        {
+            "name": "Training outside",
+            "tag": "Bewegung draußen",
+            "text_erlaubt":"<div>You're allowed to go out for fresh air during curfew. Sports and exercise in the fresh air are allowed - but only alone or with members of your own household. You are not allowed to meet in larger groops.</div>",
+            "text_verboten":"<div>At your place of residence it is also not allowed to leave the apartment for sports or exercise in the fresh air.</div>",
+            "tip": "<div>Please note that every  trip you do not take can save lives. You can save time and minimize risks by taking the direct route to your destination.</div>"
+        },
+        {
+            "name": "Pets",
+            "tag": "Haustiere",
+            "text_erlaubt":"<div>You may take care of your animals during curfew. Taking your animals out into the fresh air is allowed - but only alone or with members of your own household and without any other group formation. Visiting the vet and using veterinary services is also permitted.</div>",
+            "text_verboten":"<div>You are not allowed to take care of your animals outside the house during curfew.</div>",
+            "tip": "<div>Please note that every  trip you do not take can save lives. You can save time and minimize risks by taking the direct route to your destination.</div>"
+        }
+
+    ]
+}
