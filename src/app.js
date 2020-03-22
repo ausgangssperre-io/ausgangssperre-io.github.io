@@ -85,10 +85,18 @@ ShelterInPlace.Router = (function() {
 ShelterInPlace.Utilities = (function() {
   // Obtains all we know about the current activity. This is *the* core state of
   // the app, where we store all we know about what the user intends to do.
-  var _getActivity =
-      function() {
-    return JSON.parse(localStorage.getItem('activity') || '[]');
-  }
+  var _getActivity = function() {
+    var history = _getActivityHistory();
+    if (history.length > 0) {
+      return history[history.length - 1];
+    }
+    return {}
+  };
+
+  // Returns the history of all activities.
+  var _getActivityHistory = function() {
+    return JSON.parse(localStorage.getItem('activityHistory') || '[]');
+  };
 
   // Adds the current activity. Call this to persist the activity's state after
   // the activity has been modified. For debugging, call
@@ -96,18 +104,23 @@ ShelterInPlace.Utilities = (function() {
   // put the app in a particular state.
   var _addActivity =
       function(activity) {
-    console.log('Activity added:', activity);
-    var tmp = _getActivity();
-    if (!tmp.includes(JSON.stringify(activity))) {
-      tmp.push(JSON.stringify(activity));
-      return localStorage.setItem('activity', JSON.stringify(tmp));
+    console.log('_addActivity:', activity);
+    var history = _getActivityHistory();
+    if (!history.some(
+            existing => existing.place.name == activity.place.name &&
+                existing.formatted_address == activity.formatted_address)) {
+      console.log('Activity added.');
+      history.push(activity);
+      return localStorage.setItem('activityHistory', JSON.stringify(history));
+    } else {
+      console.log('Activity not added; already existed.');
     }
   }
 
-  var _clearActivity =
+  var _clearActivityHistory =
       function() {
-    console.log('Activity cleared');
-    return localStorage.setItem('activity', [])
+    console.log('Activity history cleared');
+    return localStorage.setItem('activityHistory', '[]');
   }
 
   // Obtains the user's location
@@ -127,8 +140,11 @@ ShelterInPlace.Utilities = (function() {
   }
 
   return {
-    GetUserLocation: _getUserLocation, GetActivity: _getActivity,
-        AddActivity: _addActivity, ClearActivity: _clearActivity
+    GetUserLocation: _getUserLocation,                //
+        GetActivityHistory: _getActivityHistory,      //
+        GetActivity: _getActivity,                    //
+        AddActivity: _addActivity,                    //
+        ClearActivityHistory: _clearActivityHistory,  //
   }
 })();
 
@@ -186,7 +202,7 @@ ShelterInPlace.Application = (function() {
         var place = autocomplete.getPlace();
 
         // Set place data...
-        ShelterInPlace.Utilities.AddActivity(place);
+        ShelterInPlace.Utilities.AddActivity({"place": place});
 
         // ... and go.
         document.location.href =
@@ -196,26 +212,26 @@ ShelterInPlace.Application = (function() {
 
     // Fill the search history
     var element = document.getElementById('search-history');
-    var history = ShelterInPlace.Utilities.GetActivity();
+    var history = ShelterInPlace.Utilities.GetActivityHistory();
     if (history.length != 0) {
       history.forEach(activity => {
-        activity = JSON.parse(activity)
+        console.log('Adding from history: ', activity);
         var a = document.createElement('A');
         a.className =
             'list-group-item list-group-item-action flex-column align-items-start border mb-3';
 
-        var div = document.createElement('DIV');
+        var div = document.createElement('div');
         div.className = 'd-flex w-100 justify-content-between';
 
-        var h5 = document.createElement('H5');
+        var h5 = document.createElement('h5');
         h5.className = 'mb-1';
 
-        var span = document.createElement('SPAN');
+        var span = document.createElement('span');
         span.className = 'place-name';
-        span.innerHTML = activity.name;
+        span.innerHTML = activity.place.name;
         h5.appendChild(span);
 
-        var small = document.createElement('SMALL');
+        var small = document.createElement('small');
         small.innerHTML = 'Einkauf';
         h5.appendChild(small);
         div.appendChild(h5);
@@ -232,7 +248,7 @@ ShelterInPlace.Application = (function() {
 
         var span2 = document.createElement('span');
         span2.className = 'place-address';
-        span2.innerHTML = activity.formatted_address;
+        span2.innerHTML = activity.place.formatted_address;
         p.appendChild(span2);
         a.appendChild(p);
 
@@ -251,7 +267,7 @@ ShelterInPlace.Application = (function() {
     // debugging to set the place to a hard-coded value.
     $('.latest a').click((e) => {
       var link = e.target.closest('a');
-      var activity = ShelterInPlace.Utilities.GetActivity()[0];
+      var activity = ShelterInPlace.Utilities.GetActivity();
       activity.place = {
         name: $(link).find('.place-name').text(),
         formatted_address: $(link).find('.place-address').text(),
@@ -289,7 +305,7 @@ ShelterInPlace.Application = (function() {
           }
         ],
       };
-      ShelterInPlace.Utilities.AddActivity(JSON.parse(activity));
+      ShelterInPlace.Utilities.AddActivity(activity);
       document.location.href =
           document.location.href.replace('/home.html', '/go.html');
     });
@@ -297,9 +313,7 @@ ShelterInPlace.Application = (function() {
 
   // Initializes the `go` page of the app.
   var _initGo = function() {
-    var activities = ShelterInPlace.Utilities.GetActivity();
-    var activity = JSON.parse(activities[activities.length - 1]);
-
+    var activity = ShelterInPlace.Utilities.GetActivity();
 
     $('.placeName').html(activity.place.name);
     $('.placeAddress').html(activity.place.formatted_address);
