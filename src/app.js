@@ -93,6 +93,20 @@ ShelterInPlace.Utilities = (function() {
     return {}
   };
 
+  var _removeActivity = function (activity) {
+    console.log('_removeActivity:', activity);
+    var history = _getActivityHistory();
+    if (history.some(
+      existing => existing.place.name == activity.place.name &&
+        existing.formatted_address == activity.formatted_address)) {
+      console.log('Activity removed.');
+      history.splice(history.indexOf(activity));
+      return localStorage.setItem('activityHistory', JSON.stringify(history));
+    } else {
+      console.log("Activity not removed; didn't exist.");
+    }
+  }
+
   // Returns the history of all activities.
   var _getActivityHistory = function() {
     return JSON.parse(localStorage.getItem('activityHistory') || '[]');
@@ -172,6 +186,7 @@ ShelterInPlace.Utilities = (function() {
     GetActivityHistory: _getActivityHistory,      //
     GetActivity: _getActivity,                    //
     AddActivity: _addActivity,                    //
+    RemoveActivity: _removeActivity,
     ClearActivityHistory: _clearActivityHistory,  //
     GetPopularTimes: _getPopularTimes
   }
