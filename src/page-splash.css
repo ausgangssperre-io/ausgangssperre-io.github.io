@@ -1,23 +1,29 @@
 /* styles only for components on the page splash (index) */
 
 body.splashscreen {
-    background-color: #313031; /* Old browsers */
-    background-color: -moz-linear-gradient(left, #313031 0%, #151314 100%); /* FF3.6-15 */
-    background-color: -webkit-linear-gradient(left, #313031 0%,#151314 100%); /* Chrome10-25,Safari5.1-6 */
-    background-color: linear-gradient(to right, #313031 0%,#151314 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#313031', endColorstr='#151314',GradientType=1 ); /* IE6-9 */
-    background-image: url("../data/img/splash.jpg");
-    -webkit-background-size: cover;
-    -moz-background-size: center cover;
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 #start-container {
-  text-align: center;
-  position:absolute;
-  top: 40vh;
-  left: 0;
-  width: 100%;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+#start-container .splash {
+  height: 100vh;
+  margin-left: -100vh;
+
+  position: absolute;
+  top: 0;
+  left: 50vw;
+}
+
+#start-container .logo {
+  height: 30vh;
+  margin-left: -12vh;
+
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
 }
