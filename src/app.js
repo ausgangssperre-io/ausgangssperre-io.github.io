@@ -5,27 +5,122 @@
 // Bootstrap on all pages
 $(function() {
   $('body').bootstrapMaterialDesign();
+  ShelterInPlace.Router.Init();
   ShelterInPlace.Application.Init();
 });
 
 var ShelterInPlace = ShelterInPlace || {};
 
+ShelterInPlace.Router = (function() {
+  var _router = new Navigo(null, /*useHash=*/ true, /*hash=*/ '#!');
+
+  var _setContent = function(area) {
+    console.log('_setContent:', area);
+    $('section.route-active')
+        .removeClass('route-active')
+        .addClass('route-inactive');
+    $('section#' + area).removeClass('route-inactive').addClass('route-active');
+  };
+
+  var _signaturePadInitilized = false;
+  var _initSignaturePad = function() {
+    if (_signaturePadInitilized) {
+      return;
+    }
+    var canvasContainer = $('#canvas-container');
+
+    // do not style canvas width and height via css, this will break
+    // functionality!
+    $('#sign').attr('width', canvasContainer.outerWidth()).attr('height', 300);
+    var canvas = document.querySelector('canvas');
+    var signaturePad = new SignaturePad(canvas);
+
+    $('.js-reset-sign').click(function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      signaturePad.clear();
+    });
+    $('.js-jetzt-unterschreiben-btn').click(function(e) {
+      if (signaturePad.isEmpty()) {
+        alert('Bitte unterschreibe im Signaturfeld!');
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+
+      // fetch sign as png data url
+      var sign = signaturePad.toDataURL();
+
+      // @TODO: store data in local storage
+
+      return true;
+    });
+    _signaturePadInitilized = true;
+  };
+
+  var _init = function() {
+    _router
+        .on({
+          'jetzt-losgehen': function() {
+            _setContent('jetzt-losgehen');
+          },
+          'zusammenfassung-unterschrift': function() {
+            _setContent('zusammenfassung-unterschrift');
+            _initSignaturePad();
+          },
+          '*': function() {
+            _setContent('home')
+          }
+        })
+        .resolve();
+  };
+
+  return {
+    Init: _init,
+    SetContent: _setContent,
+    Navigate: _router.navigate.bind(_router),
+  };
+})();
+
 ShelterInPlace.Utilities = (function() {
   // Obtains all we know about the current activity. This is *the* core state of
   // the app, where we store all we know about what the user intends to do.
-  var _getActivity =
-      function() {
-    return JSON.parse(localStorage.getItem('activity') || '{}');
+  var _getActivity = function() {
+    var history = _getActivityHistory();
+    if (history.length > 0) {
+      return history[history.length - 1];
+    }
+    return {}
+  };
+
+  // Returns the history of all activities.
+  var _getActivityHistory = function() {
+    return JSON.parse(localStorage.getItem('activityHistory') || '[]');
+  };
+
+  // Adds the current activity. Call this to persist the activity's state after
+  // the activity has been modified. For debugging, call
+  // `ShelterInPlace.Utilities.AddActivity({...})` in the JavaScript console to
+  // put the app in a particular state.
+  var _addActivity =
+      function(activity) {
+    console.log('_addActivity:', activity);
+    var history = _getActivityHistory();
+    if (!history.some(
+            existing => existing.place.name == activity.place.name &&
+                existing.formatted_address == activity.formatted_address)) {
+      console.log('Activity added.');
+      history.push(activity);
+      return localStorage.setItem('activityHistory', JSON.stringify(history));
+    } else {
+      console.log('Activity not added; already existed.');
+    }
   }
 
-  // Sets the current activity. Call this to persist the activity's state after
-  // the activity has been modified. For debugging, call
-  // `ShelterInPlace.Utilities.SetActivity({...})` in the JavaScript console to
-  // put the app in a particular state.
-  var _setActivity =
-      function(activity) {
-    console.log('Activity updated:', activity);
-    return localStorage.setItem('activity', JSON.stringify(activity));
+  var _clearActivityHistory =
+      function() {
+    console.log('Activity history cleared');
+    return localStorage.setItem('activityHistory', '[]');
   }
 
   // Obtains the user's location
@@ -73,8 +168,12 @@ ShelterInPlace.Utilities = (function() {
   }
 
   return {
-    GetUserLocation: _getUserLocation, GetActivity: _getActivity,
-        SetActivity: _setActivity, GetPopularTimes: _getPopularTimes
+    GetUserLocation: _getUserLocation,                //
+    GetActivityHistory: _getActivityHistory,      //
+    GetActivity: _getActivity,                    //
+    AddActivity: _addActivity,                    //
+    ClearActivityHistory: _clearActivityHistory,  //
+    GetPopularTimes: _getPopularTimes
   }
 })();
 
@@ -95,11 +194,6 @@ ShelterInPlace.Application = (function() {
     } else {
       console.error('_init: Unknown page: ' + document.location.pathname);
     }
-  };
-
-  // Initialized the index page. This is also our way to clear the state.
-  var _initIndex = function() {
-    ShelterInPlace.Utilities.SetActivity({});
   };
 
   // Initializes the `home` page of the app.
@@ -137,9 +231,7 @@ ShelterInPlace.Application = (function() {
         var place = autocomplete.getPlace();
 
         // Set place data...
-        activity = ShelterInPlace.Utilities.GetActivity();
-        activity.place = place;
-        ShelterInPlace.Utilities.SetActivity(activity);
+        ShelterInPlace.Utilities.AddActivity({"place": place});
 
         // ... and go.
         document.location.href =
@@ -147,53 +239,105 @@ ShelterInPlace.Application = (function() {
       });
     }
 
-        // Init the "latest destination" buttons. Currently, we use these for
-        // debugging to set the place to a hard-coded value.
-        $('.latest a')
-            .click((e) => {
-              var link = e.target.closest('a');
-              var activity = ShelterInPlace.Utilities.GetActivity();
-              activity.place = {
-                name: $(link).find('.place-name').text(),
-                formatted_address: $(link).find('.place-address').text(),
-                addr_address: $(link).find('.place-address').text(),
-                address_components: [
-                  {
-                    'long_name': 'Laim',
-                    'short_name': 'Laim',
-                    'types': ['sublocality_level_1', 'sublocality', 'political']
-                  },
-                  {
-                    'long_name': 'Munich',
-                    'short_name': 'Munich',
-                    'types': ['locality', 'political']
-                  },
-                  {
-                    'long_name': 'Munich',
-                    'short_name': 'Munich',
-                    'types': ['administrative_area_level_3', 'political']
-                  },
-                  {
-                    'long_name': 'Upper Bavaria',
-                    'short_name': 'Upper Bavaria',
-                    'types': ['administrative_area_level_2', 'political']
-                  },
-                  {
-                    'long_name': 'Bavaria',
-                    'short_name': 'BY',
-                    'types': ['administrative_area_level_1', 'political']
-                  },
-                  {
-                    'long_name': 'Germany',
-                    'short_name': 'DE',
-                    'types': ['country', 'political']
-                  }
-                ],
-              };
-              ShelterInPlace.Utilities.SetActivity(activity);
-              document.location.href =
-                  document.location.href.replace('/home.html', '/go.html');
-            });
+    // Fill the search history
+    var element = document.getElementById('search-history');
+    var history = ShelterInPlace.Utilities.GetActivityHistory();
+    if (history.length != 0) {
+      history.forEach(activity => {
+        console.log('Adding from history: ', activity);
+        var a = document.createElement('A');
+        a.className =
+            'list-group-item list-group-item-action flex-column align-items-start border mb-3';
+
+        var div = document.createElement('div');
+        div.className = 'd-flex w-100 justify-content-between';
+
+        var h5 = document.createElement('h5');
+        h5.className = 'mb-1';
+
+        var span = document.createElement('span');
+        span.className = 'place-name';
+        span.innerHTML = activity.place.name;
+        h5.appendChild(span);
+
+        var small = document.createElement('small');
+        small.innerHTML = 'Einkauf';
+        h5.appendChild(small);
+        div.appendChild(h5);
+
+        var img = document.createElement('img');
+        img.src = '/data/img/icon-delete.svg';
+        img.width = 20;
+        img.height = 20;
+        div.appendChild(img);
+        a.appendChild(div);
+
+        var p = document.createElement('p');
+        p.className = 'mb-1';
+
+        var span2 = document.createElement('span');
+        span2.className = 'place-address';
+        span2.innerHTML = activity.place.formatted_address;
+        p.appendChild(span2);
+        a.appendChild(p);
+
+        var small2 = document.createElement('small');
+        small2.className = 'p-3 mb-2 bg-success';
+        small2.innerHTML = 'Weniger Besucher als gewöhnlich.';
+        a.appendChild(small2);
+
+        element.appendChild(a);
+      })
+    } else {
+      document.getElementById('history-text').innerHTML = 'Keine Letzten Ziele.'
+    }
+
+    // Init the "latest destination" buttons. Currently, we use these for
+    // debugging to set the place to a hard-coded value.
+    $('.latest a').click((e) => {
+      var link = e.target.closest('a');
+      var activity = ShelterInPlace.Utilities.GetActivity();
+      activity.place = {
+        name: $(link).find('.place-name').text(),
+        formatted_address: $(link).find('.place-address').text(),
+        addr_address: $(link).find('.place-address').text(),
+        address_components: [
+          {
+            'long_name': 'Laim',
+            'short_name': 'Laim',
+            'types': ['sublocality_level_1', 'sublocality', 'political']
+          },
+          {
+            'long_name': 'Munich',
+            'short_name': 'Munich',
+            'types': ['locality', 'political']
+          },
+          {
+            'long_name': 'Munich',
+            'short_name': 'Munich',
+            'types': ['administrative_area_level_3', 'political']
+          },
+          {
+            'long_name': 'Upper Bavaria',
+            'short_name': 'Upper Bavaria',
+            'types': ['administrative_area_level_2', 'political']
+          },
+          {
+            'long_name': 'Bavaria',
+            'short_name': 'BY',
+            'types': ['administrative_area_level_1', 'political']
+          },
+          {
+            'long_name': 'Germany',
+            'short_name': 'DE',
+            'types': ['country', 'political']
+          }
+        ],
+      };
+      ShelterInPlace.Utilities.AddActivity(activity);
+      document.location.href =
+          document.location.href.replace('/home.html', '/go.html');
+    });
   };
 
   // Initializes the `go` page of the app.

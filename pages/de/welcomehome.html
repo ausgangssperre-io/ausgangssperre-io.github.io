@@ -8,7 +8,7 @@
     <!-- Material Design for Bootstrap fonts and icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
     <link rel="stylesheet" href="/src/app.css">
-    <link rel="stylesheet" href="/src/page-about.css">
+    <link rel="stylesheet" href="/src/page-go.css">
 
     <!-- Material Design for Bootstrap CSS -->
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
@@ -16,40 +16,20 @@
     <title>ausgangssperre.io</title>
     <link rel="shortcut icon" type="image/x-icon" href="/data/img/favicon.ico">
 </head>
-<body class="about">
+<body class="go">
 
 <!-- CONTENT START -->
 
-<div class="container mt-5">
+<div class="container">
+    <!-- img src="/data/img/header-info-page.jpg" class="img-fluid" alt="Responsive image" -->
 
-    <div class="mx-auto mb-5" style="width: 120px;">
-        <img src="/data/img/icon.svg" alt="ausgangssperre.io Logo" width="120" class="auto">
-    </div>
-    <h1>About</h1>
+    <h1>Wilkommen zu Hause!</h1>
+    <center>
+        <img src="/data/img/Wash_your_hands.svg" alt="Hände waschen" align="middle" >
+    </center>    
+    
 
-    <p> <b>Ausgangssperre.io ist im Rahmen des <a href="https://wirvsvirushackathon.org/">#WirVsVirus Online Hackathon</a> entstanden, um Probleme im Zusammenhang mit der Corona-Krise gemeinsam zu lösen. </b></p>
-
-    <h4>Version: 0.1</h4>
-
-    <p>
-    Entwickelt von:
-    Bastian,
-    Claudius Gerstner,
-    Daniel Klose,
-    Flegeton,
-    Hans-Gerd,
-    Ilinca Tudose,
-    Jonas Wagner,
-    Juliane Langer,
-    Mathias Arzberger.
-    </p>
-
-    <p>Anwendungsberechtigungen: Standort, Network</p>
-
-    <p>Die App Ausgangssperre.io dient zur Erstellung eines digitalen Passierscheins, welcher benötigt wird, um sich während einer verhängten Ausgangssperre außerhalb der eigenen Häuslichkeit aufzuhalten.</p>
-    <p>Dafür gibst du einfach an, wohin du dich bewegen möchtest oder was du tun willst und die App erstellt dir einen digitalen Ausgangsschein, welchen du bei eventuellen Kontrollen einfach vorzeigen kannst. </p>
-    <p>Zudem informiert sie dich in Echtzeit über die aktuellen Besucherzahlen deines Zielortes und gibt dir Tipps zum allgemeinen Verhalten während einer Ausgangssperre. Außerdem erhältst du wertvolle Hinweise, ob es aktuell erlaubt ist, deinen Zielort während einer Ausgangssperre aufzusuchen oder nicht.
-    </p>
+    <a id="start-link" href="/pages/de/home.html" class="btn btn-primary btn-lg btn-success bg-red text-white btn-block">Wieder los gehen</a>
 
 </div>
 
@@ -59,13 +39,13 @@
 <nav class="navigation fixed-bottom center pt-3">
     <ul class="row">
         <li class="col text-center m-2">
-            <a href="/pages/de/home.html" class="go text-hide">Wohin soll es gehen?</a>
+            <a href="/pages/de/home.html" class="go text-hide active">Wohin soll es gehen?</a>
         </li>
         <li class="col text-center m-2">
             <a href="/pages/de/news.html" class="news text-hide">News</a>
         </li>
         <li class="col text-center m-2">
-            <a href="/pages/de/about.html" class="about text-hide active">Über diese App</a>
+            <a href="/pages/de/about.html" class="about text-hide">Über diese App</a>
         </li>
     </ul>
 </nav>
@@ -75,7 +55,6 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/navigo@6.0.2/lib/navigo.min.js" integrity="sha384-Y1nMl5HsGvr3G8c1jFlDKj61sGFKNiPxREZQwWUQdx41xVB0UyPQSDo830dykkHl" crossorigin="anonymous"></script>
 
 <!-- Our own JavaScript -->
 <script src="/src/app.js"></script>

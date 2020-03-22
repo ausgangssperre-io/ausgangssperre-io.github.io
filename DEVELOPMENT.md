@@ -68,3 +68,12 @@ $ git push                        # publish the changes.
 ## Dependencies
 
 *   clang-format: `sudo apt install clang-format`
+
+##  Open Source Libs used
+* [Navigo js router](https://github.com/krasimir/navigo) MIT-License - THX @ Krasimir Tsonev
+* [Signature pad](https://github.com/szimek/signature_pad)  MIT-License - THX @ Szymon Nowak
+* [jQuery](https://github.com/jquery) MIT-License - THX @ The jQuery Foundation
+* [popper.js](https://popper.js.org/) MIT-License - THX @ The Popper Js Foundation
+* [Boostrap Material Design](https://fezvrasta.github.io/bootstrap-material-design/) MIT-License - THX @ Federico Zivolo
+* [Twitter Boostrap](https://getbootstrap.com/) MIT-License - THX @ Twitter.com
+
