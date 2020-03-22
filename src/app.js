@@ -50,9 +50,9 @@ ShelterInPlace.Router = (function() {
       }
 
       // fetch sign as png data url
-      var signature = signaturePad.toDataURL();
+      var signature = signaturePad.toDataURL("image/png");
       // @TODO: store data in local storage
-      localStorage.setItem('signature', JSON.stringify(signature));
+      localStorage.setItem('signature', signature);
       // document.write('<img src="'+signature+'"/>');
       return true;
     });
@@ -61,7 +61,6 @@ ShelterInPlace.Router = (function() {
 
   var _initDataCheck = function () {
     $('.js-go-data-btn').click(function(e){
-        console.log("doing something here");
         var name = document.getElementById('name').value;
         var familiy_name = document.getElementById('fname').value;
         if (fname == "" || name == ""){
@@ -71,6 +70,17 @@ ShelterInPlace.Router = (function() {
           localStorage.setItem('familiy_name', JSON.stringify(familiy_name));
         }
     });
+  }
+
+  var _initOnTheGo = function(){
+    
+    $('.firstName').html(localStorage.getItem('name').replace(/"/g, ''));
+    $('.familyName').html(localStorage.getItem('familiy_name').replace(/"/g, ''));
+
+    // timestamp
+    $('.signatureImage').html("<img src='" + localStorage.getItem('signature') + "'/>");
+    // TODO(ilincat) Reason??
+
   }
 
   var _init = function() {
@@ -86,6 +96,10 @@ ShelterInPlace.Router = (function() {
           'go-data': function() {
             _setContent('go-data');
             _initDataCheck();
+          },
+          'on-the-go': function() {
+            _setContent('on-the-go');
+            _initOnTheGo();
           },
           '*': function() {
             _setContent('home')
