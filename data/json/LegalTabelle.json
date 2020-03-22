@@ -67,7 +67,8 @@
             "Schulen": 0
         },
         "Bayern": {
-            "Versammlung": -1,
+            "Versammlung": 1,
+            "Versammlung Ausnahme": "Mitbewohner",
             "Lieferdienste": -1,
             "Gastronomie": {
                "Bewirtung": 0
