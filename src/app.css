@@ -8,6 +8,18 @@
     background-color: #c12722 !important;
 }
 
+.fixed-bottom.button {
+    bottom: 73px;
+}
+
+.fixed-bottom.button .border-red {
+    border-color: #c12722 !important;
+}
+
+.text-black {
+    color: #000;
+}
+
 .navigation {
     background-color: #fff;
 }
