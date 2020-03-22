@@ -31,7 +31,7 @@ ShelterInPlace.Router = (function() {
 
     // do not style canvas width and height via css, this will break
     // functionality!
-    $('#sign').attr('width', canvasContainer.outerWidth()).attr('height', 300);
+    $('#sign').attr('width', canvasContainer.outerWidth()-30).attr('height', 200);
     var canvas = document.querySelector('canvas');
     var signaturePad = new SignaturePad(canvas);
 
@@ -82,6 +82,12 @@ ShelterInPlace.Router = (function() {
 
   }
 
+  var _initWelcomeHome = function(){
+
+    // do anything
+
+  }
+
   var _init = function() {
     _router
         .on({
@@ -96,6 +102,10 @@ ShelterInPlace.Router = (function() {
           'on-the-go': function() {
             _setContent('on-the-go');
             _initOnTheGo();
+          },
+          'end': function() {
+            _setContent('end');
+            _initWelcomeHome();
           },
           '*': function() {
             _setContent('home')
@@ -183,34 +193,36 @@ ShelterInPlace.Utilities = (function() {
   }
 
   var _getPopularTimes =
-      function(id, placeId) {
-          let baseUri = 'https://api.ausgangssperre.io/place/';
-          let detailUri = baseUri + placeId;
+    function(id, placeId) {
+      let baseUri = 'https://api.ausgangssperre.io/place/';
+      let detailUri = baseUri + placeId;
 
-          var request = new XMLHttpRequest();
-          request.open('GET', detailUri, true);
+      fetch(detailUri)
+        .then(
+          function(response) {
+            if (response.status !== 200) {
+              console.log('Looks like there was a problem. Status Code: ' +
+                response.status);
+              return;
+            }
 
-          request.onload = function() {
-              if (request.status >= 200 && request.status < 400) {
-                  // Success!
-                  var data = JSON.parse(request.responseText);
-                  console.log(data);
-                  $('.currentHour').html(data.current.hour);
-                  $('.currentDesc').html(data.current.desc);
+            response.json().then(function(data) {
+              let desc = (data.current.desc != null) ? data.current.desc : "Keine Echtzeit-Daten verfügbar";
+              let hour = (data.current.hour != null) ? data.current.hour : new Date().getHours();
 
-
-                  // $(id).html('#####');
-
-              } else {
-                  console.log('popular times api returned a error');
+              if(data.current.desc == null) {
+                $('#placeInfo').addClass('alert-info');
+                $('.days-chart ').hide();
               }
-          };
 
-          request.onerror = function() {
-              console.log('popular times api connection error');
-          };
-
-          request.send();
+              $('.currentHour').html(hour);
+              $('.currentDesc').html(desc);
+            });
+          }
+        )
+        .catch(function(err) {
+          console.log('Fetch Error :-S', err);
+        });
   }
 
   return {
@@ -218,7 +230,7 @@ ShelterInPlace.Utilities = (function() {
     GetActivityHistory: _getActivityHistory,      //
     GetActivity: _getActivity,                    //
     AddActivity: _addActivity,                    //
-    RemoveActivity: _removeActivity,
+    RemoveActivity: _removeActivity,              //
     ClearActivityHistory: _clearActivityHistory,  //
     GetPopularTimes: _getPopularTimes             //
   }

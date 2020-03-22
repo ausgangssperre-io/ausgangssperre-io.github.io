@@ -54,8 +54,8 @@
                     Nies-Etikette beachten, Abstand halten, evtl. auf bargeldloses Bezahlen umsteigen.</p>
             </div>
 
-            <div class="col-12">
-                <a href="#!zusammenfassung-unterschrift" class="btn btn-primary btn-lg active">Verstanden</a>
+            <div class="fixed-bottom button col-12">
+                <a href="#!zusammenfassung-unterschrift" class="btn btn-lg bg-white text-black border border-red btn-block js-jetzt-losgehen-btn" role="button">Verstanden</a>
             </div>
 
         </div>
@@ -67,31 +67,29 @@
 <section class="route-inactive" id="zusammenfassung-unterschrift">
     <form>
         <div class="container mt-5">
-            <div class="row">
-                <div class="col-10">
-                    <h2 class="placeName"></h2><br>
-                    <p class="placeType">
-                        <i class="material-icons">shopping</i>
-                        Einkaufen
-                    </p>
+            <div class="row place-data border m-1">
+                <div class="col-12">
+                    <h2 class="pt-3 pb-1">
+                        <span class="placeName"></span>
+                        <span class="placeType">Einkauf</span>
+                    </h2>
                     <p class="placeAddress"></p>
                 </div>
-            </div>
-             <div class="col-12">
-                <p><b>Ich werde mich auf dem kürzesten Weg zu REWE bewegen und danach direkt wieder nach Hause zurückkehren.</b></p>
-            </div>
-            <div class="col-12">
-                <p>Bitte mit deinem Finger unterschreiben.</p>
-            </div>
-            <div class="col-12" id="canvas-container">
-                <canvas id="sign"></canvas>
-                <input id="js-form-field-sign" name="sign" type="hidden" value="">
+                <div class="col-12" id="canvas-container">
+                  <canvas id="sign"></canvas>
+                  <input id="js-form-field-sign" name="sign" type="hidden" value="">
+                </div>
+                <div class="col-12 text-center text-gray">
+                    <p>(Bitte mit deinem Finger unterschreiben)</p>
+                </div>
+                <div class="col-12">
+                    <p>Ich werde mich auf dem kürzesten Weg zu <span class="placeName"></span> bewegen und danach direkt wieder nach Hause zurückkehren.</p>
+                </div>
             </div>
 
-            <div class="col-12">
-                <button type="button" class="btn btn-danger btn-lg active js-reset-sign">Unterschrift zurücksetzen</button>
-                &nbsp;
-                <a href="#!go-data" class="btn btn-primary btn-lg active js-jetzt-unterschreiben-btn">Weiter</a>
+            <div class="fixed-bottom button col-12">
+                <a type="button" class="btn btn-secondary border bg-white d-block js-reset-sign" role="button">Unterschrift zurücksetzen</a>
+                <a href="#!go-data" class="btn btn-lg bg-white text-black border border-red btn-block js-jetzt-unterschreiben-btn" role="button">Weiter</a>
             </div>
         </div>
     </form>
@@ -100,25 +98,45 @@
 <section class="route-inactive" id="go-data">
     <form>
         <div class="container mt-5">
-            <div class="row">
-                <div class="col-10">
-                    <h2 class="placeName"></h2><br>
-                    <p class="placeType">
-                        <i class="material-icons">shopping</i>
-                        Einkaufen
-                    </p>
+            <div class="row place-data border m-1">
+                <div class="col-12">
+                    <h2 class="pt-3 pb-1">
+                        <span class="placeName"></span>
+                        <span class="placeType">Einkauf</span>
+                    </h2>
+                    <p class="placeAddress"></p>
+                </div>
+                <div class="col-12 border-top pt-3 mb-3">
+                    <p>Für eine offizielle <strong>Ausgangsbescheinigung</strong> benötigen wir noch ein paar
+                        Informationen von dir.</p>
+                    <div class="border text-success p-3 info-text mb-3">
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="material-icons align-middle">info</i>
+                            </div>
+                            <div class="col-10">
+                                Alle persönlichen Daten werden nur auf deinem Endgerät gespeichert und niemals ohne dein
+                                Einverständnis an Dritte übermittelt. <span class="text-gray"><small>Mehr Info</small></span>
+                            </div>
+                        </div>
+                    </div>
+                    <label for="name">Name</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control border" name="name" id="name">
+                    </div>
+                    <label for="birthday">Geburtsdatum</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control border" name="birthday" id="birthday">
+                    </div>
+                    <label for="address">Anschrift</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control border" name="address" id="address">
+                    </div>
                 </div>
             </div>
-            <div class="col-12">
-                <label for="name"> Vorname:</label>
-                <input type="text" id="name" name="fname"><br><br>
-            </div>
-            <div class="col-12">
-                <label for="fname"> Nachname:</label>
-                <input type="text" id="fname" name="fname"><br><br>
-            </div>
-            <div class="col-12">
-                <a href="#!on-the-go" class="btn btn-primary btn-lg active js-go-data-btn">Weiter</a>
+
+            <div class="fixed-bottom button col-12">
+                <a href="#!on-the-go" class="btn btn-lg bg-white text-black border border-red btn-block  js-go-data-btn" role="button">Weiter</a>
             </div>
         </div>
     </form>
@@ -129,19 +147,33 @@
     <form>
         <div class="container mt-5">
             <div class="row">
-            <h2>Ausgangsbescheinigung für <span class="firstName"></span> <span class="familyName"></span></h2>
+                <div class="col-12">
+                    <h2>Unterwegs</h2>
+                </div>
+                <div class="col-12">
+                    <span class="name">Name</span>
+                    <span class="birthday">TT.MM.YYYY</span>
+                    <span class="address">Friedrichstraße 11, 11111 Berlin</span>
+                    <p>brach um 11.49 Uhr auf Richtung:</p>
+                </div>
             </div>
-
-                <div class="col-10">
-                    <p> Ziel: <span class="placeName"></span> <p>
-                    <p class="placeType">
-                        <i class="material-icons">shopping</i>
-                        Einkaufen
-                    </p>
+            <div class="row place-data border m-1">
+                <div class="col-12">
+                    <h2 class="pt-3 pb-1">
+                        <span class="placeName"></span>
+                        <span class="placeType">Einkauf</span>
+                    </h2>
+                    <p class="placeAddress"></p>
                 </div>
                 <div class="col-12">
                     <span class="signatureImage"></span>
                 </div>
+
+                <div class="fixed-bottom button col-12">
+                    <a href="#!end" class="btn btn-lg bg-red text-white border btn-block js-go-data-btn" role="button">Ausgang beenden</a>
+                </div>
+            </div>
+
         </div>
     </form>
 </section>

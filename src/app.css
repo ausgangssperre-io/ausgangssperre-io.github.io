@@ -4,6 +4,11 @@ body {
     padding-bottom: 78px;
 }
 
+a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
 .border {
     border-radius: 4pt;
 }
@@ -39,6 +44,10 @@ body {
 
 .text-black {
     color: #000;
+}
+
+.text-gray {
+    color: #ccc;
 }
 
 .navigation {
