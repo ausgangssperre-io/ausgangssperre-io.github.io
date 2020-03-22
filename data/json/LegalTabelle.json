@@ -4,9 +4,7 @@
             "Versammlung": -1,
             "Lieferdienste": -1,
             "Gastronomie": {
-               "Bewirtung": -1,
-                "Anfang": 6,
-                "Ende": 18
+               "Bewirtung": 0,
             },
             "Rausgehen": -1,
             "Laeden": 1,
@@ -268,9 +266,7 @@
             "Versammlung": 50,
             "Lieferdienste": -1,
             "Gastronomie": {
-               "Bewirtung": -1,
-                "Anfang": 6,
-                "Ende": 18
+               "Bewirtung": 0
             },
             "Rausgehen": -1,
             "Laeden": 1,
@@ -513,9 +509,7 @@
             "Versammlung": -1,
             "Lieferdienste": -1,
             "Gastronomie": {
-               "Bewirtung": -1,
-                "Anfang": 6,
-                "Ende": 18
+               "Bewirtung": 0
             },
             "Rausgehen": -1,
             "Laeden": 1,
@@ -551,9 +545,7 @@
             "Versammlung": -1,
             "Lieferdienste": -1,
             "Gastronomie": {
-               "Bewirtung": -1,
-                "Anfang": 6,
-                "Ende": 18
+               "Bewirtung": 0
             },
             "Rausgehen": -1,
             "Laeden": 1,

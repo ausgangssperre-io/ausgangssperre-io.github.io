@@ -61,10 +61,7 @@
         {
             "type": "beauty_salon",
             "Art": "Laeden",
-            "Tags": [
-                "Freie Berufe",
-                "Dienstleister"
-            ]
+            "Tags": []
         },
         {
             "type": "bicycle_store",
