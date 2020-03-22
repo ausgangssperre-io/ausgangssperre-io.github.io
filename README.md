@@ -1,51 +1,51 @@
 # ausgangssperre.io - der offizielle Passierschein A38
 
-[> to english version <](README-EN.md)
+[➡ to the English version](README-EN.md)
 
-[> Informationen für Entwickler und Mitwirkende <](DEVELOPMENT.md)
+[➡ information for developers and contributors](DEVELOPMENT.md)
 
+ausgangssperre.io ist eine App, die Nutzer:innen hilft bei der Entscheidung, ob
+es weise ist, das Haus zu verlassen. Falls Nutzer:innen ausser Haus gehen,
+generiert die App einen Ausgangsschein mit dem Ziel und Grund des Ausgangs.
 
 ## Setting
 
-In Deutschland wird global die Ausgangssperre wegen COVID-19 verhängt.
-Um sich im öffentlichen Raum zu bewegen wird von der Polizei -ähnlich 
-wie jetzt schon in Frankreich- ein Dokument verlangt, auf dem der 
-Bürger erfassen muss, warum er sich außerhalb seiner Räumlichkeiten 
-bewegt.
+In Deutschland wird die Ausgangssperre wegen COVID-19 verhängt. Um sich im
+öffentlichen Raum zu bewegen, wird von der Polizei -- ähnlich wie jetzt schon in
+Frankreich -- ein Dokument verlangt, auf dem Bürger:innen erfassen müssen, warum
+sie sich außerhalb ihrer Räumlichkeiten bewegen.
 
 ## Szenario
 
-Der Bürger will das Haus verlassen und kann nicht oder möchte kein 
-Formular auf Papier ausdrucken. Er hat gehört (via Rundfunk / Fernsehen
-/ Social Share), dass es da auch eine App geben soll. Er findet diese
-schnell in seinem App-Store / Play-Store und öffnet sie. 
+Ein Bürger oder eine Bürgerin will das Haus verlassen und kann nicht oder möchte
+kein Formular auf Papier ausdrucken. Via Rundfunk / Fernsehen / Social Share hat
+die Person erfahren, dass es dazu auch eine App geben soll. Sie findet diese
+schnell im App Store / Play Store und öffnet sie.
 
-Daraufhin wird er zunächst nach ein paar grundlegenden Informationen
-(Standort / Bundesland / Name) gefragt und kann dann auswählen was er 
-machen möchte. Will er den “Digitalen Ausgangsschein” erstellen werden 
-ihm ein paar Fragen gestellt, die unter anderem klären, ob er zur 
-Risiko-Gruppe gehört und ob es rechtlich erlaubt ist, was er vor hat.
- 
-Ohne Oberlehrerhaft zu klingen wird die App dabei Empfehlungen 
-aussprechen ohne den Benutzer an der Ausstellung der Bescheinigung 
-zu hindern.
+In der App wählt der/die Bürger:in eine Aktivität und ein Ziel. Die App liefert
+Informationen zum Ziel, etwa ob der Gang dorthin legal ist, wie viel dort gerade
+los ist und ob es gute Alternative gibt.
 
-Nach dem Ausstellen der Bescheinigung macht sich der 
-Bürger auf den Weg zur Arbeit und gerät in eine Polizeikontrolle.
-
-Hier öffnet er die App, ruft das ausgefüllte Formular ab und zeigt 
-es durch die geschlossene Fensterscheibe des Autos. Die Informationen 
-sind so strukturiert, dass der Polizist auf einen Blick ohne viel lesen 
-zu müssen alles gut erfasst und er lässt das Auto passieren.
+Falls der/die Bürger:in das Haus verlässt, generiert die App einen "Digitalen
+Ausgangsschein". Bürger:innen können diesen Schein bei Kontrollen vorzeigen und
+damit beweisen, dass sie sich auf einem notwendigen und legalen Ausgang
+befinden.
 
 ## Ziele
 
-- Der Bürger soll auf dem Weg zum ausgefüllten Formular auch ein wenig 
-  beraten werden, ob das eine gute Idee ist die Wohnung zu verlassen 
-  (Stichwort Nudging). 
+-   Die App hilft Benutzer:innen, zuhause zu bleiben. Sie warnt Nutzer:innen,
+    wenn ihre Pläne gefährlich oder illegal sind. Außerdem liefert die App gute
+    Alternativpläne.
+-   Die App hilft Nutzer:innen auf dem Weg und reduziert die Angst vor
+    Kontrollen.
+-   Mit der App ist es schneller, einfacher und umweltfreundlicher, eine
+    Ausgangsschein zu erhalten.
+-   Die App ist eine zuverlässige und zugängliche Quelle von Informationen im
+    regionalen Gesetzeswirrwar rund um Ausgangssperren.
 
-- Die App Infos und Links zu verlässlichen Informationen enthalten.
+## Nächste Schritte
 
-#### Verweis: original Passierschein A38
-
-https://www.youtube.com/watch?v=lIiUR2gV0xk
+-   Probiere die App aus: <https://app.ausgangssperre.io> (am besten auf einem
+    Mobilgerät)
+-   Finde mehr heraus über den mysteriösen
+    ["Passierschein A38"](https://www.youtube.com/watch?v=lIiUR2gV0xk) :)
