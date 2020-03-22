@@ -85,9 +85,6 @@ ShelterInPlace.Router = (function() {
   var _init = function() {
     _router
         .on({
-          'jetzt-losgehen': function() {
-            _setContent('jetzt-losgehen');
-          },
           'zusammenfassung-unterschrift': function() {
             _setContent('zusammenfassung-unterschrift');
             _initSignaturePad();
@@ -408,10 +405,6 @@ ShelterInPlace.Application = (function() {
 
     // load popular times
     ShelterInPlace.Utilities.GetPopularTimes('#placeInfo', activity.place.name + ',' + activity.place.formatted_address);
-
-    $('.js-jetzt-losgehen-btn').on('click', function() {
-      ShelterInPlace.Router.Navigate('jetzt-losgehen');
-    })
   };
 
   return {

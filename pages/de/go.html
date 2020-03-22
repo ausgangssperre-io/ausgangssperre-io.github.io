@@ -54,26 +54,14 @@
                     Nies-Etikette beachten, Abstand halten, evtl. auf bargeldloses Bezahlen umsteigen.</p>
             </div>
 
-            <!--<div class="col-12">
-                <h3>Öffnungszeiten</h3>
-                <p id="placeWeekday"></p>
-            </div> -->
-
-            <div class="fixed-bottom button col-12">
-                <button type="button" class="btn btn-lg bg-white text-black border border-red btn-block js-jetzt-losgehen-btn">Verstanden</button>
+            <div class="col-12">
+                <a href="#!zusammenfassung-unterschrift" class="btn btn-primary btn-lg active">Verstanden</a>
             </div>
 
         </div>
 
     </div>
 
-</section>
-
-<section class="route-inactive" id="jetzt-losgehen">
-    <div class="container mt-5">
-        <h1>los gehen</h1>
-        <a href="#!zusammenfassung-unterschrift" class="btn btn-primary btn-lg active">WEITER</a>
-    </div>
 </section>
 
 <section class="route-inactive" id="zusammenfassung-unterschrift">
@@ -89,16 +77,17 @@
                     <p class="placeAddress"></p>
                 </div>
             </div>
+             <div class="col-12">
+                <p><b>Ich werde mich auf dem kürzesten Weg zu REWE bewegen und danach direkt wieder nach Hause zurückkehren.</b></p>
+            </div>
+            <div class="col-12">
+                <p>Bitte mit deinem Finger unterschreiben.</p>
+            </div>
             <div class="col-12" id="canvas-container">
                 <canvas id="sign"></canvas>
                 <input id="js-form-field-sign" name="sign" type="hidden" value="">
             </div>
-            <div class="col-12">
-                <p>(Bitte unterschreibe mit deinem Finger)</p>
-            </div>
-            <div class="col-12">
-                <p>Ich werde mich auf dem kürzesten Weg zu REWE bewegen und danach direkt wieder nach Hause zurückkehren.</p>
-            </div>
+
             <div class="col-12">
                 <button type="button" class="btn btn-danger btn-lg active js-reset-sign">Unterschrift zurücksetzen</button>
                 &nbsp;
