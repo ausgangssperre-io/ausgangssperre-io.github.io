@@ -1,5 +1,9 @@
 /* all general styles */
 
+.body {
+    padding-bottom: 78px;
+}
+
 .bg-red {
     background-color: #c12722 !important;
 }
