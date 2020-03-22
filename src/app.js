@@ -123,13 +123,12 @@ ShelterInPlace.Application = (function() {
         // debugging to set the place to a hard-coded value.
         $('.latest a')
             .click((e) => {
-              console.log('click: ', e.target);
-              activity = ShelterInPlace.Utilities.GetActivity();
+              var link = e.target.closest('a');
+              var activity = ShelterInPlace.Utilities.GetActivity();
               activity.place = {
-                name: e.target.innerText,
-                formatted_address: 'Laim, Munich, Germany',
-                adr_address:
-                    'Laim, <span class="locality">Munich</span>, <span class="country-name">Germany</span>',
+                name: $(link).find('.place-name').text(),
+                formatted_address: $(link).find('.place-address').text(),
+                addr_address: $(link).find('.place-address').text(),
                 address_components: [
                   {
                     'long_name': 'Laim',
