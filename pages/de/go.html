@@ -27,12 +27,12 @@
 
         <div class="row place-data">
             <div class="col-10">
-                <h2 id="placeName"></h2><br>
-                <p id="placeType">
+                <h2 class="placeName"></h2><br>
+                <p class="placeType">
               <i class="material-icons">shopping</i>
               Einkaufen
                 </p>
-                <p id="placeAddress"></p>
+                <p class="placeAddress"></p>
             </div>
             <div class="alert alert-success" role="alert" id="placeInfo">
                 <h3>Aktuell 16 Uhr:</h3>
@@ -52,10 +52,47 @@
 
 </section>
 
+
+
 <section class="route-inactive" id="jetzt-losgehen">
     <div class="container mt-5">
         <h1>los gehen</h1>
+        <a href="#!zusammenfasung-unterschrift" class="btn btn-primary btn-lg active">WEITER</a>
     </div>
+</section>
+
+
+
+<section class="route-inactive" id="zusammenfasung-unterschrift">
+    <form>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-10">
+                    <h2 class="placeName"></h2><br>
+                    <p class="placeType">
+                        <i class="material-icons">shopping</i>
+                        Einkaufen
+                    </p>
+                    <p class="placeAddress"></p>
+                </div>
+            </div>
+            <div class="col-12" id="canvas-container">
+                <canvas id="sign"></canvas>
+                <input id="js-form-field-sign" name="sign" type="hidden" value="">
+            </div>
+            <div class="col-12">
+                <p>(Bitte unterschreibe mit deinem Finger)</p>
+            </div>
+            <div class="col-12">
+                <p>Ich werde mich auf dem kürzesten Weg zu REWE bewegen und danach direkt wieder nach Hause zurückkehren.</p>
+            </div>
+            <div class="col-12">
+                <button type="button" class="btn btn-danger btn-lg active js-reset-sign" type="button">Unterschrift zurücksetzen</button>
+                &nbsp;
+                <button type="button" class="btn btn-primary btn-lg active js-jetzt-unterschreiben-btn">Weiter</button>
+            </div>
+        </div>
+    </form>
 </section>
 
 <!-- CONTENT END -->
@@ -81,7 +118,7 @@
 <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/navigo@6.0.2/lib/navigo.min.js" integrity="sha384-Y1nMl5HsGvr3G8c1jFlDKj61sGFKNiPxREZQwWUQdx41xVB0UyPQSDo830dykkHl" crossorigin="anonymous"></script>
-
+<script src="/data/lib/signature_pad.min.js"></script>
 <!-- Our own JavaScript -->
 <script src="/src/app.js"></script>
 

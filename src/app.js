@@ -22,11 +22,52 @@ ShelterInPlace.Router = (function() {
     $('section#' + area).removeClass('route-inactive').addClass('route-active');
   };
 
+  var _signaturePadInitilized = false;
+  var _initSignaturePad = function () {
+    if(_signaturePadInitilized) {
+      return;
+    }
+    var canvasContainer = $('#canvas-container');
+
+    // do not style canvas width and height via css, this will break functionality!
+    $('#sign')
+      .attr('width', canvasContainer.outerWidth())
+      .attr('height', 300);
+    var canvas = document.querySelector("canvas");
+    var signaturePad = new SignaturePad(canvas);
+
+    $('.js-reset-sign').click(function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      signaturePad.clear();
+    });
+    $('.js-jetzt-unterschreiben-btn').click(function(e){
+      if(signaturePad.isEmpty()) {
+        alert('Bitte unterschreibe im Signaturfeld!');
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+
+      // fetch sign as png data url
+      var sign = signaturePad.toDataURL();
+
+      // @TODO: store data in local storage
+
+      return true;
+    });
+    _signaturePadInitilized = true;
+  };
+
   var _init = function() {
     _router
         .on({
           'jetzt-losgehen': function() {
             _setContent('jetzt-losgehen');
+          },
+          'zusammenfasung-unterschrift': function() {
+            _setContent('zusammenfasung-unterschrift');
+            _initSignaturePad();
           },
           '*': function() {
             _setContent('home')
@@ -204,9 +245,9 @@ ShelterInPlace.Application = (function() {
   var _initGo = function() {
     var activity = ShelterInPlace.Utilities.GetActivity();
 
-    $('#placeName').html(activity.place.name);
-    $('#placeAddress').html(activity.place.formatted_address);
-    $('#placeWeekday').html(activity.place.weekday_text);
+    $('.placeName').html(activity.place.name);
+    $('.placeAddress').html(activity.place.formatted_address);
+    $('.placeWeekday').html(activity.place.weekday_text);
 
     $('.js-jetzt-losgehen-btn').on('click', function() {
       ShelterInPlace.Router.Navigate('jetzt-losgehen');
