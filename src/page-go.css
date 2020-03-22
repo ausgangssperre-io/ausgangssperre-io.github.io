@@ -1,1 +1,5 @@
 /* styles only for components on the page go */
+
+h1 a {
+    color: #000;
+}

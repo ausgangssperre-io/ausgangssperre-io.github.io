@@ -8,7 +8,7 @@
     <!-- Material Design for Bootstrap fonts and icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
     <link rel="stylesheet" href="/src/app.css">
-    <link rel="stylesheet" href="/src/page-about.css">
+    <link rel="stylesheet" href="/src/page-info.css">
 
     <!-- Material Design for Bootstrap CSS -->
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
@@ -16,15 +16,30 @@
     <title>ausgangssperre.io</title>
     <link rel="shortcut icon" type="image/x-icon" href="/data/img/favicon.ico">
 </head>
-<body class="about">
+<body class="news">
 
 <!-- CONTENT START -->
 
 <div class="container mt-5">
 
-    <h1>About</h1>
+    <h1>News</h1>
 
-    <p>orem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <ul class="list-group">
+        <li class="list-group-item border mb-3">
+            <div class="bmd-list-group-col">
+                <time datetime="1914-12-20 08:30:45">21. März</time>
+                <p class="list-group-item-heading">Lorem ipsum dolor sit amet</p>
+                <p class="list-group-item-text">This disallows more than two lines.  Hopefully an ellipsis ends this text.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut malesuada elit. Proin tristique, lorem eu vehicula congue, lectus ipsum porta quam, eget rutrum sapien turpis et libero.</p>
+            </div>
+        </li>
+        <li class="list-group-item border mb-3">
+            <div class="bmd-list-group-col">
+                <time datetime="1914-12-20 08:30:45">21. März</time>
+                <p class="list-group-item-heading">Lorem ipsum dolor sit amet</p>
+                <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut malesuada elit. Proin tristique, lorem eu vehicula congue, lectus ipsum porta quam, eget rutrum sapien turpis et libero.</p>
+            </div>
+        </li>
+    </ul>
 
 </div>
 
@@ -37,10 +52,10 @@
             <a href="/pages/de/home.html" class="go text-hide">Wohin soll es gehen?</a>
         </li>
         <li class="col text-center m-2">
-            <a href="/pages/de/news.html" class="news text-hide">News</a>
+            <a href="/pages/de/news.html" class="news text-hide active">News</a>
         </li>
         <li class="col text-center m-2">
-            <a href="/pages/de/about.html" class="about text-hide active">Über diese App</a>
+            <a href="/pages/de/about.html" class="about text-hide">Über diese App</a>
         </li>
     </ul>
 </nav>

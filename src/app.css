@@ -1,1 +1,39 @@
 /* all general styles */
+
+.bg-red {
+    background-color: #c12722 !important;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navigation ul li a {
+    display: block;
+    height: 30px;
+}
+
+.navigation ul li .go {
+    background: url("../data/img/icon-go-grey.svg") no-repeat top center;
+}
+
+.navigation ul li .news {
+    background: url("../data/img/icon-news-grey.svg") no-repeat top center;
+}
+
+.navigation ul li .about {
+    background: url("../data/img/icon-about-grey.svg") no-repeat top center;
+}
+
+.navigation ul li .go.active {
+    background: url("../data/img/icon-go-red.svg") no-repeat top center;
+}
+
+.navigation ul li .news.active {
+    background: url("../data/img/icon-news-red.svg") no-repeat top center;
+}
+
+.navigation ul li .about.active {
+    background: url("../data/img/icon-about-red.svg") no-repeat top center;
+}
