@@ -32,7 +32,7 @@ ShelterInPlace.Router = (function() {
     // do not style canvas width and height via css, this will break
     // functionality!
     $('#sign')
-        .attr('width', canvasContainer.outerWidth() - 30)
+        .attr('width', canvasContainer.get(0).clientWidth - 30)
         .attr('height', 200);
     var canvas = document.querySelector('canvas');
     var signaturePad = new SignaturePad(canvas);
@@ -52,9 +52,8 @@ ShelterInPlace.Router = (function() {
 
       // fetch sign as png data url
       var signature = signaturePad.toDataURL('image/png');
-      // @TODO: store data in local storage
       localStorage.setItem('signature', signature);
-      // document.write('<img src="'+signature+'"/>');
+      console.log('Signature stored: ' + signature.substr(0, 20));
       return true;
     });
     _signaturePadInitilized = true;
@@ -64,26 +63,25 @@ ShelterInPlace.Router = (function() {
       function() {
     $('.js-go-data-btn').click(function(e) {
       var name = document.getElementById('name').value;
-      var familiy_name = document.getElementById('fname').value;
-      if (fname == '' || name == '') {
-        alert('Namen fehlen!');
+      var birthday = document.getElementById('birthday').value;
+      var address = document.getElementById('address').value;
+      if (!name || !birthday || !address) {
+        alert('Bitte fülle das Formular vollständig aus.');
       } else {
-        localStorage.setItem('name', JSON.stringify(name));
-        localStorage.setItem('familiy_name', JSON.stringify(familiy_name));
+        localStorage.setItem('name', name);
+        localStorage.setItem('birthday', birthday);
+        localStorage.setItem('address', address);
       }
     });
   }
 
   var _initOnTheGo =
       function() {
-    $('.firstName').html(localStorage.getItem('name').replace(/"/g, ''));
-    $('.familyName')
-        .html(localStorage.getItem('familiy_name').replace(/"/g, ''));
+    $('#on-the-go .name').html(localStorage.getItem('name'));
+    $('#on-the-go .birthday').html(localStorage.getItem('birthday'));
+    $('#on-the-go .address').html(localStorage.getItem('address'));
 
-    // timestamp
-    $('.signatureImage')
-        .html('<img src=\'' + localStorage.getItem('signature') + '\'/>');
-    // TODO(ilincat) Reason??
+    $('.signatureImage').attr('src', localStorage.getItem('signature'));
   }
 
   var _initWelcomeHome =
