@@ -249,7 +249,11 @@ ShelterInPlace.Application = (function() {
   // Initializes the entire app. Checks the URL for the page that we're on, and
   // dispatches accordingly.
   var _init = function() {
-    if (document.location.pathname.endsWith('/home.html')) {
+    if (document.location.pathname.endsWith('/about.html')) {
+      _initAbout();
+    } else if (document.location.pathname.endsWith('/news.html')) {
+      _initNews();
+    } else if (document.location.pathname.endsWith('/home.html')) {
       _initHome();
     } else if (document.location.pathname.endsWith('/go.html')) {
       _initGo();
@@ -259,8 +263,20 @@ ShelterInPlace.Application = (function() {
     }
   };
 
+  var _initAbout =
+      function() {
+    $('a.about').addClass('active');
+  }
+
+  var _initNews =
+      function() {
+    $('a.news').addClass('active');
+  }
+
   // Initializes the `home` page of the app.
   var _initHome = function() {
+    $('a.go').addClass('active');
+
     // Request the user's location and init the autocomplete search bar once we
     // get it.
     ShelterInPlace.Utilities.GetUserLocation(
@@ -413,6 +429,8 @@ ShelterInPlace.Application = (function() {
 
   // Initializes the `go` page of the app.
   var _initGo = function() {
+    $('a.go').addClass('active');
+
     var activity = ShelterInPlace.Utilities.GetActivity();
 
     $('.placeName').html(activity.place.name);
