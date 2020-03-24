@@ -31,7 +31,9 @@ ShelterInPlace.Router = (function() {
 
     // do not style canvas width and height via css, this will break
     // functionality!
-    $('#sign').attr('width', canvasContainer.outerWidth()-30).attr('height', 200);
+    $('#sign')
+        .attr('width', canvasContainer.outerWidth() - 30)
+        .attr('height', 200);
     var canvas = document.querySelector('canvas');
     var signaturePad = new SignaturePad(canvas);
 
@@ -82,13 +84,11 @@ ShelterInPlace.Router = (function() {
     $('.signatureImage')
         .html('<img src=\'' + localStorage.getItem('signature') + '\'/>');
     // TODO(ilincat) Reason??
-
   }
 
-  var _initWelcomeHome = function(){
-
+  var _initWelcomeHome =
+      function() {
     // do anything
-
   }
 
   var _init = function() {
@@ -197,46 +197,48 @@ ShelterInPlace.Utilities = (function() {
   }
 
   var _getPopularTimes =
-    function(id, placeId) {
-      let baseUri = 'https://api.ausgangssperre.io/place/';
-      let detailUri = baseUri + placeId;
+      function(id, placeId) {
+    let baseUri = 'https://api.ausgangssperre.io/place/';
+    let detailUri = baseUri + placeId;
 
-      fetch(detailUri)
-        .then(
-          function(response) {
-            if (response.status !== 200) {
-              console.log('Looks like there was a problem. Status Code: ' +
+    fetch(detailUri)
+        .then(function(response) {
+          if (response.status !== 200) {
+            console.log(
+                'Looks like there was a problem. Status Code: ' +
                 response.status);
-              return;
+            return;
+          }
+
+          response.json().then(function(data) {
+            let desc = (data.current.desc != null) ?
+                data.current.desc :
+                'Keine Echtzeit-Daten verfügbar';
+            let hour = (data.current.hour != null) ? data.current.hour :
+                                                     new Date().getHours();
+
+            if (data.current.desc == null) {
+              $('#placeInfo').addClass('alert-info');
+              $('.days-chart ').hide();
             }
 
-            response.json().then(function(data) {
-              let desc = (data.current.desc != null) ? data.current.desc : "Keine Echtzeit-Daten verfügbar";
-              let hour = (data.current.hour != null) ? data.current.hour : new Date().getHours();
-
-              if(data.current.desc == null) {
-                $('#placeInfo').addClass('alert-info');
-                $('.days-chart ').hide();
-              }
-
-              $('.currentHour').html(hour);
-              $('.currentDesc').html(desc);
-            });
-          }
-        )
+            $('.currentHour').html(hour);
+            $('.currentDesc').html(desc);
+          });
+        })
         .catch(function(err) {
           console.log('Fetch Error :-S', err);
         });
   }
 
   return {
-    GetUserLocation: _getUserLocation,            //
-    GetActivityHistory: _getActivityHistory,      //
-    GetActivity: _getActivity,                    //
-    AddActivity: _addActivity,                    //
-    RemoveActivity: _removeActivity,              //
-    ClearActivityHistory: _clearActivityHistory,  //
-    GetPopularTimes: _getPopularTimes             //
+    GetUserLocation: _getUserLocation,                //
+        GetActivityHistory: _getActivityHistory,      //
+        GetActivity: _getActivity,                    //
+        AddActivity: _addActivity,                    //
+        RemoveActivity: _removeActivity,              //
+        ClearActivityHistory: _clearActivityHistory,  //
+        GetPopularTimes: _getPopularTimes             //
   }
 })();
 
