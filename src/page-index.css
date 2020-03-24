@@ -1,29 +1,27 @@
 /* styles only for components on the page splash (index) */
 
-body.index {
+.start-outer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.start-inner {
   overflow: hidden;
-}
-
-#start-container {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 800px;
 }
 
-#start-container .splash {
-  height: 100vh;
-  margin-left: -100vh;
-
+.splash {
   position: absolute;
+  height: 800px;
   top: 0;
-  left: 50vw;
+  left: -800px;
 }
 
-#start-container .logo {
-  height: 30vh;
-  margin-left: -12vh;
-
+.logo {
   position: absolute;
-  top: 50vh;
-  left: 50vw;
+  height: 150px;
+  top: 565px;
+  left: 165px;
 }

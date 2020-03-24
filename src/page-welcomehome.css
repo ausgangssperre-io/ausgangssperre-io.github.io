@@ -1,1 +1,6 @@
 /* styles only for components on the welcomehome page */
+
+h1 a {
+  color: #000;
+}
+

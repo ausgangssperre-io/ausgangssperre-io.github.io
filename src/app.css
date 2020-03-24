@@ -1,12 +1,45 @@
 /* all general styles */
 
-body {
-    padding-bottom: 78px;
+.narrow-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Add a container to make the viewport more narrow on large screens. */
+@media screen and (min-width: 576px) {
+.narrow-container {
+    width: 546px;
+    min-height: 800px;
+    margin: 15px auto 15px auto;
+    border-radius: 4pt;
+    border: 1px solid rgba(0,0,0,.125);
+}
+}
+
+@media screen and (max-width: 576px) {
+.narrow-container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
 }
 
 a:hover {
     color: #000;
     text-decoration: none;
+}
+
+/* For buttons, we use our own styles... looks like we don't want them to be
+ * material after all :-P */
+.btn-primary, .btn-secondary {
+    border: 1px solid #dee2e6;
+    border-radius: 4pt;
+}
+.btn-primary {
+    background-color: #c12722 !important;
+    color: #fff !important;
 }
 
 .border {
@@ -32,14 +65,6 @@ a:hover {
 
 .bg-red {
     background-color: #c12722 !important;
-}
-
-.fixed-bottom.button {
-    bottom: 73px;
-}
-
-.fixed-bottom.button .border-red {
-    border-color: #c12722 !important;
 }
 
 .text-black {
