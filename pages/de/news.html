@@ -4,19 +4,23 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="mobile-web-app-capable" content="yes">
 
     <!-- Material Design for Bootstrap CSS -->
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
 
     <!-- Material Design for Bootstrap fonts and icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+    <!-- Our own CSS. Put this last, so that it can override the defaults. -->
     <link rel="stylesheet" href="/src/app.css">
-    <link rel="stylesheet" href="/src/page-info.css">
+    <link rel="stylesheet" href="/src/page-news.css">
 
     <title>ausgangssperre.io</title>
     <link rel="shortcut icon" type="image/x-icon" href="/data/img/favicon.ico">
 </head>
 <body class="news">
+<div class="narrow-container">
 
 <!-- CONTENT START -->
 
@@ -59,6 +63,7 @@
 
 <!-- CONTENT END -->
 
+</div> <!-- .narrow-container -->
 
 <nav class="navigation fixed-bottom center pt-3">
     <ul class="row">
@@ -66,7 +71,7 @@
             <a href="/pages/de/home.html" class="go text-hide">Wohin soll es gehen?</a>
         </li>
         <li class="col text-center m-2">
-            <a href="/pages/de/news.html" class="news text-hide active">News</a>
+            <a href="/pages/de/news.html" class="news text-hide">News</a>
         </li>
         <li class="col text-center m-2">
             <a href="/pages/de/about.html" class="about text-hide">Über diese App</a>
@@ -74,12 +79,15 @@
     </ul>
 </nav>
 
-<!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+
+<!-- Other dependencies -->
 <script src="https://unpkg.com/navigo@6.0.2/lib/navigo.min.js" integrity="sha384-Y1nMl5HsGvr3G8c1jFlDKj61sGFKNiPxREZQwWUQdx41xVB0UyPQSDo830dykkHl" crossorigin="anonymous"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgnLnGGj9HI3sDja5ONz0Vtmoel6fYqMU&libraries=places"></script>
+<script src="/data/lib/signature_pad.min.js"></script>
 
 <!-- Our own JavaScript -->
 <script src="/src/app.js"></script>
