@@ -249,15 +249,13 @@ ShelterInPlace.Application = (function() {
   // Initializes the entire app. Checks the URL for the page that we're on, and
   // dispatches accordingly.
   var _init = function() {
-    if (document.location.pathname == '/' ||
-        document.location.pathname == '/index.html') {
-      _initIndex();
-    } else if (document.location.pathname.endsWith('/home.html')) {
+    if (document.location.pathname.endsWith('/home.html')) {
       _initHome();
     } else if (document.location.pathname.endsWith('/go.html')) {
       _initGo();
     } else {
-      console.error('_init: Unknown page: ' + document.location.pathname);
+      console.log(
+          '_init: no special action on page: ' + document.location.pathname);
     }
   };
 
