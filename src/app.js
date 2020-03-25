@@ -22,66 +22,91 @@ ShelterInPlace.Router = (function() {
     $('section#' + area).removeClass('route-inactive').addClass('route-active');
   };
 
-  var _signaturePadInitilized = false;
+  var _signaturePad = undefined;
   var _initSignaturePad = function() {
-    if (_signaturePadInitilized) {
+    if (_signaturePad) {
       return;
     }
-    var canvasContainer = $('#canvas-container');
 
     // do not style canvas width and height via css, this will break
     // functionality!
+    var canvasContainer = $('#canvas-container');
     $('#sign')
         .attr('width', canvasContainer.get(0).clientWidth - 30)
         .attr('height', 200);
     var canvas = document.querySelector('canvas');
-    var signaturePad = new SignaturePad(canvas);
+    _signaturePad = new SignaturePad(canvas, {'onEnd': _onSignatureChanged});
 
     $('.js-reset-sign').click(function(e) {
+      _signaturePad.clear();
+      _onSignatureChanged();
       e.preventDefault();
-      e.stopPropagation();
-      signaturePad.clear();
     });
-    $('.js-jetzt-unterschreiben-btn').click(function(e) {
-      if (signaturePad.isEmpty()) {
-        alert('Bitte unterschreibe im Signaturfeld!');
-        e.preventDefault();
-        e.stopPropagation();
-        return false;
-      }
-
+    $('.js-finish-sign').click(function(e) {
       // fetch sign as png data url
-      var signature = signaturePad.toDataURL('image/png');
+      var signature = _signaturePad.toDataURL('image/png');
       localStorage.setItem('signature', signature);
       console.log('Signature stored: ' + signature.substr(0, 20));
-      return true;
+      localStorage.setItem('signatureTime', new Date().toISOString());
+
+      // If we have user data already, we can go directly to the "on-the-go"
+      // screen. Otherwise, show a form to collect user data.
+      if (localStorage.getItem('user')) {
+        document.location.href = document.location.href.replace(
+            '#!zusammenfassung-unterschrift', '#!on-the-go');
+      } else {
+        document.location.href = document.location.href.replace(
+            '#!zusammenfassung-unterschrift', '#!go-data');
+      }
+      e.preventDefault();
     });
-    _signaturePadInitilized = true;
   };
 
-  var _initDataCheck =
+  var _onSignatureChanged = function() {
+    if (_signaturePad.isEmpty()) {
+      $('.js-finish-sign').addClass('disabled');
+    } else {
+      $('.js-finish-sign').removeClass('disabled');
+    }
+  };
+
+  var _initGoData =
       function() {
-    $('.js-go-data-btn').click(function(e) {
-      var name = document.getElementById('name').value;
-      var birthday = document.getElementById('birthday').value;
-      var address = document.getElementById('address').value;
-      if (!name || !birthday || !address) {
-        alert('Bitte fülle das Formular vollständig aus.');
+    $('#go-data form input').change(function() {
+      var userName = document.getElementById('userName').value;
+      var userBirthday = document.getElementById('userBirthday').value;
+      var userAddress = document.getElementById('userAddress').value;
+
+      if (userName && userBirthday && userAddress) {
+        $('.js-go-data').removeClass('disabled');
       } else {
-        localStorage.setItem('name', name);
-        localStorage.setItem('birthday', birthday);
-        localStorage.setItem('address', address);
+        $('.js-go-data').addClass('disabled');
       }
+    });
+    $('.js-go-data').click(function(e) {
+      var userName = document.getElementById('userName').value;
+      var userBirthday = document.getElementById('userBirthday').value;
+      var userAddress = document.getElementById('userAddress').value;
+
+      localStorage.setItem('user', JSON.stringify({
+        'name': userName,
+        'birthday': userBirthday,
+        'address': userAddress
+      }));
     });
   }
 
   var _initOnTheGo =
       function() {
-    $('#on-the-go .name').html(localStorage.getItem('name'));
-    $('#on-the-go .birthday').html(localStorage.getItem('birthday'));
-    $('#on-the-go .address').html(localStorage.getItem('address'));
+    var user = JSON.parse(localStorage.getItem('user'));
+    $('#on-the-go .userName').text(user.name);
+    $('#on-the-go .userBirthday').text(user.birthday);
+    $('#on-the-go .userAddress').text(user.address);
 
-    $('.signatureImage').attr('src', localStorage.getItem('signature'));
+    $('#on-the-go .signatureImage').attr('src', localStorage.getItem('signature'));
+    var signatureTime = new Date(localStorage.getItem('signatureTime'));
+    var options = {hour: 'numeric', minute: 'numeric'};
+    $('#on-the-go .signatureTime').html(signatureTime.toLocaleString('de-DE', options));
   }
 
   var _initWelcomeHome =
@@ -98,7 +123,7 @@ ShelterInPlace.Router = (function() {
           },
           'go-data': function() {
             _setContent('go-data');
-            _initDataCheck();
+            _initGoData();
           },
           'on-the-go': function() {
             _setContent('on-the-go');
