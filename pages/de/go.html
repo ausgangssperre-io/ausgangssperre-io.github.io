@@ -91,8 +91,8 @@
                 </div>
             </div>
 
-            <a type="button" class="btn btn-secondary d-block m-1 js-reset-sign" role="button">Unterschrift zurücksetzen</a>
-            <a href="#!go-data" class="btn btn-primary btn-lg d-block m-1 js-jetzt-unterschreiben-btn" role="button">Weiter</a>
+            <a href="#" type="button" class="btn btn-secondary d-block m-1 js-reset-sign" role="button">Unterschrift zurücksetzen</a>
+            <a href="#" class="btn btn-primary btn-lg d-block m-1 js-finish-sign disabled" role="button">Weiter</a>
         </div>
     </form>
 </section>
@@ -122,22 +122,22 @@
                             </div>
                         </div>
                     </div>
-                    <label for="name">Name</label>
+                    <label for="userName">Name</label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control border" name="name" id="name">
+                        <input type="text" class="form-control border" name="userName" id="userName">
                     </div>
-                    <label for="birthday">Geburtsdatum</label>
+                    <label for="userBirthday">Geburtsdatum</label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control border" name="birthday" id="birthday">
+                        <input type="text" class="form-control border" name="userBirthday" id="userBirthday">
                     </div>
-                    <label for="address">Anschrift</label>
+                    <label for="userAddress">Anschrift</label>
                     <div class="input-group">
-                        <input type="text" class="form-control border" name="address" id="address">
+                        <input type="text" class="form-control border" name="userAddress" id="userAddress">
                     </div>
                 </div>
             </div>
 
-            <a href="#!on-the-go" class="btn btn-primary btn-lg d-block m-1 js-go-data-btn" role="button">Weiter</a>
+            <a href="#!on-the-go" class="btn btn-primary btn-lg disabled d-block m-1 js-go-data" role="button">Weiter</a>
         </div>
     </form>
 </section>
@@ -151,10 +151,14 @@
                     <h2>Unterwegs</h2>
                 </div>
                 <div class="col-12">
-                    <span class="name">Name</span>
-                    <span class="birthday">TT.MM.YYYY</span>
-                    <span class="address">Friedrichstraße 11, 11111 Berlin</span>
-                    <p>brach um 11.49 Uhr auf Richtung:</p>
+                    <p><strong class="userName">Name</strong>,
+                    geboren am
+                    <strong class="userBirthday">TT.MM.YYYY</strong>,
+                    wohnhaft in
+                    <strong class="userAddress">Friedrichstraße 11, 11111 Berlin</strong>,
+                    brach um
+                    <strong class="signatureTime">11:49</strong>
+                    Uhr auf in Richtung:</p>
                 </div>
             </div>
             <div class="row place-data border m-1">
@@ -168,10 +172,9 @@
                 <div class="col-12">
                     <img class="signatureImage" alt="Die Unterschrift des Benutzers" />
                 </div>
-
             </div>
 
-            <a href="/pages/de/welcomehome.html" class="btn btn-lg btn-primary d-block m-1 js-go-data-btn" role="button">Ausgang beenden</a>
+            <a href="/pages/de/welcomehome.html" class="btn btn-lg btn-primary d-block m-1" role="button">Ausgang beenden</a>
         </div>
     </form>
 </section>
