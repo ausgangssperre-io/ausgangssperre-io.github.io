@@ -22,6 +22,7 @@
 .logo {
   position: absolute;
   height: 150px;
-  top: 565px;
-  left: 165px;
+  margin-left: -101px;
+  top: 400px;
+  left: 50%;
 }
